@@ -31,8 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="Code" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="Code/Domains/Headers/tempo.hpp" />
+		<Unit filename="Code/Domains/tempo.cpp" />
+		<Unit filename="Code/main.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
