@@ -2,3 +2,14 @@
 1774534758 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/main.cpp
 	<iostream>
 
+1774969650 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Domains/codigo.cpp
+	<Domains/Headers/codigo.hpp>
+
+1774969657 /home/fcbd/Documents/TP1/TP1-UnB/Code/Domains/Headers/codigo.hpp
+	<string>
+
+1774965182 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Domains/tempo.cpp
+	<Domains/Headers/tempo.hpp>
+
+1774535749 /home/fcbd/Documents/TP1/TP1-UnB/Code/Domains/Headers/tempo.hpp
+
