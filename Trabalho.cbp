@@ -34,11 +34,8 @@
 			<Add option="-fexceptions" />
 			<Add directory="Code" />
 		</Compiler>
-		<Unit filename="Code/Domains/Headers/codigo.hpp" />
-		<Unit filename="Code/Domains/Headers/data.hpp" />
-		<Unit filename="Code/Domains/Headers/tempo.hpp" />
-		<Unit filename="Code/Domains/codigo.cpp" />
-		<Unit filename="Code/Domains/data.cpp" />
+		<Unit filename="Code/Domains/Headers/dominio_base.hpp" />
+		<Unit filename="Code/Domains/Headers/outros_dominios.hpp" />
 		<Unit filename="Code/Domains/tempo.cpp" />
 		<Unit filename="Code/main.cpp" />
 		<Extensions />
