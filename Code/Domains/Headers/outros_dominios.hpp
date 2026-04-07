@@ -3,7 +3,7 @@
 
 #include <Domains/Headers/dominio_base.hpp>
 
-class Tempo : Dominio{
+class Tempo : public Dominio{
     private:
         bool validar(string) override;
 
@@ -13,7 +13,7 @@ class Tempo : Dominio{
         };
 };
 //////////////////////////////////////////////////////////
-class Data : Dominio{
+class Data : public Dominio{
     private:
         bool ehBisexto(int) const;
         bool validar(string) override;
@@ -31,7 +31,7 @@ inline bool Data::ehBisexto(int ano) const{
         return false;
 }
 ////////////////////////////////////////////////////////////////
-class Codigo : Dominio{
+class Codigo : public Dominio{
     private:
         bool validar(string) override;
 
