@@ -1,16 +1,18 @@
 #include <Domains/Headers/outros_dominios.hpp>
 
-bool Tempo::validar(string tempo){
-    if(tempo.size()>3) return false;
-    for(auto c : tempo){
-        if(c<'0'|| c>'9') return false;
-    }
-    int a = stoi(tempo);
-    return(!(a<1 || a>365));
+// CODIGO
+bool Codigo::validar(string codigo){
+    for(int index=0;index<=1;index++){
+        if(codigo[index]<'A' or codigo[index]>'Z') return false;
+    }    
+    for(int index=2;index<=4;index++){
+        if(codigo[index]<'0' or codigo[index]>'9') return false;
+    }    
+    return true;
 }
+////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////
-
+// DATA
 bool Data::validar(string data){
     if(data.size()!=10 or data[2]!='/' or data[5]!='/') return false;
     for(int index=0;index<=data.size();index++){
@@ -30,15 +32,43 @@ bool Data::validar(string data){
     
     return(dia>0 and dia<=diasMensais[mes]);
 }
+////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////
+// EMAIL
 
-bool Codigo::validar(string codigo){
-    for(int index=0;index<=1;index++){
-        if(codigo[index]<'A' or codigo[index]>'Z') return false;
-    }    
-    for(int index=2;index<=4;index++){
-        if(codigo[index]<'0' or codigo[index]>'9') return false;
-    }    
-    return true;
+////////////////////////////////////////////////////////////////
+
+// ESTADO
+
+////////////////////////////////////////////////////////////////
+
+// NOME
+
+////////////////////////////////////////////////////////////////
+
+// PAPEL
+
+////////////////////////////////////////////////////////////////
+
+// PRIORIDADE
+
+////////////////////////////////////////////////////////////////
+
+// SENHA
+
+////////////////////////////////////////////////////////////////
+
+// TEMPO
+bool Tempo::validar(string tempo){
+    if(tempo.size()>3) return false;
+    for(auto c : tempo){
+        if(c<'0'|| c>'9') return false;
+    }
+    int a = stoi(tempo);
+    return(!(a<1 || a>365));
 }
+////////////////////////////////////////////////////////////////
+
+// TEXTO
+
+////////////////////////////////////////////////////////////////
