@@ -13,6 +13,10 @@ bool Tempo::validar(string tempo){
 
 bool Data::validar(string data){
     if(data.size()!=10 or data[2]!='/' or data[5]!='/') return false;
+    for(int index=0;index<=data.size();index++){
+        if(index==2||index==5) continue;
+        if(data[index]<'0' || data[index]>'9') return false;
+    }
     int dia = stoi(data.substr(0,2));
     int mes = stoi(data.substr(3,2));
     int ano = stoi(data.substr(6,4));
