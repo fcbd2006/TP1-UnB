@@ -36,26 +36,80 @@ inline bool Data::ehBisexto(int ano) const{
 ////////////////////////////////////////////////////////////////
 
 // EMAIL
+class Email : public Dominio{
+    private:
+        bool validar(string) override;
+
+    public:
+        Email(string v){
+            if(!setValor(v));
+        };
+};
 
 ////////////////////////////////////////////////////////////////
 
 // ESTADO
+class Estado : public Dominio{
+    private:
+        bool validar(string) override;
+
+    public:
+        Estado(string v){
+            if(!setValor(v));
+        };
+};
 
 ////////////////////////////////////////////////////////////////
 
 // NOME
+class Nome : public Dominio{
+    private:
+        bool validar(string) override;
+
+    public:
+        Nome(string v){
+            if(!setValor(v));
+        };
+};
 
 ////////////////////////////////////////////////////////////////
 
 // PAPEL
+class Papel : public Dominio{
+    private:
+        bool validar(string) override;
+
+    public:
+        Papel(string v){
+            if(!setValor(v));
+        };
+};
 
 ////////////////////////////////////////////////////////////////
 
 // PRIORIDADE
+class Prioridade : public Dominio{
+    private:
+        bool validar(string) override;
+
+    public:
+        Prioridade(string v){
+            if(!setValor(v));
+        };
+};
 
 ////////////////////////////////////////////////////////////////
 
 // SENHA
+class Senha : public Dominio{
+    private:
+        bool validar(string) override;
+
+    public:
+        Senha(string v){
+            if(!setValor(v));
+        };
+};
 
 ////////////////////////////////////////////////////////////////
 
@@ -72,6 +126,15 @@ class Tempo : public Dominio{
 ////////////////////////////////////////////////////////////////
 
 // TEXTO
+class Texto : public Dominio{
+    private:
+        bool validar(string) override;
+
+    public:
+        Texto(string v){
+            if(!setValor(v));
+        };
+};
 
 ////////////////////////////////////////////////////////////////
 

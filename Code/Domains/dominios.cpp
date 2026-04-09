@@ -14,8 +14,9 @@ bool Codigo::validar(string codigo){
 
 // DATA
 bool Data::validar(string data){
-    if(data.size()!=10 or data[2]!='/' or data[5]!='/') return false;
-    for(int index=0;index<=data.size();index++){
+    if(data.size()!=10) return false;
+    if(data[2]!='/' or data[5]!='/') return false;
+    for(int index=0;index<= int (data.size());index++){
         if(index==2||index==5) continue;
         if(data[index]<'0' || data[index]>'9') return false;
     }
@@ -39,18 +40,40 @@ bool Data::validar(string data){
 ////////////////////////////////////////////////////////////////
 
 // ESTADO
+bool Estado::validar(string estado){
+    return (estado=="A FAZER" || estado=="FAZENDO" || estado=="FEITO");
+}
 
 ////////////////////////////////////////////////////////////////
 
 // NOME
+bool Nome::validar(string nome){
+    if(nome.size()>10) return false;
+    if(nome[0]==' ' || nome[nome.size()-1]==' ') return false;
+    for(int index=0;index<=(int(nome.size())-1);index++){
+
+        if(nome[index]==' ' and ((nome[index+1]<'A' || nome[index+1]>'Z') and (nome[index+1]<'a' || nome[index+1]>'z')))
+            return false;
+    
+        if((nome[index]<'A' || nome[index]>'Z') and (nome[index]<'a' || nome[index]>'z') and nome[index]!=' ')
+            return false;
+    }
+    return true;
+}
 
 ////////////////////////////////////////////////////////////////
 
 // PAPEL
+bool Papel::validar(string papel){
+    return (papel=="DESENVOLVEDOR" or papel=="MESTRE SCRUM" or papel=="PROPRIETARIO DE PRODUTO");
+}
 
 ////////////////////////////////////////////////////////////////
 
 // PRIORIDADE
+bool Prioridade::validar(string prioridade){
+    return (prioridade=="ALTA" or prioridade=="MEDIA" or prioridade=="BAIXA");
+}
 
 ////////////////////////////////////////////////////////////////
 
