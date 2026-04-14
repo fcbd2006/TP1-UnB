@@ -6,12 +6,12 @@
 // CODIGO
 class Codigo : public Dominio{
     private:
-        bool validar(string) override;
+        void validar(const std::string&) override;
 
     public:
-        Codigo(string v){
-            if(!setValor(v));
-        };
+        Codigo(const std::string& v){
+            setValor(v);
+        }
 };
 ////////////////////////////////////////////////////////////////
 
@@ -19,12 +19,12 @@ class Codigo : public Dominio{
 class Data : public Dominio{
     private:
         bool ehBisexto(int) const;
-        bool validar(string) override;
+        void validar(const std::string&) override;
 
     public:
-        Data(string v){
-            if(!setValor(v));
-        }  ; 
+        Data(std::string v){
+            setValor(v);
+        } 
 };
 
 inline bool Data::ehBisexto(int ano) const{
@@ -38,12 +38,12 @@ inline bool Data::ehBisexto(int ano) const{
 // EMAIL
 class Email : public Dominio{
     private:
-        bool validar(string) override;
+        void validar(const std::string&) override;
 
     public:
-        Email(string v){
-            if(!setValor(v));
-        };
+        Email(std::string v){
+            setValor(v);
+        }
 };
 
 ////////////////////////////////////////////////////////////////
@@ -51,12 +51,12 @@ class Email : public Dominio{
 // ESTADO
 class Estado : public Dominio{
     private:
-        bool validar(string) override;
+        void validar(const std::string&) override;
 
     public:
-        Estado(string v){
-            if(!setValor(v));
-        };
+        Estado(std::string v){
+            setValor(v);
+        }
 };
 
 ////////////////////////////////////////////////////////////////
@@ -64,12 +64,12 @@ class Estado : public Dominio{
 // NOME
 class Nome : public Dominio{
     private:
-        bool validar(string) override;
+        void validar(const std::string&) override;
 
     public:
-        Nome(string v){
-            if(!setValor(v));
-        };
+        Nome(std::string v){
+            setValor(v);
+        }
 };
 
 ////////////////////////////////////////////////////////////////
@@ -77,12 +77,12 @@ class Nome : public Dominio{
 // PAPEL
 class Papel : public Dominio{
     private:
-        bool validar(string) override;
+        void validar(const std::string&) override;
 
     public:
-        Papel(string v){
-            if(!setValor(v));
-        };
+        Papel(std::string v){
+            setValor(v);
+        }
 };
 
 ////////////////////////////////////////////////////////////////
@@ -90,11 +90,11 @@ class Papel : public Dominio{
 // PRIORIDADE
 class Prioridade : public Dominio{
     private:
-        bool validar(string) override;
+        void validar(const std::string&) override;
 
     public:
-        Prioridade(string v){
-            if(!setValor(v));
+        Prioridade(std::string v){
+            setValor(v);
         };
 };
 
@@ -103,11 +103,11 @@ class Prioridade : public Dominio{
 // SENHA
 class Senha : public Dominio{
     private:
-        bool validar(string) override;
+        void validar(const std::string&) override;
 
     public:
-        Senha(string v){
-            if(!setValor(v));
+        Senha(std::string v){
+            setValor(v);
         };
 };
 
@@ -116,11 +116,11 @@ class Senha : public Dominio{
 // TEMPO
 class Tempo : public Dominio{
     private:
-        bool validar(string) override;
+        void validar(const std::string&) override;
 
     public:
-        Tempo(string v){
-            if(!setValor(v));
+        Tempo(std::string v){
+            setValor(v);
         };
 };
 ////////////////////////////////////////////////////////////////
@@ -128,11 +128,11 @@ class Tempo : public Dominio{
 // TEXTO
 class Texto : public Dominio{
     private:
-        bool validar(string) override;
+        void validar(const std::string&) override;
 
     public:
-        Texto(string v){
-            if(!setValor(v));
+        Texto(std::string v){
+            setValor(v);
         };
 };
 

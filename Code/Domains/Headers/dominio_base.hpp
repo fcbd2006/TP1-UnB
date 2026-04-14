@@ -2,27 +2,26 @@
 #define DOMINIO_HPP_INCLUDED
 
 #include <string>
-using namespace std;
 
 class Dominio {
     private:
-        string valor;
-        virtual bool validar(string) = 0;
+        std::string valor;
+        virtual void validar(const std::string&) = 0;
 
     public:
         Dominio() = default;
-        bool setValor(string);
-        string getValor() const;
+        virtual ~Dominio() = default;
+        void setValor(const std::string&);
+        const std::string& getValor() const;
 };
 
-inline string Dominio::getValor() const{
+inline const std::string& Dominio::getValor() const{
     return valor;
 }
 
-inline bool Dominio::setValor(string value){
-    if(!validar(value)) return false;
+inline void Dominio::setValor(const std::string& value){
+    validar(value);
     valor=value;
-    return true;
 }
 
 #endif
