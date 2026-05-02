@@ -28,7 +28,7 @@ class Data : public Dominio{
 };
 
 inline bool Data::ehBisexto(int ano) const{
-    if((!ano%4 and ano%100) or (!ano%400 and !ano%100)) 
+    if((!ano%4 && ano%100) || (!ano%400 && !ano%100)) 
         return true;
     else 
         return false;
