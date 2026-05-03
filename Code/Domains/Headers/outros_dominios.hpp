@@ -39,6 +39,7 @@ inline bool Data::ehBisexto(int ano) const{
 class Email : public Dominio{
     private:
         void validar(const std::string&) override;
+        void validar_formato(const std::string&);
 
     public:
         Email(std::string v){
