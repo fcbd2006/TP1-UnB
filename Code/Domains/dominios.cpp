@@ -38,7 +38,7 @@ void Data::validar(const std::string& data){
 
 // EMAIL
 void Email::validar(const std::string& email){
-    //Encontrar a posição do "@" e garantir que não está nos extremos.
+    //Encontrar a posição do '@' e garantir que não está nos extremos.
     size_t position = email.find('@');
     if(position == std::string::npos || position == 0 || position == email.length() -1){
         throw std::invalid_argument("Valor Inválido para Email.");
@@ -51,32 +51,31 @@ void Email::validar(const std::string& email){
     if(local.length() > 64 || dominio.length() > 255){
         throw std::invalid_argument("Valor Inválido para Email.");
     }
-
-    //Função para validar regras de caracteres e pontuação.
-    auto validar_formato = [](const std::string& parte){
-        if(parte.front() == '.' || parte.front() == '-' || parte.back() == '.' || parte.back() == '-'){
-            throw std::invalid_argument("Valor Inválido para  Email.");
-        }
-
-        for(size_t i = 0; i < parte.length(); i++){
-            char c = parte[i];
-
-            if(!isalnum(c) && c != '.' && c != '-'){
-                throw std::invalid_argument("Valor Inválido para Email.");
-            }
-
-            if((c == '.' || c == '-') && i + 1 < parte.length()){
-                char proximo = parte[i + 1];
-                if(proximo == '.' || proximo == '-'){
-                    throw std::invalid_argument("Valor Inválido para Email.");
-                }
-            }
-        }
-    };
     
     //validação das partes do email por meio da função.
     validar_formato(local);
     validar_formato(dominio);
+}
+
+void Email::validar_formato(const std::string& parte){
+    if(parte.front() == '.' || parte.front() == '-' || parte.back() == '.' || parte.back() == '-'){
+        throw std::invalid_argument("Valor Inválido para  Email.");
+    }
+
+    for(size_t i = 0; i < parte.length(); i++){
+        char c = parte[i];
+
+        if(!isalnum(c) && c != '.' && c != '-'){
+            throw std::invalid_argument("Valor Inválido para Email.");
+        }
+
+        if((c == '.' || c == '-') && i + 1 < parte.length()){
+            char proximo = parte[i + 1];
+            if(proximo == '.' || proximo == '-'){
+                throw std::invalid_argument("Valor Inválido para Email.");
+            }
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////
