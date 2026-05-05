@@ -3,6 +3,8 @@
 
 #include <Domains/Headers/dominio_base.hpp>
 
+// Declarações dos domínios
+
 // CODIGO
 class Codigo : public Dominio{
     private:
@@ -13,7 +15,8 @@ class Codigo : public Dominio{
             setValor(v);
         }
 };
-////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------
 
 // DATA
 class Data : public Dominio{
@@ -27,13 +30,16 @@ class Data : public Dominio{
         } 
 };
 
+// Método para verificar se o ano é bissexto ou não
 inline bool Data::ehBisexto(int ano) const{
     if((!ano%4 && ano%100) || (!ano%400 && !ano%100)) 
         return true;
     else 
         return false;
 }
-////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------
+
 
 // EMAIL
 class Email : public Dominio{
@@ -47,7 +53,7 @@ class Email : public Dominio{
         }
 };
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // ESTADO
 class Estado : public Dominio{
@@ -60,7 +66,7 @@ class Estado : public Dominio{
         }
 };
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // NOME
 class Nome : public Dominio{
@@ -73,7 +79,7 @@ class Nome : public Dominio{
         }
 };
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // PAPEL
 class Papel : public Dominio{
@@ -86,7 +92,7 @@ class Papel : public Dominio{
         }
 };
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // PRIORIDADE
 class Prioridade : public Dominio{
@@ -99,7 +105,7 @@ class Prioridade : public Dominio{
         };
 };
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // SENHA
 class Senha : public Dominio{
@@ -112,7 +118,7 @@ class Senha : public Dominio{
         };
 };
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // TEMPO
 class Tempo : public Dominio{
@@ -124,7 +130,8 @@ class Tempo : public Dominio{
             setValor(v);
         };
 };
-////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------
 
 // TEXTO
 class Texto : public Dominio{
@@ -137,6 +144,6 @@ class Texto : public Dominio{
         };
 };
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 #endif // DOMAINS_HPP_INCLUDED

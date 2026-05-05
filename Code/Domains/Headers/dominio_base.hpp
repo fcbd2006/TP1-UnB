@@ -3,6 +3,7 @@
 
 #include <string>
 
+// Declaração de classe base para padronização dos domínios
 class Dominio {
     private:
         std::string valor;
@@ -15,10 +16,12 @@ class Dominio {
         const std::string& getValor() const;
 };
 
+// Método para acesso do valor armazenado
 inline const std::string& Dominio::getValor() const{
     return valor;
 }
 
+// Método para armazenar um valor
 inline void Dominio::setValor(const std::string& value){
     validar(value);
     valor=value;

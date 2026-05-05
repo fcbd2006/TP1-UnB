@@ -37,6 +37,8 @@
 		<Unit filename="Code/Domains/Headers/dominio_base.hpp" />
 		<Unit filename="Code/Domains/Headers/outros_dominios.hpp" />
 		<Unit filename="Code/Domains/dominios.cpp" />
+		<Unit filename="Code/Entities/Headers/entidades.hpp" />
+		<Unit filename="Code/Entities/entidades.cpp" />
 		<Unit filename="Code/main.cpp" />
 		<Extensions />
 	</Project>
