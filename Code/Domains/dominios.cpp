@@ -201,11 +201,7 @@ void Senha::validar(const std::string& senha){
         else{
             throw std::invalid_argument("Valor Inválido para Senha.");
         }
-        //Garante a não repetição de caracteres.
-        if(senha.find(c, i+1) != std::string::npos){
-            throw std::invalid_argument("Valor Inválido para Senha.");
-        }
-
+        
         if(i > 0){
             if((isalpha(senha[i - 1]) && isalpha(c)) || (isdigit(senha[i - 1]) && isdigit(c))){
                 throw std::invalid_argument("Valor Inválido para Senha.");
