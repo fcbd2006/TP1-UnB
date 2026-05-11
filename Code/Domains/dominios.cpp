@@ -3,40 +3,73 @@
 #include <cctype>
 
 // CODIGO
+
+// Método para validação do formato de valor a ser armazenado no domínio Código
+// AA000
 void Codigo::validar(const std::string& codigo){
+
+    // verifica o comprimento da string
+    if((int)codigo.size() != 5) throw std::invalid_argument("Valor Inválido para Código -> Número de caracteres diferente de 5");
+    
+    // verifica se os 2 primeiros caracteres são letras maiusculas
     for(int index=0;index<=1;index++){
-        if(codigo[index]<'A' || codigo[index]>'Z') throw std::invalid_argument("Valor Inválido para Código.");
-    }    
+        if(isupper(codigo[index])) throw std::invalid_argument("Valor Inválido para Código -> 2 primeiros caracteres não condizem");
+    }
+
+    // verifica se os 3 ultimos caracteres são números
     for(int index=2;index<=4;index++){
-        if(codigo[index]<'0' || codigo[index]>'9') throw std::invalid_argument("Valor Inválido para Código.");
+        if(isdigit(codigo[index])) throw std::invalid_argument("Valor Inválido para Código -> 3 últimos caracteres não condizem");
     }
 }
-////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------
 
 // DATA
+
+// Método para validação do formato de valor a ser armazenado no domínio Data
+// DD/MM/YYYY
 void Data::validar(const std::string& data){
-    if(data.size()!=10) throw std::invalid_argument("Valor Inválido para Data.");
-    if(data[2]!='/' || data[5]!='/') throw std::invalid_argument("Valor Inválido para Data.");
+    // verifica comprimento da string para que seja do formato
+    if(data.size()!=10) throw std::invalid_argument("Valor Inválido para Data -> Comprimento Invalido");
+
+    // verifica posição das barras
+    if(data[2]!='/' || data[5]!='/') throw std::invalid_argument("Valor Inválido para Data -> Formato não condiz");
+
+    // verifica se todos os caracteres são dígitos
     for(int index=0;index<= int (data.size());index++){
+        // pula as barras
         if(index==2||index==5) continue;
-        if(data[index]<'0' || data[index]>'9') throw std::invalid_argument("Valor Inválido para Data.");
+
+        if(isdigit(data[index])) throw std::invalid_argument("Valor Inválido para Data -> Caractere inválido");
     }
+
+    // substring para cada parte da data e transforma em um int
     int dia = stoi(data.substr(0,2));
     int mes = stoi(data.substr(3,2));
     int ano = stoi(data.substr(6,4));
 
-    if(mes>12 || mes<1) throw std::invalid_argument("Valor Inválido para Data.");
-    if(ano>2999 || ano<2000) throw std::invalid_argument("Valor Inválido para Data.");
+    // verifica o mes
+    if(mes>12 || mes<1) throw std::invalid_argument("Valor Inválido para Data -> Mês inválido");
 
+    //verifica o ano
+    if(ano>2999 || ano<2000) throw std::invalid_argument("Valor Inválido para Data -> Ano inválido");
+
+    // Arrays com qnts dias tem cada mes
     int diasMensais[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
+    // mes 2 tem mais dias se for bissexto, ent se tiver trabalhando com esse caso, altera
     if(mes==2 && ehBisexto(ano)) diasMensais[2]=29;
     
-    if(!(dia>0 && dia<=diasMensais[mes])) throw std::invalid_argument("Valor Inválido para Data.");
+    // verifica o dia
+    if(!(dia>0 && dia<=diasMensais[mes])) throw std::invalid_argument("Valor Inválido para Data -> Dia inválido");
 }
-////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------
 
 // EMAIL
+
+// Método para validação do formato de valor a ser armazenado no domínio Email
+// string@string
 void Email::validar(const std::string& email){
     //Encontrar a posição do '@' e garantir que não está nos extremos.
     size_t position = email.find('@');
@@ -80,46 +113,67 @@ void Email::validar_formato(const std::string& parte){
     }
 }
 
-////////////////////////////////////////////////////////////////
+//----------------------------------------------------------
 
 // ESTADO
+
+// Método para validação do formato de valor a ser armazenado no domínio Estado
+// "A FAZER", "FAZENDO", ou "FEITO"
 void Estado::validar(const std::string& estado){
     if(!(estado=="A FAZER" || estado=="FAZENDO" || estado=="FEITO")) throw std::invalid_argument("Valor Inválido para Estado.");
 }
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // NOME
-void Nome::validar(const std::string& nome){
-    if(nome.size()>10) throw std::invalid_argument("Valor Inválido para Nome.");
-    if(nome[0]==' ' || nome[nome.size()-1]==' ') throw std::invalid_argument("Valor Inválido para Nome.");
-    for(int index=0;index<=(int(nome.size())-1);index++){
 
-        if(nome[index]==' ' && ((nome[index+1]<'A' || nome[index+1]>'Z') && (nome[index+1]<'a' || nome[index+1]>'z')))
-            throw std::invalid_argument("Valor Inválido para Nome.");
+// Método para validação do formato de valor a ser armazenado no domínio Nome
+// 10 caracteres, " ", a-z, A-Z
+void Nome::validar(const std::string& nome){
+    // verifica o tamanho
+    if(nome.size()>10) throw std::invalid_argument("Valor Inválido para Nome -> Longo demais");
+
+    // verifica se o primeiro ou ultimo caracteres sao espaços
+    if(nome[0]==' ' || nome[nome.size()-1]==' ') throw std::invalid_argument("Valor Inválido para Nome -> Espaço no início ou final");
     
-        if((nome[index]<'A' || nome[index]>'Z') && (nome[index]<'a' || nome[index]>'z') && nome[index]!=' ')
-            throw std::invalid_argument("Valor Inválido para Nome.");
+    // verifica cada caracter
+    for(int index=0;index<=(int(nome.size())-1);index++){
+        
+        // verifica se é letra dps de cada espaço
+        if(nome[index]==' ' && !isalpha(nome[index+1]))
+            throw std::invalid_argument("Valor Inválido para Nome -> Espaço duplicado");
+        
+        // verifica se algum caracter não é letra ou ' '
+        if(!(isalpha(nome[index]) || nome[index]!=' '))
+            throw std::invalid_argument("Valor Inválido para Nome -> Caractere inválido");
     }
 }
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // PAPEL
+
+// Método para validação do formato de valor a ser armazenado no domínio Papel
+// "DESENVOLVEDOR", "MESTRE SCRUM", ou "PROPRIETARIO DE PRODUTO"
 void Papel::validar(const std::string& papel){
     if(!(papel=="DESENVOLVEDOR" || papel=="MESTRE SCRUM" || papel=="PROPRIETARIO DE PRODUTO")) throw std::invalid_argument("Valor Inválido para Papel.");
 }
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // PRIORIDADE
+
+// Método para validação do formato de valor a ser armazenado no domínio Prioridade
+// "ALTA", "MEDIA", ou "BAIXA"
 void Prioridade::validar(const std::string& prioridade){
     if(!(prioridade=="ALTA" || prioridade=="MEDIA" || prioridade=="BAIXA")) throw std::invalid_argument("Valor Inválido para Prioridade.");
 }
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // SENHA
+
+// Método para validação do formato de valor a ser armazenado no domínio Senha
 void Senha::validar(const std::string& senha){
     //Verificar tamanho.
     if(senha.length() != 6){
@@ -164,20 +218,31 @@ void Senha::validar(const std::string& senha){
     }
 }
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
 
 // TEMPO
+
+// Método para validação do formato de valor a ser armazenado no domínio Tempo
+// 1 a 365
 void Tempo::validar(const std::string& tempo){
-    if(tempo.size()>3) throw std::invalid_argument("Valor Inválido para Tempo.");
-    for(auto c : tempo){
-        if(c<'0'|| c>'9') throw std::invalid_argument("Valor Inválido para Tempo.");
+    // verifica se tem de 1 a 3 caracteres
+    if(tempo.size()>3) throw std::invalid_argument("Valor Inválido para Tempo -> Excede tamanho");
+
+    // verifica se todos os caracteres são dígitos
+    for(auto& c : tempo){
+        if(!isdigit(c)) throw std::invalid_argument("Valor Inválido para Tempo -> Deve ser números");
     }
+
+    // transforma a string em int e verifica se faz parte do intervalo aceito
     int a = stoi(tempo);
-    if(a<1 || a>365) throw std::invalid_argument("Valor Inválido para Tempo.");
+    if(a<1 || a>365) throw std::invalid_argument("Valor Inválido para Tempo -> Fora do intervalo");
 }
-////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------
 
 // TEXTO
+
+// Método para validação do formato de valor a ser armazenado no domínio Texto
 void Texto::validar(const std::string& texto){
     //Verificar comprimento e se é vazio.
     if(texto.empty() || texto.length() > 40){
@@ -208,4 +273,4 @@ void Texto::validar(const std::string& texto){
     }
 }
 
-////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------
