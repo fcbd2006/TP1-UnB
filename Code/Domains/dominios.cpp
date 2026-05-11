@@ -44,6 +44,7 @@ void Email::validar(const std::string& email){
         throw std::invalid_argument("Valor Inválido para Email.");
     }
 
+    //Separação do email em local e domínio.
     std::string local = email.substr(0, position);
     std::string dominio = email.substr(position + 1);
 
@@ -52,11 +53,12 @@ void Email::validar(const std::string& email){
         throw std::invalid_argument("Valor Inválido para Email.");
     }
     
-    //validação das partes do email por meio da função.
+    //Validação das partes do email por meio da função validar_formato.
     validar_formato(local);
     validar_formato(dominio);
 }
 
+//Função auxiliar para validar as partes do email.
 void Email::validar_formato(const std::string& parte){
     if(parte.front() == '.' || parte.front() == '-' || parte.back() == '.' || parte.back() == '-'){
         throw std::invalid_argument("Valor Inválido para  Email.");
@@ -119,16 +121,17 @@ void Prioridade::validar(const std::string& prioridade){
 
 // SENHA
 void Senha::validar(const std::string& senha){
-    //verificar tamanho.
+    //Verificar tamanho.
     if(senha.length() != 6){
         throw std::invalid_argument("Valor Inválido para Senha.");
     }
 
+    //Variáveis para verificar a presença de maiúsculas, minúsculas e dígitos.
     bool tem_maiuscula = false;
     bool tem_minuscula = false;
     bool tem_digito = false;
 
-    //verificar regras de formatação da senha.
+    //Verificar regras de formatação da senha.
     for(size_t i = 0; i < senha.length(); i++){
         char c = senha[i];
 
@@ -144,7 +147,7 @@ void Senha::validar(const std::string& senha){
         else{
             throw std::invalid_argument("Valor Inválido para Senha.");
         }
-        //garante a não repetição de caracteres.
+        //Garante a não repetição de caracteres.
         if(senha.find(c, i+1) != std::string::npos){
             throw std::invalid_argument("Valor Inválido para Senha.");
         }
@@ -155,7 +158,7 @@ void Senha::validar(const std::string& senha){
             }
         }
     }
-
+    //Verificar se a senha contém pelo menos um caractere de cada tipo.
     if(!tem_maiuscula || !tem_minuscula || !tem_digito){
         throw std::invalid_argument("Valor Inválido para Senha.");
     }
@@ -176,19 +179,19 @@ void Tempo::validar(const std::string& tempo){
 
 // TEXTO
 void Texto::validar(const std::string& texto){
-    //verificar comprimento e se é vazio.
+    //Verificar comprimento e se é vazio.
     if(texto.empty() || texto.length() > 40){
         throw std::invalid_argument("Valor Inválido para Texto.");
     }
-    //verificar o primeiro caractere.
+    //Verificar o primeiro caractere.
     if(texto.front() == ' ' || texto.front() == ',' || texto.front() == '.'){
         throw std::invalid_argument("Valor Inválido para Texto.");
     }
-    //verificar o último caractere.
-    if(texto.back() == ',' || texto.back() == '.'){
+    //Verificar o último caractere.
+    if(texto.back() == ' ' || texto.back() == ',' || texto.back() == '.'){
         throw std::invalid_argument("Valor Inválido para Texto.");
     }
-    //verificar caracteres e duplicatas.
+    //Verificar caracteres e duplicatas.
     for(size_t i = 0; i < texto.length(); i++){
         char c = texto[i];
 
@@ -203,7 +206,6 @@ void Texto::validar(const std::string& texto){
             }
         }
     }
-
 }
 
 ////////////////////////////////////////////////////////////////
