@@ -5,7 +5,7 @@
 /**
  * @class Dominio
  * @brief Classe base abstrata para padronização dos domínios.
- * * Esta classe fornece a estrutura fundamental para armazenar um valor de domínio. 
+ ** Esta classe fornece a estrutura fundamental para armazenar um valor de domínio. 
  * As classes derivadas devem obrigatoriamente implementar a lógica específica 
  * de validação através do método validar().
  */
@@ -41,7 +41,8 @@ class Dominio {
         */ 
         void setValor(const std::string&);
 
-        /** @brief Método para obter o valor do domínio.
+        /**
+         * @brief Método para obter o valor do domínio.
          * @return Retorna uma referência constante para a string contendo o valor do domínio.
          */
         const std::string& getValor() const;
