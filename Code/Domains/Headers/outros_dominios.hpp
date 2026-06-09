@@ -6,11 +6,28 @@
 // Declarações dos domínios
 
 // CODIGO
+/**
+ * @class Codigo
+ * @brief Representa o domínio de um código de identificação.
+ * * Esta classe herda da classe base Dominio e garante a integridade de um valor de
+ * código, que deve seguir todas as regras de formatação do sistema.
+ */
 class Codigo : public Dominio{
     private:
+    /**
+     * @brief Método de validação específico para o domínio Codigo.
+     * * Este método é responsável por verificar se o valor do código atende aos critérios de formatação
+     * estabelecidos pelo sistema.
+     */
         void validar(const std::string&) override;
 
     public:
+    /**
+     * @brief Construtor para a classe Codigo.
+     * @param v String contendo o valor do código a ser armazenado.
+     * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor do código,
+     * garantindo que a validação seja realizada automaticamente.
+     */
         Codigo(const std::string& v){
             setValor(v);
         }
