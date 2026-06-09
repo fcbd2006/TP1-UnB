@@ -36,12 +36,36 @@ class Codigo : public Dominio{
 //-----------------------------------------------------------
 
 // DATA
+/**
+ * @class Data
+ * @brief Representa o domínio de uma data.
+ * * Esta classe herda da classe base Dominio e garante a integridade de um valor de data,
+ * que deve seguir as regras de formatação e validade de datas estabelecidas pelo sistema, inclusive anos bissextos.
+ */
 class Data : public Dominio{
     private:
+    /**
+     * @brief Verifica se determinado ano é bissexto.
+     * @param ano O ano a ser verificado.
+     * @return Retorna true se o ano for bissexto, ou false caso contrário.
+     * * Este método atua como uma função auxiliar para o método de validação da classe Data,
+     * garantindo que datas como 29 de fevereiro sejam aceitas apenas em anos bissextos.
+     */
         bool ehBisexto(int) const;
+    /**
+     * @brief Método de validação específico para o domínio Data.
+     * * Este método é responsável por verificar se o valor da data atende aos critérios de formatação e validade,
+     * incluindo a verificação de dias, meses e anos, bem como a consideração de anos bissextos.
+     */
         void validar(const std::string&) override;
 
     public:
+    /**
+     * @brief Construtor da classe Data.
+     * @param v String contendo o valor da data a ser armazenada.
+     * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor da data,
+     * garantindo que a validação seja realizada automaticamente.
+     */
         Data(std::string v){
             setValor(v);
         } 
