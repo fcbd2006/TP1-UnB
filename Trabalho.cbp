@@ -34,6 +34,16 @@
 			<Add option="-fexceptions" />
 			<Add directory="Code" />
 		</Compiler>
+		<Unit filename="Code/Controladoras/Headers/caa.hpp" />
+		<Unit filename="Code/Controladoras/Headers/cac.hpp" />
+		<Unit filename="Code/Controladoras/Headers/cagh.hpp" />
+		<Unit filename="Code/Controladoras/Headers/cagp.hpp" />
+		<Unit filename="Code/Controladoras/Headers/cai.hpp" />
+		<Unit filename="Code/Controladoras/caa.cpp" />
+		<Unit filename="Code/Controladoras/cac.cpp" />
+		<Unit filename="Code/Controladoras/cagh.cpp" />
+		<Unit filename="Code/Controladoras/cagp.cpp" />
+		<Unit filename="Code/Controladoras/cai.cpp" />
 		<Unit filename="Code/Domains/Headers/dominio_base.hpp" />
 		<Unit filename="Code/Domains/Headers/outros_dominios.hpp" />
 		<Unit filename="Code/Domains/dominios.cpp" />
@@ -41,6 +51,7 @@
 		<Unit filename="Code/Entities/entidades.cpp" />
 		<Unit filename="Code/Interfaces/Headers/interfaces_apresentacao.hpp" />
 		<Unit filename="Code/Interfaces/Headers/interfaces_servico.hpp" />
+		<Unit filename="Code/Stubs/servico.hpp" />
 		<Unit filename="Code/main.cpp" />
 		<Extensions>
 			<DoxyBlocks>
