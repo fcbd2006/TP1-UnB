@@ -18,63 +18,75 @@ void CntrIACadastro::executar(Email& email) {
         std::cout << "======================================\n";
 
         if (!logado) {
-            std::cout << "1 - Criar nova conta\n";
-            std::cout << "2 - Retornar\n";
+            std::cout << CRIAR << " - Criar nova conta\n";
+            std::cout << RETORNAR << " - Retornar\n";
         } else {
-            std::cout << "2 - Retornar\n";
-            std::cout << "3 - Visualizar dados da conta\n";
-            std::cout << "4 - Atualizar dados da conta\n";
-            std::cout << "5 - Excluir conta\n";
+            std::cout << RETORNAR << " - Retornar\n";
+            std::cout << LER << " - Visualizar dados da conta\n";
+            std::cout << ATUALIZAR << " - Atualizar dados da conta\n";
+            std::cout << EXCLUIR << " - Excluir conta\n";
         }
         
         std::cout << "Escolha uma opcao: ";
         std::cin >> opcao;
 
-        switch (opcao) {
-            case CRIAR: 
-                this->cadastrar(email, logado);
-                break;
+        if(!logado){
+            switch (opcao){
+                case CRIAR: 
+                    this->cadastrar(email, logado);
+                    break;
 
-            case LER: 
-                this->ler(email, logado);
-                break;
+                case RETORNAR:
+                    executando = false;
+                    break;
 
-            case ATUALIZAR: 
-                this->atualizar(email, logado);
-                break;
+                default:
+                    std::cout << "\nOpcao invalida!\n";
+                    break;
+            }
+        }else{
+            switch (opcao) {
+                case LER: 
+                    this->ler(email, logado);
+                    break;
 
-            case EXCLUIR: {
-                if (!logado) break;
+                case ATUALIZAR: 
+                    this->atualizar(email, logado);
+                    break;
 
-                char confirmacao;
-                std::cout << "\n--- Exclusao de Conta ---\n";
-                std::cout << "ATENCAO: Esta acao e irreversivel.\n";
-                std::cout << "Tem certeza que deseja excluir sua conta? (S/N): ";
-                std::cin.ignore();
-                std::cin >> confirmacao;
+                case EXCLUIR: {
+                    if (!logado) break;
 
-                if (confirmacao == 'S' || confirmacao == 's') {
-                    if (cntrlISCadastro->excluir(email)) {
-                        std::cout << "\nConta excluida com sucesso. Voce sera desconectado.\n";
-                        email.setValor("");
-                        executando = false; // Força a saída do menu e o fim da sessão
+                    char confirmacao;
+                    std::cout << "\n--- Exclusao de Conta ---\n";
+                    std::cout << "ATENCAO: Esta acao e irreversivel.\n";
+                    std::cout << "Tem certeza que deseja excluir sua conta? (S/N): ";
+                    std::cin.ignore();
+                    std::cin >> confirmacao;
+
+                    if (confirmacao == 'S' || confirmacao == 's') {
+                        if (cntrlISCadastro->excluir(email)) {
+                            std::cout << "\nConta excluida com sucesso. Voce sera desconectado.\n";
+                            email.setValor("");
+                            executando = false; // Força a saída do menu e o fim da sessão
+                        } else {
+                            std::cout << "\nErro ao tentar excluir a conta.\n";
+                        }
                     } else {
-                        std::cout << "\nErro ao tentar excluir a conta.\n";
+                        std::cout << "\nExclusao cancelada.\n";
                     }
-                } else {
-                    std::cout << "\nExclusao cancelada.\n";
+                    break;
                 }
-                break;
-            }
 
-            case RETORNAR: {
-                executando = false;
-                break;
-            }
+                case RETORNAR: {
+                    executando = false;
+                    break;
+                }
 
-            default:
-                std::cout << "\nOpcao invalida!\n";
-                break;
+                default:
+                    std::cout << "\nOpcao invalida!\n";
+                    break;
+            }
         }
 
         if (executando) {

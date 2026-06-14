@@ -148,4 +148,38 @@ public:
     virtual ~IAGestaoHistorias() {}
 };
 
+//-----------------------------------------------------------
+// INICIAL
+//-----------------------------------------------------------
+
+/**
+ * @brief Interface de apresentação para a inicialização e coordenação do sistema.
+ * Define o contrato para o menu principal de navegação, que interliga 
+ * os fluxos de autenticação, cadastro e gestão.
+ */
+class IAInicial {
+public:
+    /**
+     * @brief Inicia a execução do programa e o menu principal.
+     */
+    virtual void executar() = 0;
+
+    /** @brief Injeta o módulo de apresentação de Autenticação. */
+    virtual void setApresentacaoAutenticacao(IAAutenticacao* apr) = 0;
+    
+    /** @brief Injeta o módulo de apresentação de Cadastro. */
+    virtual void setApresentacaoCadastro(IACadastro* apr) = 0;
+    
+    /** @brief Injeta o módulo de apresentação de Gestão de Projetos. */
+    virtual void setApresentacaoProjetos(IAGestaoProjetos* apr) = 0;
+    
+    /** @brief Injeta o módulo de apresentação de Gestão de Histórias. */
+    virtual void setApresentacaoHistorias(IAGestaoHistorias* apr) = 0;
+
+    /**
+     * @brief Destrutor virtual padrão.
+     */
+    virtual ~IAInicial() {}
+};
+
 #endif // INTERFACES_APRESENTACAO_HPP_INCLUDED

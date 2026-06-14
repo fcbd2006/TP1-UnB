@@ -20,10 +20,14 @@ bool CntrIAAutenticacao::autenticar(Email& email) {
         std::cin >> entrada;
         std::cin.ignore();
 
-        if (entrada == 0) {
+        if (entrada == 2) {
             return false;
         }
-
+        else if(entrada != 1) {
+            std::cout << "Opcao invalida. Pressione ENTER para tentar novamente...";
+            std::cin.ignore(); std::cin.get();
+            continue;
+        }
         std::cout << "Digite o E-mail: ";
         std::cin >> entradaEmail;
 
