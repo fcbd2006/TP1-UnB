@@ -1,0 +1,151 @@
+#ifndef INTERFACES_APRESENTACAO_HPP_INCLUDED
+#define INTERFACES_APRESENTACAO_HPP_INCLUDED
+
+#include "Entities/Headers/entidades.hpp"
+
+//-----------------------------------------------------------
+// FORWARD DECLARATIONS DAS INTERFACES DE SERVIÇO
+//-----------------------------------------------------------
+
+class ISAutenticacao;
+class ISCadastro;
+class ISGestaoHistorias;
+class ISGestaoProjetos;
+
+//-----------------------------------------------------------
+// AUTENTICAÇÃO
+//-----------------------------------------------------------
+
+/**
+ * @brief Interface de apresentação de autenticação (IAA).
+ *
+ * Esta classe abstrata estabelece o contrato para a interação com o utilizador 
+ * durante o fluxo de entrada e login no sistema.
+ */
+class IAAutenticacao {
+public:
+    /**
+     * @brief Executa o menu de autenticação de usuário.
+     *
+     * Solicita as credenciais de acesso (e-mail e senha), realiza a validação de 
+     * formato dos dados inseridos e invoca a camada de serviço para confirmar a autenticidade.
+     *
+     * @param email Ponteiro para o objeto Email que será preenchido com o identificador do utilizador autenticado em caso de sucesso.
+     * @return true se o utilizador for autenticado com sucesso, false caso contrário.
+     */
+    virtual bool autenticar(Email* email) = 0;
+
+    /**
+     * @brief Define a ligação com o respectivo módulo de serviço de autenticação.
+     *
+     * @param servico Ponteiro para a interface de serviço de autenticação (ISA).
+     */
+    virtual void setServicoAutenticacao(ISAutenticacao* servico) = 0;
+
+    /**
+     * @brief Destrutor virtual padrão.
+     */
+    virtual ~IAAutenticacao() {}
+};
+
+//-----------------------------------------------------------
+// CADASTRO
+//-----------------------------------------------------------
+
+/**
+ * @brief Interface de apresentação de cadastro (IAC).
+ *
+ * Estabelece o contrato para a exibição de menus relacionados com 
+ * o gerenciamento de contas (Pessoas).
+ */
+class IACadastro {
+public:
+    /**
+     * @brief Executa o menu de gestão de conta ou registo inicial.
+     *
+     * Caso o e-mail fornecido esteja vazio, apresenta o fluxo de criação de uma nova conta.
+     * Caso contrário, apresenta as opções de visualização, modificação ou exclusão dos dados da conta logada.
+     *
+     * @param email Referência constante para o e-mail do utilizador em sessão (pode ser um objeto vazio).
+     */
+    virtual void executar(const Email& email) = 0;
+
+    /**
+     * @brief Define a ligação com o respectivo módulo de serviço de cadastro.
+     *
+     * @param servico Ponteiro para a interface de serviço de cadastro (ISC).
+     */
+    virtual void setServicoCadastro(ISCadastro* servico) = 0;
+
+    /**
+     * @brief Destrutor virtual padrão.
+     */
+    virtual ~IACadastro() {}
+};
+
+//-----------------------------------------------------------
+// GESTÃO
+//-----------------------------------------------------------
+
+/**
+ * @brief Interface de apresentação de gestão de projetos (IAGP).
+ *
+ * Estabelece o contrato para a exibição dos menus de controle de
+ * projetos e planos de sprint.
+ */
+class IAGestaoProjetos {
+public:
+    /**
+     * @brief Executa o menu principal de gestão de projetos e planos de sprint.
+     *
+     * Apresenta as opções de listagem, criação e edição de projetos e planos de sprint.
+     * As opções exibidas devem respeitar as restrições de permissões do papel associado ao e-mail.
+     *
+     * @param email Referência constante para o e-mail do utilizador autenticado que está operando o sistema.
+     */
+    virtual void executar(const Email& email) = 0;
+
+    /**
+     * @brief Define a ligação com o respectivo módulo de serviço de gestão de projetos.
+     *
+     * @param servico Ponteiro para a interface de serviço de gestão de projetos (ISGP).
+     */
+    virtual void setServicoGestaoProjetos(ISGestaoProjetos* servico) = 0;
+
+    /**
+     * @brief Destrutor virtual padrão.
+     */
+    virtual ~IAGestaoProjetos() {}
+};
+
+/**
+ * @brief Interface de apresentação de gestão de histórias (IAGH).
+ *
+ * Estabelece o contrato para a exibição dos menus de controle de história.
+ */
+class IAGestaoHistorias {
+public:
+    /**
+     * @brief Executa o menu principal de gestão de histórias.
+     *
+     * Apresenta as opções de listagem, criação e edição de histórias.
+     * As opções exibidas devem respeitar as restrições de permissões do papel associado ao e-mail.
+     *
+     * @param email Referência constante para o e-mail do utilizador autenticado que está operando o sistema.
+     */
+    virtual void executar(const Email& email) = 0;
+
+    /**
+     * @brief Define a ligação com o respectivo módulo de serviço de gestão de histórias.
+     *
+     * @param servico Ponteiro para a interface de serviço de gestão de histórias (ISGH).
+     */
+    virtual void setServicoGestaoHistorias(ISGestaoHistorias* servico) = 0;
+
+    /**
+     * @brief Destrutor virtual padrão.
+     */
+    virtual ~IAGestaoHistorias() {}
+};
+
+#endif // INTERFACES_APRESENTACAO_HPP_INCLUDED
