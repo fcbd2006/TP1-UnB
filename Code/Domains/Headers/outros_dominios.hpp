@@ -14,23 +14,28 @@
  */
 class Codigo : public Dominio{
     private:
-    /**
-     * @brief Método de validação específico para o domínio Codigo.
-     * * Este método é responsável por verificar se o valor do código atende aos critérios de formatação
-     * estabelecidos pelo sistema.
-     */
+        /**
+         * @brief Método de validação específico para o domínio Codigo.
+         * * Este método é responsável por verificar se o valor do código atende aos critérios de formatação
+         * estabelecidos pelo sistema.
+         */
         void validar(const std::string&) override;
 
     public:
-    /**
-     * @brief Construtor para a classe Codigo.
-     * @param v String contendo o valor do código a ser armazenado.
-     * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor do código,
-     * garantindo que a validação seja realizada automaticamente.
-     */
+        /**
+         * @brief Construtor para a classe Codigo.
+         * @param v String contendo o valor do código a ser armazenado.
+         * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor do código,
+         * garantindo que a validação seja realizada automaticamente.
+         */
         Codigo(const std::string& v){
             setValor(v);
-        }
+        };
+
+        /**
+         * @brief Construtor padrão.
+         */
+        Codigo() = default;
 };
 
 //-----------------------------------------------------------
@@ -44,31 +49,37 @@ class Codigo : public Dominio{
  */
 class Data : public Dominio{
     private:
-    /**
-     * @brief Verifica se determinado ano é bissexto.
-     * @param ano O ano a ser verificado.
-     * @return Retorna true se o ano for bissexto, ou false caso contrário.
-     * * Este método atua como uma função auxiliar para o método de validação da classe Data,
-     * garantindo que datas como 29 de fevereiro sejam aceitas apenas em anos bissextos.
-     */
+        /**
+         * @brief Verifica se determinado ano é bissexto.
+         * @param ano O ano a ser verificado.
+         * @return Retorna true se o ano for bissexto, ou false caso contrário.
+         * * Este método atua como uma função auxiliar para o método de validação da classe Data,
+         * garantindo que datas como 29 de fevereiro sejam aceitas apenas em anos bissextos.
+         */
         bool ehBisexto(int) const;
-    /**
-     * @brief Método de validação específico para o domínio Data.
-     * * Este método é responsável por verificar se o valor da data atende aos critérios de formatação e validade,
-     * incluindo a verificação de dias, meses e anos, bem como a consideração de anos bissextos.
-     */
+
+        /**
+         * @brief Método de validação específico para o domínio Data.
+         * * Este método é responsável por verificar se o valor da data atende aos critérios de formatação e validade,
+         * incluindo a verificação de dias, meses e anos, bem como a consideração de anos bissextos.
+         */
         void validar(const std::string&) override;
 
     public:
-    /**
-     * @brief Construtor da classe Data.
-     * @param v String contendo o valor da data a ser armazenada.
-     * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor da data,
-     * garantindo que a validação seja realizada automaticamente.
-     */
+        /**
+         * @brief Construtor da classe Data.
+         * @param v String contendo o valor da data a ser armazenada.
+         * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor da data,
+         * garantindo que a validação seja realizada automaticamente.
+         */
         Data(std::string v){
             setValor(v);
-        } 
+        };
+        
+        /**
+         * @brief Construtor padrão.
+         */
+        Data() = default;
 };
 
 // Método para verificar se o ano é bissexto ou não
@@ -91,7 +102,9 @@ class Email : public Dominio{
     public:
         Email(std::string v){
             setValor(v);
-        }
+        };
+
+        Email() = default;
 };
 
 //-----------------------------------------------------------
@@ -104,7 +117,9 @@ class Estado : public Dominio{
     public:
         Estado(std::string v){
             setValor(v);
-        }
+        };
+
+        Estado() = default;
 };
 
 //-----------------------------------------------------------
@@ -117,7 +132,9 @@ class Nome : public Dominio{
     public:
         Nome(std::string v){
             setValor(v);
-        }
+        };
+
+        Nome() = default;
 };
 
 //-----------------------------------------------------------
@@ -130,7 +147,9 @@ class Papel : public Dominio{
     public:
         Papel(std::string v){
             setValor(v);
-        }
+        };
+
+        Papel() = default;
 };
 
 //-----------------------------------------------------------
@@ -144,6 +163,8 @@ class Prioridade : public Dominio{
         Prioridade(std::string v){
             setValor(v);
         };
+
+        Prioridade() = default;
 };
 
 //-----------------------------------------------------------
@@ -157,6 +178,8 @@ class Senha : public Dominio{
         Senha(std::string v){
             setValor(v);
         };
+
+        Senha() = default;
 };
 
 //-----------------------------------------------------------
@@ -170,6 +193,8 @@ class Tempo : public Dominio{
         Tempo(std::string v){
             setValor(v);
         };
+
+        Tempo() = default;
 };
 
 //-----------------------------------------------------------
@@ -183,6 +208,8 @@ class Texto : public Dominio{
         Texto(std::string v){
             setValor(v);
         };
+
+        Texto() = default;
 };
 
 //-----------------------------------------------------------

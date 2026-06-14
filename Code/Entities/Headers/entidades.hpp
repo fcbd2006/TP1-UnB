@@ -12,6 +12,7 @@ class Pessoa{
         // Construtor
         Pessoa(const Email& email, const Nome& nome, const Senha& senha, const Papel& papel): 
         papel(papel), email(email), nome(nome), senha(senha){};
+        Pessoa() = default;
 
         // Destrutor
         virtual ~Pessoa();
@@ -35,7 +36,8 @@ class Projeto{
     public:
         // Construtor
         Projeto(const Codigo& codigo, const Nome& nome, const Data& inicio, const Data& termino) : termino(termino), inicio(inicio), nome(nome), codigo(codigo){};
-        
+        Projeto() = default;
+
         // Destrutor
         virtual ~Projeto();
         // Métodos get referente aos atributos da Entidade
@@ -60,6 +62,7 @@ class PlanoDeSprint{
         // Construtor
         PlanoDeSprint(const Codigo& codigo, const Texto& objetivo, const Tempo& capacidade)
          : capacidade(capacidade), objetivo(objetivo), codigo(codigo){};
+        PlanoDeSprint() = default;
         
         // Destrutor
         virtual ~PlanoDeSprint();
@@ -88,6 +91,7 @@ class HistoriaDeUsuario{
         const Tempo& estimativa, const Prioridade& prioridade, const Estado& estado) 
         : titulo(titulo), papel(papel), acao(acao), codigo(codigo), valor(valor)
         , estimativa(estimativa), prioridade(prioridade), estado(estado){};
+        HistoriaDeUsuario() = default;
         
         // Destrutor
         virtual ~HistoriaDeUsuario();
@@ -112,12 +116,5 @@ class HistoriaDeUsuario{
         void setEstado(const Estado& estado){this->estado = estado;};
 
 };
-
-
-
-
-
-
-
 
 #endif
