@@ -6,8 +6,8 @@
 
 /**
  * @brief Classe controladora de apresentação para a Gestão de Histórias de Usuário.
- * * Implementa a interface IAGestaoHistorias, fornecendo os menus e submenus interativos 
- * para gerenciar os requisitos, estados e atribuições de tarefas no ecossistema Scrum.
+ * Implementa a interface IAGestaoHistorias, fornecendo os menus e submenus interativos 
+ * para gerenciar os requisitos, estados e atribuições de histórias.
  */
 class CntrIAGestaoHistorias : public IAGestaoHistorias {
 private:
@@ -27,6 +27,23 @@ private:
     /** @brief Ponteiro para a interface de serviço de gestão de histórias. */
     ISGestaoHistorias *cntrlISGestaoHistorias;
 
+    /**
+     * @brief Subrotina para o cadastro de nova história.
+     * @param email Referência para o e-mail do usuário.
+     */
+    void criar(const Email& email);
+
+    /**
+     * @brief Subrotina para a leitura de história.
+     */
+    void ler();
+
+    /**
+     * @brief Subrotina para a atualização de uma história.
+     * @param email Referência para o e-mail do usuário.
+     */
+    void atualizar(const Email& email);
+
 public:
     /**
      * @brief Executa o menu principal de gestão de Histórias de Usuário.
@@ -35,7 +52,7 @@ public:
     void executar(const Email& email) override;
 
     /**
-     * @brief Injeta a dependência do módulo de serviço de gestão de histórias.
+     * @brief Define o módulo de serviço de gestão de histórias que será dependência.
      * @param servico Ponteiro para a instância concreta do serviço de gestão de histórias.
      */
     void setServicoGestaoHistorias(ISGestaoHistorias* servico) override;
