@@ -33,7 +33,7 @@ public:
      * @param email Ponteiro para o objeto Email que será preenchido com o identificador do utilizador autenticado em caso de sucesso.
      * @return true se o utilizador for autenticado com sucesso, false caso contrário.
      */
-    virtual bool autenticar(Email* email) = 0;
+    virtual bool autenticar(Email& email) = 0;
 
     /**
      * @brief Define a ligação com o respectivo módulo de serviço de autenticação.
@@ -68,7 +68,7 @@ public:
      *
      * @param email Referência constante para o e-mail do utilizador em sessão (pode ser um objeto vazio).
      */
-    virtual void executar(const Email& email) = 0;
+    virtual void executar(Email& email) = 0;
 
     /**
      * @brief Define a ligação com o respectivo módulo de serviço de cadastro.

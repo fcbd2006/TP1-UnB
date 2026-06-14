@@ -16,13 +16,13 @@ private:
 public:
     /**
      * @brief Executa o fluxo interativo de autenticação do usuário.
-     * @param email Ponteiro para o objeto Email onde será armazenado o e-mail do usuário caso a autenticação tenha sucesso.
+     * @param email o objeto Email onde será armazenado o e-mail do usuário caso a autenticação tenha sucesso.
      * @return true se a autenticação for bem-sucedida, false caso contrário.
      */
-    bool autenticar(Email* email) override;
+    bool autenticar(Email& email) override;
 
     /**
-     * @brief Define o módulo de serviço de autenticação que será usado.
+     * @brief Define o módulo de serviço de autenticação que será dependência.
      * @param servico Ponteiro para a instância concreta do serviço de autenticação.
      */
     void setServicoAutenticacao(ISAutenticacao* servico) override;

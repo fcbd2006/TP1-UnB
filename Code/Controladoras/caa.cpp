@@ -3,7 +3,7 @@
 #include <string>
 #include <cstdlib>
 
-bool CntrIAAutenticacao::autenticar(Email* email) {
+bool CntrIAAutenticacao::autenticar(Email& email) {
     std::string entradaEmail, entradaSenha;
     int entrada;
     Email emailTemp;
@@ -37,7 +37,7 @@ bool CntrIAAutenticacao::autenticar(Email* email) {
 
             // chama a camada de serviço que vai verificar no banco de dados
             if (cntrlISAutenticacao->autenticar(emailTemp, senhaTemp)) {
-                *email = emailTemp; // Salva o e-mail na sessão
+                email.setValor(emailTemp.getValor()); // Salva o e-mail na sessão
                 std::cout << "\nAutenticacao realizada com sucesso.\n";
                 std::cout << "Pressione ENTER para continuar...";
                 std::cin.ignore(); std::cin.get();

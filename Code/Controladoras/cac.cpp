@@ -1,0 +1,273 @@
+#include "Controladoras/Headers/cac.hpp"
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
+void CntrIACadastro::executar(Email& email) {
+    int opcao;
+    bool executando = true;
+
+    // Se o email não estiver preenchido, 
+    // significa que o usuário não está logado e quer se cadastrar.
+    bool logado = (email.getValor() != ""); 
+
+    while (executando) {
+        system("clear");
+        std::cout << "======================================\n";
+        std::cout << "           MENU DE CADASTRO           \n";
+        std::cout << "======================================\n";
+
+        if (!logado) {
+            std::cout << "1 - Criar nova conta\n";
+            std::cout << "2 - Retornar\n";
+        } else {
+            std::cout << "2 - Retornar\n";
+            std::cout << "3 - Visualizar dados da conta\n";
+            std::cout << "4 - Atualizar dados da conta\n";
+            std::cout << "5 - Excluir conta\n";
+        }
+        
+        std::cout << "Escolha uma opcao: ";
+        std::cin >> opcao;
+
+        switch (opcao) {
+            case CRIAR: 
+                this->cadastrar(email, logado);
+                break;
+
+            case LER: 
+                this->ler(email, logado);
+                break;
+
+            case ATUALIZAR: 
+                this->atualizar(email, logado);
+                break;
+
+            case EXCLUIR: {
+                if (!logado) break;
+
+                char confirmacao;
+                std::cout << "\n--- Exclusao de Conta ---\n";
+                std::cout << "ATENCAO: Esta acao e irreversivel.\n";
+                std::cout << "Tem certeza que deseja excluir sua conta? (S/N): ";
+                std::cin.ignore();
+                std::cin >> confirmacao;
+
+                if (confirmacao == 'S' || confirmacao == 's') {
+                    if (cntrlISCadastro->excluir(email)) {
+                        std::cout << "\nConta excluida com sucesso. Voce sera desconectado.\n";
+                        email.setValor("");
+                        executando = false; // Força a saída do menu e o fim da sessão
+                    } else {
+                        std::cout << "\nErro ao tentar excluir a conta.\n";
+                    }
+                } else {
+                    std::cout << "\nExclusao cancelada.\n";
+                }
+                break;
+            }
+
+            case RETORNAR: {
+                executando = false;
+                break;
+            }
+
+            default:
+                std::cout << "\nOpcao invalida!\n";
+                break;
+        }
+
+        if (executando) {
+            std::cout << "Pressione ENTER para continuar...";
+            std::cin.ignore(); std::cin.get();
+        }
+    }
+}
+
+void CntrIACadastro::cadastrar(Email& email, bool& logado){
+    if (logado) return; // Bloqueia se já estiver logado
+
+    std::string strNome, strPapel, strSenha, strEmail;
+    int escPapel = 0;
+    std::cout << "\n--- Criacao de Nova Conta ---\n";
+    
+    std::cin.ignore(); // Limpa o buffer do enter antes dos getlines
+    std::cout << "Digite o Nome: ";
+    std::getline(std::cin, strNome);
+    
+    while(!escPapel){
+        std::cout << "Selecione o Papel:\n";
+        std::cout << "  1 - DESENVOLVEDOR\n";
+        std::cout << "  2 - MESTRE SCRUM\n";
+        std::cout << "  3 - PROPRIETARIO DE PRODUTO\n";
+        std::cout << "-> ";
+        std::cin >> escPapel;
+        switch(escPapel){
+            case 1:
+                strPapel = "DESENVOLVEDOR";
+                break;
+            case 2:
+                strPapel = "MESTRE SCRUM";
+                break;
+            case 3:
+                strPapel = "PROPRIETARIO DE PRODUTO";
+                break;
+            default:
+                escPapel=0;
+                std::cout << "Entrada inválida. Tente novamente.\n\n";
+                break;
+        }
+    }
+    std::cin.ignore();
+    
+    std::cout << "Digite a Senha: ";
+    std::getline(std::cin, strSenha);
+    
+    std::cout << "Digite o E-mail: ";
+    std::getline(std::cin, strEmail);
+
+    try {
+        // Instancia os domínios e valida o formato
+        Nome nome;       nome.setValor(strNome);
+        Papel papel;     papel.setValor(strPapel);
+        Senha senha;     senha.setValor(strSenha);
+        Email novoEmail; novoEmail.setValor(strEmail);
+
+        // Monta a entidade
+        Pessoa novaPessoa;
+        novaPessoa.setNome(nome);
+        novaPessoa.setPapel(papel);
+        novaPessoa.setSenha(senha);
+        novaPessoa.setEmail(novoEmail);
+
+        // Passa para a camada de serviço
+        if (cntrlISCadastro->criar(novaPessoa)) {
+            email = novoEmail;
+            logado = true;
+            std::cout << "\nConta criada com sucesso! Voce ja esta logado.\n";
+        } else {
+            std::cout << "\nFalha no cadastro: O E-mail informado ja existe.\n";
+        }
+    } 
+    catch (std::invalid_argument &exp) {
+        std::cout << "\nErro nos dados informados: " << exp.what() << "\n";
+    }
+}
+
+void CntrIACadastro::ler(const Email& email, bool logado){
+    if (!logado) return; // Bloqueia se não estiver logado
+
+    int opcao=0;
+    Pessoa pessoa;
+
+    while(opcao == '0'){
+        std::cout << "\n--- Buscar Conta ---\n";
+        std::cout << "\n Deseja buscar: \n";
+        std::cout << "  1 - Própria conta;\n";
+        std::cout << "  2 - Outra conta.\n";
+        std::cout << "   -> ";
+        std::cin >> opcao;
+        
+        switch(opcao){
+            case 1:{
+                pessoa.setEmail(email);
+                break;
+            }
+
+            case 2:{
+                Email novoEmail;
+                std::string strEmail;
+                std::cin.ignore();
+                std::cout << "Digite o Email: ";
+                std::getline(std::cin, strEmail);
+                try{
+                    novoEmail.setValor(strEmail);
+                    pessoa.setEmail(strEmail);
+                }catch(std::invalid_argument &exp){
+                    opcao=0;
+                    std::cout << "\nErro nos dados informados: " << exp.what() << "\n";
+                }
+                break;
+            }
+
+            default:{
+                opcao=0;
+                std::cout << "Entrada inválida. Tente novamente.\n\n";
+                break;
+            }
+        }
+    }
+    
+    // Envia o email da sessão para o serviço buscar
+    if (cntrlISCadastro->ler(&pessoa)) {
+        std::cout << "\n--- Dados Pessoais ---\n";
+        std::cout << "Nome:   " << pessoa.getNome().getValor() << "\n";
+        std::cout << "Papel:  " << pessoa.getPapel().getValor() << "\n";
+        std::cout << "E-mail: " << pessoa.getEmail().getValor() << "\n";
+        std::cout << "Senha:  " << pessoa.getSenha().getValor() << "\n";
+    } else {
+        std::cout << "\nErro crítico: Dados da conta não encontrados.\n";
+    }
+}
+
+void CntrIACadastro::atualizar(const Email& email, bool logado){
+    if (!logado) return;
+
+    std::string strNome, strPapel, strSenha;
+    int escPapel = 0;
+    std::cout << "\n--- Atualizacao de Conta ---\n";
+    
+    std::cin.ignore();
+    std::cout << "Digite o novo Nome: ";
+    std::getline(std::cin, strNome);
+    
+    while(!escPapel){
+        std::cout << "Selecione o novo Papel:\n";
+        std::cout << "  1 - DESENVOLVEDOR\n";
+        std::cout << "  2 - MESTRE SCRUM\n";
+        std::cout << "  3 - PROPRIETARIO DE PRODUTO\n";
+        std::cout << "-> ";
+        std::cin >> escPapel;
+        switch(escPapel){
+            case 1:
+                strPapel = "DESENVOLVEDOR";
+                break;
+            case 2:
+                strPapel = "MESTRE SCRUM";
+                break;
+            case 3:
+                strPapel = "PROPRIETARIO DE PRODUTO";
+                break;
+            default:
+                escPapel=0;
+                std::cout << "Entrada inválida. Tente novamente.\n\n";
+                break;
+        }
+    }
+    std::cin.ignore();
+    
+    std::cout << "Digite a nova Senha: ";
+    std::getline(std::cin, strSenha);
+
+    try {
+        Nome nome;   nome.setValor(strNome);
+        Papel papel; papel.setValor(strPapel);
+        Senha senha; senha.setValor(strSenha);
+
+        Pessoa pessoaAtualizada;
+        pessoaAtualizada.setNome(nome);
+        pessoaAtualizada.setPapel(papel);
+        pessoaAtualizada.setSenha(senha);
+        pessoaAtualizada.setEmail(email); // O Email (PK) não muda
+
+        if (cntrlISCadastro->atualizar(pessoaAtualizada)) {
+            std::cout << "\nDados atualizados com sucesso!\n";
+        } else {
+            std::cout << "\nFalha na atualizacao dos dados.\n";
+        }
+    } 
+    catch (std::invalid_argument &exp) {
+        std::cout << "\nErro nos dados informados: " << exp.what() << "\n";
+    }
+}
+
