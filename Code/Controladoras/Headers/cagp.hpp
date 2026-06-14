@@ -6,7 +6,7 @@
 
 /**
  * @brief Classe controladora de apresentação para a Gestão de Projetos e Sprints.
- * * Implementa a interface IAGestaoProjetos, fornecendo os menus e submenus interativos 
+ * Implementa a interface IAGestaoProjetos, fornecendo os menus e submenus interativos 
  * para gerenciar a estrutura temporal (Projetos e Sprints) do sistema Scrum.
  */
 class CntrIAGestaoProjetos : public IAGestaoProjetos {
@@ -35,7 +35,7 @@ public:
     void executar(const Email& email) override;
 
     /**
-     * @brief Injeta a dependência do módulo de serviço de gestão de projetos.
+     * @brief Define o módulo de serviço de gestão de projetos que será dependência.
      * @param servico Ponteiro para a instância concreta do serviço de gestão de projetos e sprints.
      */
     void setServicoGestaoProjetos(ISGestaoProjetos* servico) override;
