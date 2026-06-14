@@ -1,4 +1,5 @@
 #include "Controladoras/Headers/cagh.hpp"
+#include "Interfaces/Headers/interfaces_servico.hpp"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -70,7 +71,7 @@ void CntrIAGestaoHistorias::executar(const Email& email) {
                 catch (std::invalid_argument &exp) {
                     std::cout << "\nErro nos dados informados: " << exp.what() << "\n";
                 }
-                
+
                 break;
             }
                 
@@ -231,7 +232,7 @@ void CntrIAGestaoHistorias::ler(){
             std::cout << "- Papel: " << historia.getPapel().getValor() << "\n";
             std::cout << "- Acao: " << historia.getAcao().getValor() << "\n";
             std::cout << "- Valor: " << historia.getValor().getValor() << "\n";
-            std::cout << "- Estimativa: " << historia.getEstimativa().getValor() << "\n";
+            std::cout << "- Estimativa: " << historia.getTempo().getValor() << "\n";
             std::cout << "- Prioridade: " << historia.getPrioridade().getValor() << "\n";
             std::cout << "- Estado: " << historia.getEstado().getValor() << "\n";
         }else{
@@ -268,7 +269,6 @@ void CntrIAGestaoHistorias::atualizar(const Email& email){
     std::cout << "\nDigite a nova Estimativa: ";
     std::getline(std::cin, strTempoE);
 
-    int esc;
     while(!esc){
         std::cout << "Selecione a nova Prioridade:\n";
         std::cout << "  1 - ALTA\n";

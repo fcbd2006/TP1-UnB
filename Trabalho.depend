@@ -27,9 +27,78 @@
 1781460285 source:/home/shamelo/TP1/Trabalho/Code/Entities/entidades.cpp
 	<Entities/Headers/entidades.hpp>
 
-1781461517 /home/shamelo/TP1/Trabalho/Code/Entities/Headers/entidades.hpp
+1781478704 /home/shamelo/TP1/Trabalho/Code/Entities/Headers/entidades.hpp
 	"Domains/Headers/outros_dominios.hpp"
 
-1781460285 source:/home/shamelo/TP1/Trabalho/Code/main.cpp
+1781479144 source:/home/shamelo/TP1/Trabalho/Code/main.cpp
+	"Controladoras/Headers/cai.hpp"
+	"Controladoras/Headers/cac.hpp"
+	"Controladoras/Headers/cagh.hpp"
+	"Controladoras/Headers/cagp.hpp"
+	"Controladoras/Headers/caa.hpp"
+	"Stubs/servico.hpp"
+
+1781479712 source:/home/shamelo/TP1/Trabalho/Code/Controladoras/cai.cpp
+	"Controladoras/Headers/cai.hpp"
 	<iostream>
+
+1781478883 /home/shamelo/TP1/Trabalho/Code/Controladoras/Headers/cai.hpp
+	"Interfaces/Headers/interfaces_apresentacao.hpp"
+	"Entities/Headers/entidades.hpp"
+
+1781470546 /home/shamelo/TP1/Trabalho/Code/Interfaces/Headers/interfaces_apresentacao.hpp
+	"Entities/Headers/entidades.hpp"
+
+1781479433 source:/home/shamelo/TP1/Trabalho/Code/Controladoras/cac.cpp
+	"Controladoras/Headers/cac.hpp"
+	"Interfaces/Headers/interfaces_servico.hpp"
+	<iostream>
+	<string>
+	<cstdlib>
+
+1781469364 /home/shamelo/TP1/Trabalho/Code/Controladoras/Headers/cac.hpp
+	"Interfaces/Headers/interfaces_apresentacao.hpp"
+	"Entities/Headers/entidades.hpp"
+
+1781478279 /home/shamelo/TP1/Trabalho/Code/Interfaces/Headers/interfaces_servico.hpp
+	"Entities/Headers/entidades.hpp"
+	<vector>
+
+1781478348 source:/home/shamelo/TP1/Trabalho/Code/Controladoras/cagp.cpp
+	"Controladoras/Headers/cagp.hpp"
+	"Interfaces/Headers/interfaces_servico.hpp"
+	<iostream>
+	<string>
+	<cstdlib>
+
+1781476636 /home/shamelo/TP1/Trabalho/Code/Controladoras/Headers/cagp.hpp
+	"Interfaces/Headers/interfaces_apresentacao.hpp"
+	"Entities/Headers/entidades.hpp"
+
+1781478433 source:/home/shamelo/TP1/Trabalho/Code/Controladoras/cagh.cpp
+	"Controladoras/Headers/cagh.hpp"
+	"Interfaces/Headers/interfaces_servico.hpp"
+	<iostream>
+	<string>
+	<cstdlib>
+
+1781473905 /home/shamelo/TP1/Trabalho/Code/Controladoras/Headers/cagh.hpp
+	"Interfaces/Headers/interfaces_apresentacao.hpp"
+	"Entities/Headers/entidades.hpp"
+
+1781478456 source:/home/shamelo/TP1/Trabalho/Code/Controladoras/caa.cpp
+	"Controladoras/Headers/caa.hpp"
+	"Interfaces/Headers/interfaces_servico.hpp"
+	<iostream>
+	<string>
+	<cstdlib>
+
+1781469292 /home/shamelo/TP1/Trabalho/Code/Controladoras/Headers/caa.hpp
+	"Interfaces/Headers/interfaces_apresentacao.hpp"
+	"Entities/Headers/entidades.hpp"
+
+1781478322 /home/shamelo/TP1/Trabalho/Code/Stubs/servico.hpp
+	"Interfaces/Headers/interfaces_servico.hpp"
+	"Entities/Headers/entidades.hpp"
+	<vector>
 

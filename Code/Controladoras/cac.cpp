@@ -1,4 +1,5 @@
 #include "Controladoras/Headers/cac.hpp"
+#include "Interfaces/Headers/interfaces_servico.hpp"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -67,7 +68,7 @@ void CntrIACadastro::executar(Email& email) {
                     if (confirmacao == 'S' || confirmacao == 's') {
                         if (cntrlISCadastro->excluir(email)) {
                             std::cout << "\nConta excluida com sucesso. Voce sera desconectado.\n";
-                            email.setValor("");
+                            email = Email();
                             executando = false; // Força a saída do menu e o fim da sessão
                         } else {
                             std::cout << "\nErro ao tentar excluir a conta.\n";

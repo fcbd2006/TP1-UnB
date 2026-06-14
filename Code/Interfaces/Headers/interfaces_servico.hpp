@@ -191,28 +191,28 @@ public:
      * @param historia Instância completa da entidade HistoriaDeUsuario a ser salva no sistema.
      * @return true se a história de usuário foi criada com sucesso, false caso contrário.
      */
-    virtual bool criarHistoria(const HistoriaDeUsuario& historia) = 0;
+    virtual bool criar(const HistoriaDeUsuario& historia) = 0;
 
     /**
      * @brief Lê os dados de uma História de Usuário cadastrada (Serviço 14).
      * @param historia Ponteiro para o objeto HistoriaDeUsuario que receberá os dados do sistema.
      * @return true se a leitura foi bem-sucedida, false se a história de usuário não foi encontrada.
      */
-    virtual bool lerHistoria(HistoriaDeUsuario* historia) = 0;
+    virtual bool ler(HistoriaDeUsuario* historia) = 0;
 
     /**
      * @brief Atualiza os dados de uma História de Usuário existente (Serviço 15).
      * @param historia Instância da entidade HistoriaDeUsuario contendo as modificações a serem salvas.
      * @return true se a atualização foi realizada com sucesso, false caso contrário.
      */
-    virtual bool atualizarHistoria(const HistoriaDeUsuario& historia) = 0;
+    virtual bool atualizar(const HistoriaDeUsuario& historia) = 0;
 
     /**
      * @brief Exclui uma História de Usuário do sistema (Serviço 16).
      * @param codigoHistoria Instância do domínio Codigo que identifica exclusivamente a História de Usuário a ser removida.
      * @return true se a exclusão foi bem-sucedida, false caso contrário.
      */
-    virtual bool excluirHistoria(const Codigo& codigoHistoria) = 0;
+    virtual bool excluir(const Codigo& codigoHistoria) = 0;
 
     //-----------------------------------------------------------
 
@@ -222,7 +222,7 @@ public:
      * @param emailPessoa Instância do domínio Email contendo o identificador da Pessoa.
      * @return true se o relacionamento foi estabelecido com sucesso, false caso contrário.
      */
-    virtual bool associarHistoriaPessoa(const Codigo& codigoHistoria, const Email& emailPessoa) = 0;
+    virtual bool associarPessoa(const Codigo& codigoHistoria, const Email& emailPessoa) = 0;
     
     /**
      * @brief Remove o vínculo de associação entre uma História de Usuário e uma Pessoa (Serviço 18).
@@ -230,7 +230,7 @@ public:
      * @param emailPessoa Instância do domínio Email contendo o identificador da Pessoa associada.
      * @return true se a associação foi removida com sucesso, false caso contrário.
      */
-    virtual bool removerAssociacaoHistoriaPessoa(const Codigo& codigoHistoria, const Email& emailPessoa) = 0;
+    virtual bool removerAssociacaoPessoa(const Codigo& codigoHistoria, const Email& emailPessoa) = 0;
 
     /**
      * @brief Move uma História de Usuário de um Projeto para um Plano de Sprint (Serviço 24).
@@ -238,7 +238,7 @@ public:
      * @param codigoPlano Instância do domínio Codigo identificando o Plano de Sprint destino.
      * @return true se a história foi movida com sucesso, false caso contrário.
      */
-    virtual bool moverHistoriaParaPlanoSprint(const Codigo& codigoHistoria, const Codigo& codigoPlano) = 0;
+    virtual bool moverParaPlanoSprint(const Codigo& codigoHistoria, const Codigo& codigoPlano) = 0;
 
     /**
      * @brief Altera o estado de uma História de Usuário (Serviço 25).
@@ -246,7 +246,7 @@ public:
      * @param novoEstado Instância do domínio Estado com o novo estado a ser aplicado à história.
      * @return true se o estado foi alterado com sucesso, false caso contrário.
      */
-    virtual bool alterarEstadoHistoria(const Codigo& codigoHistoria, const Estado& novoEstado) = 0; 
+    virtual bool alterarEstado(const Codigo& codigoHistoria, const Estado& novoEstado) = 0; 
 
     //-----------------------------------------------------------
 

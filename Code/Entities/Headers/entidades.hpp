@@ -10,12 +10,12 @@ class Pessoa{
         Papel papel;
     public:
         // Construtor
-        Pessoa(const Email& email, const Nome& nome, const Senha& senha, const Papel& papel): 
-        papel(papel), email(email), nome(nome), senha(senha){};
+        //Pessoa(const Email& email, const Nome& nome, const Senha& senha, const Papel& papel): 
+        //papel(papel), email(email), nome(nome), senha(senha){};
         Pessoa() = default;
 
         // Destrutor
-        virtual ~Pessoa();
+        virtual ~Pessoa() = default;
         // Métodos get referente aos atributos da Entidade
         Email getEmail() const{return email;};
         Nome getNome() const{return nome;};
@@ -35,11 +35,11 @@ class Projeto{
         Data inicio, termino;
     public:
         // Construtor
-        Projeto(const Codigo& codigo, const Nome& nome, const Data& inicio, const Data& termino) : termino(termino), inicio(inicio), nome(nome), codigo(codigo){};
+        //Projeto(const Codigo& codigo, const Nome& nome, const Data& inicio, const Data& termino) : termino(termino), inicio(inicio), nome(nome), codigo(codigo){};
         Projeto() = default;
 
         // Destrutor
-        virtual ~Projeto();
+        virtual ~Projeto() = default;
         // Métodos get referente aos atributos da Entidade
         Codigo getCodigo() const{return codigo;};
         Nome getNome() const{return nome;};
@@ -60,12 +60,12 @@ class PlanoDeSprint{
         Tempo capacidade;
     public:
         // Construtor
-        PlanoDeSprint(const Codigo& codigo, const Texto& objetivo, const Tempo& capacidade)
-         : capacidade(capacidade), objetivo(objetivo), codigo(codigo){};
+        //PlanoDeSprint(const Codigo& codigo, const Texto& objetivo, const Tempo& capacidade)
+        // : capacidade(capacidade), objetivo(objetivo), codigo(codigo){};
         PlanoDeSprint() = default;
         
         // Destrutor
-        virtual ~PlanoDeSprint();
+        virtual ~PlanoDeSprint() = default;
         // Métodos get referente aos atributos da Entidade
         Codigo getCodigo() const{return codigo;};
         Texto getTexto() const{return objetivo;};
@@ -87,14 +87,14 @@ class HistoriaDeUsuario{
         Estado estado;
     public:
         // Construtor
-        HistoriaDeUsuario(const Codigo& codigo, const Texto& titulo, const Texto& papel, const Texto& acao, const Texto& valor, 
-        const Tempo& estimativa, const Prioridade& prioridade, const Estado& estado) 
-        : titulo(titulo), papel(papel), acao(acao), codigo(codigo), valor(valor)
-        , estimativa(estimativa), prioridade(prioridade), estado(estado){};
+        //HistoriaDeUsuario(const Codigo& codigo, const Texto& titulo, const Texto& papel, const Texto& acao, const Texto& valor, 
+        //const Tempo& estimativa, const Prioridade& prioridade, const Estado& estado) 
+        //: titulo(titulo), papel(papel), acao(acao), codigo(codigo), valor(valor)
+        //, estimativa(estimativa), prioridade(prioridade), estado(estado){};
         HistoriaDeUsuario() = default;
         
         // Destrutor
-        virtual ~HistoriaDeUsuario();
+        virtual ~HistoriaDeUsuario() = default;
         // Métodos get referente aos atributos da Entidade
         Codigo getCodigo() const{return codigo;};
         Texto getTitulo() const{return titulo;};

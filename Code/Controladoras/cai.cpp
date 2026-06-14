@@ -36,6 +36,9 @@ void CntrIAInicial::executar() {
                     break;
                 case CADASTRO:
                     cntrlIACadastro->executar(emailSessao);
+                    if(emailSessao.getValor() != ""){
+                        logado = true;
+                    }
                     break;
                 case SAIR:
                     executando = false;
