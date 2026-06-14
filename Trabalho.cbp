@@ -39,7 +39,19 @@
 		<Unit filename="Code/Domains/dominios.cpp" />
 		<Unit filename="Code/Entities/Headers/entidades.hpp" />
 		<Unit filename="Code/Entities/entidades.cpp" />
+		<Unit filename="Code/Interfaces/Headers/interfaces_apresentacao.hpp" />
+		<Unit filename="Code/Interfaces/Headers/interfaces_servico.hpp" />
 		<Unit filename="Code/main.cpp" />
-		<Extensions />
+		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project output_directory="Docs" />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

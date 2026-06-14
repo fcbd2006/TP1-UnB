@@ -13,3 +13,23 @@
 
 1774535749 /home/fcbd/Documents/TP1/TP1-UnB/Code/Domains/Headers/tempo.hpp
 
+1781460285 source:/home/shamelo/TP1/Trabalho/Code/Domains/dominios.cpp
+	<Domains/Headers/outros_dominios.hpp>
+	<stdexcept>
+	<cctype>
+
+1781461770 /home/shamelo/TP1/Trabalho/Code/Domains/Headers/outros_dominios.hpp
+	<Domains/Headers/dominio_base.hpp>
+
+1781460285 /home/shamelo/TP1/Trabalho/Code/Domains/Headers/dominio_base.hpp
+	<string>
+
+1781460285 source:/home/shamelo/TP1/Trabalho/Code/Entities/entidades.cpp
+	<Entities/Headers/entidades.hpp>
+
+1781461517 /home/shamelo/TP1/Trabalho/Code/Entities/Headers/entidades.hpp
+	"Domains/Headers/outros_dominios.hpp"
+
+1781460285 source:/home/shamelo/TP1/Trabalho/Code/main.cpp
+	<iostream>
+
