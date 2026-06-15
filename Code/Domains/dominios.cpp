@@ -13,12 +13,12 @@ void Codigo::validar(const std::string& codigo){
     
     // verifica se os 2 primeiros caracteres são letras maiusculas
     for(int index=0;index<=1;index++){
-        if(isupper(codigo[index])) throw std::invalid_argument("Valor Inválido para Código -> 2 primeiros caracteres não condizem");
+        if(!isupper(codigo[index])) throw std::invalid_argument("Valor Inválido para Código -> 2 primeiros caracteres não condizem");
     }
 
     // verifica se os 3 ultimos caracteres são números
     for(int index=2;index<=4;index++){
-        if(isdigit(codigo[index])) throw std::invalid_argument("Valor Inválido para Código -> 3 últimos caracteres não condizem");
+        if(!isdigit(codigo[index])) throw std::invalid_argument("Valor Inválido para Código -> 3 últimos caracteres não condizem");
     }
 }
 
@@ -36,11 +36,11 @@ void Data::validar(const std::string& data){
     if(data[2]!='/' || data[5]!='/') throw std::invalid_argument("Valor Inválido para Data -> Formato não condiz");
 
     // verifica se todos os caracteres são dígitos
-    for(int index=0;index<= int (data.size());index++){
+    for(int index=0;index < int (data.size());index++){
         // pula as barras
         if(index==2||index==5) continue;
 
-        if(isdigit(data[index])) throw std::invalid_argument("Valor Inválido para Data -> Caractere inválido");
+        if(!isdigit(data[index])) throw std::invalid_argument("Valor Inválido para Data -> Caractere inválido");
     }
 
     // substring para cada parte da data e transforma em um int

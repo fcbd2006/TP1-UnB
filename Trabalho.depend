@@ -107,12 +107,13 @@
 	"Entities/Headers/entidades.hpp"
 	<vector>
 
-1781543911 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/caa.cpp
+1781546565 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/caa.cpp
 	"Controladoras/Headers/caa.hpp"
 	"Interfaces/Headers/interfaces_servico.hpp"
 	<iostream>
 	<string>
 	<cstdlib>
+	<limits>
 
 1781543911 /home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/Headers/caa.hpp
 	"Interfaces/Headers/interfaces_apresentacao.hpp"
@@ -121,7 +122,7 @@
 1781543911 /home/fcbd/Documents/TP1/TP1-UnB/Code/Interfaces/Headers/interfaces_apresentacao.hpp
 	"Entities/Headers/entidades.hpp"
 
-1781543911 /home/fcbd/Documents/TP1/TP1-UnB/Code/Entities/Headers/entidades.hpp
+1781552974 /home/fcbd/Documents/TP1/TP1-UnB/Code/Entities/Headers/entidades.hpp
 	"Domains/Headers/outros_dominios.hpp"
 
 1781543911 /home/fcbd/Documents/TP1/TP1-UnB/Code/Domains/Headers/outros_dominios.hpp
@@ -134,42 +135,46 @@
 	"Entities/Headers/entidades.hpp"
 	<vector>
 
-1781543911 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/cac.cpp
+1781550747 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/cac.cpp
 	"Controladoras/Headers/cac.hpp"
 	"Interfaces/Headers/interfaces_servico.hpp"
 	<iostream>
 	<string>
 	<cstdlib>
+	<limits>
 
 1781543911 /home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/Headers/cac.hpp
 	"Interfaces/Headers/interfaces_apresentacao.hpp"
 	"Entities/Headers/entidades.hpp"
 
-1781543911 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/cagh.cpp
+1781554290 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/cagh.cpp
 	"Controladoras/Headers/cagh.hpp"
 	"Interfaces/Headers/interfaces_servico.hpp"
 	<iostream>
 	<string>
 	<cstdlib>
+	<limits>
 
-1781543911 /home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/Headers/cagh.hpp
+1781554288 /home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/Headers/cagh.hpp
 	"Interfaces/Headers/interfaces_apresentacao.hpp"
 	"Entities/Headers/entidades.hpp"
 
-1781543911 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/cagp.cpp
+1781554672 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/cagp.cpp
 	"Controladoras/Headers/cagp.hpp"
 	"Interfaces/Headers/interfaces_servico.hpp"
 	<iostream>
 	<string>
 	<cstdlib>
+	<limits>
 
-1781543911 /home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/Headers/cagp.hpp
+1781554549 /home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/Headers/cagp.hpp
 	"Interfaces/Headers/interfaces_apresentacao.hpp"
 	"Entities/Headers/entidades.hpp"
 
-1781543911 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/cai.cpp
+1781546210 source:/home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/cai.cpp
 	"Controladoras/Headers/cai.hpp"
 	<iostream>
+	<limits>
 
 1781543911 /home/fcbd/Documents/TP1/TP1-UnB/Code/Controladoras/Headers/cai.hpp
 	"Interfaces/Headers/interfaces_apresentacao.hpp"

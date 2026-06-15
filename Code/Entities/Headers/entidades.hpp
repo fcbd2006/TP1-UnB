@@ -47,7 +47,7 @@ class Projeto{
         Data getDataEnd() const{return termino;};
 
         //Métodos set referentes aos atributos dessa Entidades
-        void setcodigo(const Codigo& codigo){this->codigo = codigo;};
+        void setCodigo(const Codigo& codigo){this->codigo = codigo;};
         void setNome(const Nome& nome){this->nome = nome;};
         void setDataStart(const Data& inicio){this->inicio = inicio;};
         void setDataEnd(const Data& termino){this->termino = termino;};
@@ -72,9 +72,9 @@ class PlanoDeSprint{
         Tempo getTempo() const{return capacidade;};
 
         //Métodos set referentes aos atributos dessa Entidades
-        void setcodigo(const Codigo& codigo){this->codigo = codigo;};
-        void setNome(const Texto& objetivo){this->objetivo = objetivo;};
-        void setDataStart(const Tempo& capacidade){this->capacidade = capacidade;};
+        void setCodigo(const Codigo& codigo){this->codigo = codigo;};
+        void setTexto(const Texto& objetivo){this->objetivo = objetivo;};
+        void setTempo(const Tempo& capacidade){this->capacidade = capacidade;};
 
 };
 

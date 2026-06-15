@@ -44,6 +44,12 @@ private:
      */
     void atualizar(const Email& email);
 
+    /**
+     * @brief Subrotina para a exclusão de uma história.
+     * @param email Referência para o e-mail do usuário.
+     */
+    void excluir(const Email& email);
+
 public:
     /**
      * @brief Executa o menu principal de gestão de Histórias de Usuário.

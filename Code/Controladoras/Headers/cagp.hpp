@@ -27,6 +27,52 @@ private:
     /** @brief Ponteiro para a interface de serviço de gestão de projetos. */
     ISGestaoProjetos *cntrlISGestaoProjetos;
 
+    /**
+     * @brief Subrotina para o cadastro de novo Projeto.
+     * @param email Referência para o e-mail do usuário.
+     */
+    void criarProjeto(const Email& email);
+
+    /**
+     * @brief Subrotina para a leitura de Projeto.
+     */
+    void lerProjeto();
+
+    /**
+     * @brief Subrotina para a atualização de um Projeto.
+     * @param email Referência para o e-mail do usuário.
+     */
+    void atualizarProjeto(const Email& email);
+
+    /**
+     * @brief Subrotina para a exclusão de um Projeto.
+     * @param email Referência para o e-mail do usuário.
+     */
+    void excluirProjeto(const Email& email);
+
+    /**
+     * @brief Subrotina para o cadastro de novo Sprint.
+     * @param email Referência para o e-mail do usuário.
+     */
+    void criarSprint(const Email& email);
+
+    /**
+     * @brief Subrotina para a leitura de Sprint.
+     */
+    void lerSprint();
+
+    /**
+     * @brief Subrotina para a atualização de um Sprint.
+     * @param email Referência para o e-mail do usuário.
+     */
+    void atualizarSprint(const Email& email);
+
+    /**
+     * @brief Subrotina para a exclusão de um Sprint.
+     * @param email Referência para o e-mail do usuário.
+     */
+    void excluirSprint(const Email& email);
+
 public:
     /**
      * @brief Executa o menu principal de gestão de Projetos e Sprints.

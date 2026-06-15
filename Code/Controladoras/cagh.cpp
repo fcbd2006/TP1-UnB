@@ -47,54 +47,21 @@ void CntrIAGestaoHistorias::executar(const Email& email) {
             case ATUALIZAR:
                 this->atualizar(email);
                 break;
-            case EXCLUIR:{
-                std::string strCodigo;
-                std::cout << "\n--- Exclusao de Historia ---\n";
-
-                std::cout << "\nDigite o Codigo da historia que deseja excluir: ";
-                std::getline(std::cin, strCodigo);
-                try{
-                    Codigo codigo; codigo.setValor(strCodigo);
-
-                    char confirmacao;
-                    std::cout << "ATENCAO: Esta acao e irreversivel.\n";
-                    std::cout << "Tem certeza que deseja excluir essa historia? (S/N): ";
-                    if(!(std::cin >> confirmacao)){
-                        std::cin.clear();
-                        confirmacao = 0;
-                    }
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-                    if (confirmacao == 'S' || confirmacao == 's') {
-                        if (cntrlISGestaoHistorias->excluir(codigo)) {
-                            std::cout << "\nHistoria excluida com sucesso.\n";
-                        } else {
-                            std::cout << "\nErro ao tentar excluir a historia. Codigo nao encontrado na base de dados.\n";
-                        }
-                    } else {
-                        std::cout << "\nExclusao cancelada.\n";
-                    }
-                }
-                catch (std::invalid_argument &exp) {
-                    std::cout << "\nErro nos dados informados: " << exp.what() << "\n";
-                }
-
-                break;
-            }
+            case EXCLUIR:
                 
             case ASSOCIAR:
-                std::cout << "\n--- Associar Desenvolvedor ---\n"; break;
+                std::cout << "\n--- Associar Pessoa ---\n"; break;
             case MOVER:
                 std::cout << "\n--- Mover para Sprint ---\n"; break;
             case ALTERAR_EST:
                 std::cout << "\n--- Alterar Estado ---\n"; break;
 
             case LISTAR_HISTORIAS_PROJETO:
-                std::cout << "\n--- Historias do Projeto ---\n"; break;
+                std::cout << "\n--- Historias de um Projeto ---\n"; break;
             case LISTAR_HISTORIAS_SPRINT:
-                std::cout << "\n--- Historias do Sprint ---\n"; break;
+                std::cout << "\n--- Historias de um Sprint ---\n"; break;
             case LISTAR_HISTORIAS_PESSOA:
-                std::cout << "\n--- As minhas Historias ---\n"; break; // cntrlISGestaoHistorias->listarHistoriasDePessoa(email, &vetorHistorias)
+                std::cout << "\n--- Historias de uma Pessoa ---\n"; break; // cntrlISGestaoHistorias->listarHistoriasDePessoa(email, &vetorHistorias)
             
             case RETORNAR:
                 executando = false;
@@ -372,6 +339,39 @@ void CntrIAGestaoHistorias::atualizar(const Email& email){
             std::cout << "\nFalha na alteracao: Codigo informado nao consta na base de dados.\n";
         }
     } 
+    catch (std::invalid_argument &exp) {
+        std::cout << "\nErro nos dados informados: " << exp.what() << "\n";
+    }
+}
+
+void CntrIAGestaoHistorias::excluir(const Email& email){
+    std::string strCodigo;
+    std::cout << "\n--- Exclusao de Historia ---\n";
+
+    std::cout << "\nDigite o Codigo da historia que deseja excluir: ";
+    std::getline(std::cin, strCodigo);
+    try{
+        Codigo codigo; codigo.setValor(strCodigo);
+
+        char confirmacao;
+        std::cout << "ATENCAO: Esta acao e irreversivel.\n";
+        std::cout << "Tem certeza que deseja excluir essa historia? (S/N): ";
+        if(!(std::cin >> confirmacao)){
+            std::cin.clear();
+            confirmacao = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        if (confirmacao == 'S' || confirmacao == 's') {
+            if (cntrlISGestaoHistorias->excluir(codigo)) {
+                std::cout << "\nHistoria excluida com sucesso.\n";
+            } else {
+                std::cout << "\nErro ao tentar excluir a historia. Codigo nao encontrado na base de dados.\n";
+            }
+        } else {
+            std::cout << "\nExclusao cancelada.\n";
+        }
+    }
     catch (std::invalid_argument &exp) {
         std::cout << "\nErro nos dados informados: " << exp.what() << "\n";
     }
