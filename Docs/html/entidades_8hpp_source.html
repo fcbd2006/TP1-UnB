@@ -104,12 +104,12 @@ $(function(){initNavTree('entidades_8hpp_source.html','',''); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_class" href="class_papel.html">Papel</a> papel;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="comment">// Construtor</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        Pessoa(<span class="keyword">const</span> <a class="code hl_class" href="class_email.html">Email</a>&amp; email, <span class="keyword">const</span> <a class="code hl_class" href="class_nome.html">Nome</a>&amp; nome, <span class="keyword">const</span> <a class="code hl_class" href="class_senha.html">Senha</a>&amp; senha, <span class="keyword">const</span> <a class="code hl_class" href="class_papel.html">Papel</a>&amp; papel): </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        papel(papel), email(email), nome(nome), senha(senha){};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="comment">//Pessoa(const Email&amp; email, const Nome&amp; nome, const Senha&amp; senha, const Papel&amp; papel): </span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="comment">//papel(papel), email(email), nome(nome), senha(senha){};</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        Pessoa() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="comment">// Destrutor</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">virtual</span> ~Pessoa();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">virtual</span> ~Pessoa() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="comment">// Métodos get referente aos atributos da Entidade</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_class" href="class_email.html">Email</a> getEmail()<span class="keyword"> const</span>{<span class="keywordflow">return</span> email;};</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_class" href="class_nome.html">Nome</a> getNome()<span class="keyword"> const</span>{<span class="keywordflow">return</span> nome;};</div>
@@ -131,11 +131,11 @@ $(function(){initNavTree('entidades_8hpp_source.html','',''); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_class" href="class_data.html">Data</a> inicio, termino;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">// Construtor</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        Projeto(<span class="keyword">const</span> <a class="code hl_class" href="class_codigo.html">Codigo</a>&amp; codigo, <span class="keyword">const</span> <a class="code hl_class" href="class_nome.html">Nome</a>&amp; nome, <span class="keyword">const</span> <a class="code hl_class" href="class_data.html">Data</a>&amp; inicio, <span class="keyword">const</span> <a class="code hl_class" href="class_data.html">Data</a>&amp; termino) : termino(termino), inicio(inicio), nome(nome), codigo(codigo){};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="comment">//Projeto(const Codigo&amp; codigo, const Nome&amp; nome, const Data&amp; inicio, const Data&amp; termino) : termino(termino), inicio(inicio), nome(nome), codigo(codigo){};</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        Projeto() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="comment">// Destrutor</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">virtual</span> ~Projeto();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">virtual</span> ~Projeto() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="comment">// Métodos get referente aos atributos da Entidade</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_class" href="class_codigo.html">Codigo</a> getCodigo()<span class="keyword"> const</span>{<span class="keywordflow">return</span> codigo;};</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_class" href="class_nome.html">Nome</a> getNome()<span class="keyword"> const</span>{<span class="keywordflow">return</span> nome;};</div>
@@ -158,12 +158,12 @@ $(function(){initNavTree('entidades_8hpp_source.html','',''); });
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_class" href="class_tempo.html">Tempo</a> capacidade;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="comment">// Construtor</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        PlanoDeSprint(<span class="keyword">const</span> <a class="code hl_class" href="class_codigo.html">Codigo</a>&amp; codigo, <span class="keyword">const</span> <a class="code hl_class" href="class_texto.html">Texto</a>&amp; objetivo, <span class="keyword">const</span> <a class="code hl_class" href="class_tempo.html">Tempo</a>&amp; capacidade)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>         : capacidade(capacidade), objetivo(objetivo), codigo(codigo){};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="comment">//PlanoDeSprint(const Codigo&amp; codigo, const Texto&amp; objetivo, const Tempo&amp; capacidade)</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="comment">// : capacidade(capacidade), objetivo(objetivo), codigo(codigo){};</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        PlanoDeSprint() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="comment">// Destrutor</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">virtual</span> ~PlanoDeSprint();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">virtual</span> ~PlanoDeSprint() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="comment">// Métodos get referente aos atributos da Entidade</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_class" href="class_codigo.html">Codigo</a> getCodigo()<span class="keyword"> const</span>{<span class="keywordflow">return</span> codigo;};</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_class" href="class_texto.html">Texto</a> getTexto()<span class="keyword"> const</span>{<span class="keywordflow">return</span> objetivo;};</div>
@@ -187,14 +187,14 @@ $(function(){initNavTree('entidades_8hpp_source.html','',''); });
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <a class="code hl_class" href="class_estado.html">Estado</a> estado;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="comment">// Construtor</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        HistoriaDeUsuario(<span class="keyword">const</span> <a class="code hl_class" href="class_codigo.html">Codigo</a>&amp; codigo, <span class="keyword">const</span> <a class="code hl_class" href="class_texto.html">Texto</a>&amp; titulo, <span class="keyword">const</span> <a class="code hl_class" href="class_texto.html">Texto</a>&amp; papel, <span class="keyword">const</span> <a class="code hl_class" href="class_texto.html">Texto</a>&amp; acao, <span class="keyword">const</span> <a class="code hl_class" href="class_texto.html">Texto</a>&amp; valor, </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_tempo.html">Tempo</a>&amp; estimativa, <span class="keyword">const</span> <a class="code hl_class" href="class_prioridade.html">Prioridade</a>&amp; prioridade, <span class="keyword">const</span> <a class="code hl_class" href="class_estado.html">Estado</a>&amp; estado) </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        : titulo(titulo), papel(papel), acao(acao), codigo(codigo), valor(valor)</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        , estimativa(estimativa), prioridade(prioridade), estado(estado){};</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="comment">//HistoriaDeUsuario(const Codigo&amp; codigo, const Texto&amp; titulo, const Texto&amp; papel, const Texto&amp; acao, const Texto&amp; valor, </span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="comment">//const Tempo&amp; estimativa, const Prioridade&amp; prioridade, const Estado&amp; estado) </span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="comment">//: titulo(titulo), papel(papel), acao(acao), codigo(codigo), valor(valor)</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="comment">//, estimativa(estimativa), prioridade(prioridade), estado(estado){};</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        HistoriaDeUsuario() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="comment">// Destrutor</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keyword">virtual</span> ~HistoriaDeUsuario();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keyword">virtual</span> ~HistoriaDeUsuario() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="comment">// Métodos get referente aos atributos da Entidade</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <a class="code hl_class" href="class_codigo.html">Codigo</a> getCodigo()<span class="keyword"> const</span>{<span class="keywordflow">return</span> codigo;};</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <a class="code hl_class" href="class_texto.html">Texto</a> getTitulo()<span class="keyword"> const</span>{<span class="keywordflow">return</span> titulo;};</div>

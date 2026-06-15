@@ -6,7 +6,7 @@
 
 bool CntrIAAutenticacao::autenticar(Email& email) {
     std::string entradaEmail, entradaSenha;
-    int entrada;
+    int entrada = 0;
     Email emailTemp;
     Senha senhaTemp;
 
@@ -19,7 +19,7 @@ bool CntrIAAutenticacao::autenticar(Email& email) {
         std::cout << "2 - Retornar\n";
         std::cout << "Escolha uma opcao: ";
         std::cin >> entrada;
-        std::cin.ignore();
+        std::cin.clear(); std::cin.ignore();
 
         if (entrada == 2) {
             return false;

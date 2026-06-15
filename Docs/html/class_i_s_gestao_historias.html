@@ -99,22 +99,22 @@ $(function(){initNavTree('class_i_s_gestao_historias.html','','class_i_s_gestao_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a614caa50522b26208726eefae2b62fcb" id="r_a614caa50522b26208726eefae2b62fcb"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a614caa50522b26208726eefae2b62fcb">criarHistoria</a> (const <a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> &amp;historia)=0</td></tr>
-<tr class="memdesc:a614caa50522b26208726eefae2b62fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma nova História de Usuário associada a um projeto (Serviço 13).  <br /></td></tr>
-<tr class="memitem:adfb21d8c2266bf098b351e6481505043" id="r_adfb21d8c2266bf098b351e6481505043"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#adfb21d8c2266bf098b351e6481505043">lerHistoria</a> (<a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> *historia)=0</td></tr>
-<tr class="memdesc:adfb21d8c2266bf098b351e6481505043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê os dados de uma História de Usuário cadastrada (Serviço 14).  <br /></td></tr>
-<tr class="memitem:a58b8b78285cf4720181d9e8287703a07" id="r_a58b8b78285cf4720181d9e8287703a07"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a58b8b78285cf4720181d9e8287703a07">atualizarHistoria</a> (const <a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> &amp;historia)=0</td></tr>
-<tr class="memdesc:a58b8b78285cf4720181d9e8287703a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza os dados de uma História de Usuário existente (Serviço 15).  <br /></td></tr>
-<tr class="memitem:a3afc0b9d871be4d613d211bc3360b641" id="r_a3afc0b9d871be4d613d211bc3360b641"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a3afc0b9d871be4d613d211bc3360b641">excluirHistoria</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoHistoria)=0</td></tr>
-<tr class="memdesc:a3afc0b9d871be4d613d211bc3360b641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exclui uma História de Usuário do sistema (Serviço 16).  <br /></td></tr>
-<tr class="memitem:a98c94a26d61e029c4cdc9b38273c4578" id="r_a98c94a26d61e029c4cdc9b38273c4578"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a98c94a26d61e029c4cdc9b38273c4578">associarHistoriaPessoa</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoHistoria, const <a class="el" href="class_email.html">Email</a> &amp;emailPessoa)=0</td></tr>
-<tr class="memdesc:a98c94a26d61e029c4cdc9b38273c4578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estabelece um vínculo de associação entre uma História de Usuário e uma <a class="el" href="class_pessoa.html">Pessoa</a> (Serviço 17).  <br /></td></tr>
-<tr class="memitem:a8eea07c40ce103d51ef7a7db325c194d" id="r_a8eea07c40ce103d51ef7a7db325c194d"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a8eea07c40ce103d51ef7a7db325c194d">removerAssociacaoHistoriaPessoa</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoHistoria, const <a class="el" href="class_email.html">Email</a> &amp;emailPessoa)=0</td></tr>
-<tr class="memdesc:a8eea07c40ce103d51ef7a7db325c194d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove o vínculo de associação entre uma História de Usuário e uma <a class="el" href="class_pessoa.html">Pessoa</a> (Serviço 18).  <br /></td></tr>
-<tr class="memitem:ad36256fe9a61e661cba4802821379591" id="r_ad36256fe9a61e661cba4802821379591"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#ad36256fe9a61e661cba4802821379591">moverHistoriaParaPlanoSprint</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoHistoria, const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoPlano)=0</td></tr>
-<tr class="memdesc:ad36256fe9a61e661cba4802821379591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move uma História de Usuário de um <a class="el" href="class_projeto.html">Projeto</a> para um Plano de Sprint (Serviço 24).  <br /></td></tr>
-<tr class="memitem:a97c28216273e11fa324a32fbcccb7a34" id="r_a97c28216273e11fa324a32fbcccb7a34"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a97c28216273e11fa324a32fbcccb7a34">alterarEstadoHistoria</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoHistoria, const <a class="el" href="class_estado.html">Estado</a> &amp;novoEstado)=0</td></tr>
-<tr class="memdesc:a97c28216273e11fa324a32fbcccb7a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o estado de uma História de Usuário (Serviço 25).  <br /></td></tr>
+<tr class="memitem:aa7941116bd31dc2cc7dc7e3c261df9d0" id="r_aa7941116bd31dc2cc7dc7e3c261df9d0"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#aa7941116bd31dc2cc7dc7e3c261df9d0">criar</a> (const <a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> &amp;historia)=0</td></tr>
+<tr class="memdesc:aa7941116bd31dc2cc7dc7e3c261df9d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma nova História de Usuário associada a um projeto (Serviço 13).  <br /></td></tr>
+<tr class="memitem:acce2bd4b7dac8749e56bbeb1be0587e6" id="r_acce2bd4b7dac8749e56bbeb1be0587e6"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#acce2bd4b7dac8749e56bbeb1be0587e6">ler</a> (<a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> *historia)=0</td></tr>
+<tr class="memdesc:acce2bd4b7dac8749e56bbeb1be0587e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê os dados de uma História de Usuário cadastrada (Serviço 14).  <br /></td></tr>
+<tr class="memitem:a30d610df071a84b1d8c8394248d6f27c" id="r_a30d610df071a84b1d8c8394248d6f27c"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a30d610df071a84b1d8c8394248d6f27c">atualizar</a> (const <a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> &amp;historia)=0</td></tr>
+<tr class="memdesc:a30d610df071a84b1d8c8394248d6f27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza os dados de uma História de Usuário existente (Serviço 15).  <br /></td></tr>
+<tr class="memitem:aa9cf3e543c342c381c0d0cdd2977c672" id="r_aa9cf3e543c342c381c0d0cdd2977c672"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#aa9cf3e543c342c381c0d0cdd2977c672">excluir</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoHistoria)=0</td></tr>
+<tr class="memdesc:aa9cf3e543c342c381c0d0cdd2977c672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exclui uma História de Usuário do sistema (Serviço 16).  <br /></td></tr>
+<tr class="memitem:ad3aed8ad0f8e4aa58603c2bf185226bc" id="r_ad3aed8ad0f8e4aa58603c2bf185226bc"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#ad3aed8ad0f8e4aa58603c2bf185226bc">associarPessoa</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoHistoria, const <a class="el" href="class_email.html">Email</a> &amp;emailPessoa)=0</td></tr>
+<tr class="memdesc:ad3aed8ad0f8e4aa58603c2bf185226bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estabelece um vínculo de associação entre uma História de Usuário e uma <a class="el" href="class_pessoa.html">Pessoa</a> (Serviço 17).  <br /></td></tr>
+<tr class="memitem:a5093e67f1eff16b19a85c59e2f7fd2e8" id="r_a5093e67f1eff16b19a85c59e2f7fd2e8"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a5093e67f1eff16b19a85c59e2f7fd2e8">removerAssociacaoPessoa</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoHistoria, const <a class="el" href="class_email.html">Email</a> &amp;emailPessoa)=0</td></tr>
+<tr class="memdesc:a5093e67f1eff16b19a85c59e2f7fd2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove o vínculo de associação entre uma História de Usuário e uma <a class="el" href="class_pessoa.html">Pessoa</a> (Serviço 18).  <br /></td></tr>
+<tr class="memitem:a7665973eb53fcf72f5101e853cc779db" id="r_a7665973eb53fcf72f5101e853cc779db"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a7665973eb53fcf72f5101e853cc779db">moverParaPlanoSprint</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoHistoria, const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoPlano)=0</td></tr>
+<tr class="memdesc:a7665973eb53fcf72f5101e853cc779db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move uma História de Usuário de um <a class="el" href="class_projeto.html">Projeto</a> para um Plano de Sprint (Serviço 24).  <br /></td></tr>
+<tr class="memitem:acac2658aba9f099f74d13fa585dad303" id="r_acac2658aba9f099f74d13fa585dad303"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#acac2658aba9f099f74d13fa585dad303">alterarEstado</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoHistoria, const <a class="el" href="class_estado.html">Estado</a> &amp;novoEstado)=0</td></tr>
+<tr class="memdesc:acac2658aba9f099f74d13fa585dad303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera o estado de uma História de Usuário (Serviço 25).  <br /></td></tr>
 <tr class="memitem:a3862541fd8bd4e5ae26eeed0b71393c6" id="r_a3862541fd8bd4e5ae26eeed0b71393c6"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a3862541fd8bd4e5ae26eeed0b71393c6">listarHistoriasDeProjeto</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoProjeto, std::vector&lt; <a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> &gt; *historias)=0</td></tr>
 <tr class="memdesc:a3862541fd8bd4e5ae26eeed0b71393c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista todas as Histórias de Usuário associadas a um <a class="el" href="class_projeto.html">Projeto</a> específico (Serviço 20).  <br /></td></tr>
 <tr class="memitem:a5ab93b38a1c4977c51ed7994c4e2563d" id="r_a5ab93b38a1c4977c51ed7994c4e2563d"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a5ab93b38a1c4977c51ed7994c4e2563d">listarHistoriasDePlanoSprint</a> (const <a class="el" href="class_codigo.html">Codigo</a> &amp;codigoPlano, std::vector&lt; <a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> &gt; *historias)=0</td></tr>
@@ -128,8 +128,8 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface de serviço de gestão de Histórias (ISGH). Centraliza as operações relacionadas a Histórias de Usuário e relacionamentos. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a97c28216273e11fa324a32fbcccb7a34" name="a97c28216273e11fa324a32fbcccb7a34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97c28216273e11fa324a32fbcccb7a34">&#9670;&#160;</a></span>alterarEstadoHistoria()</h2>
+<a id="acac2658aba9f099f74d13fa585dad303" name="acac2658aba9f099f74d13fa585dad303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac2658aba9f099f74d13fa585dad303">&#9670;&#160;</a></span>alterarEstado()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,7 +138,7 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool ISGestaoHistorias::alterarEstadoHistoria </td>
+          <td class="memname">virtual bool ISGestaoHistorias::alterarEstado </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_codigo.html">Codigo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>codigoHistoria</em></span>, </td>
         </tr>
@@ -167,8 +167,8 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
 
 </div>
 </div>
-<a id="a98c94a26d61e029c4cdc9b38273c4578" name="a98c94a26d61e029c4cdc9b38273c4578"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98c94a26d61e029c4cdc9b38273c4578">&#9670;&#160;</a></span>associarHistoriaPessoa()</h2>
+<a id="ad3aed8ad0f8e4aa58603c2bf185226bc" name="ad3aed8ad0f8e4aa58603c2bf185226bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3aed8ad0f8e4aa58603c2bf185226bc">&#9670;&#160;</a></span>associarPessoa()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +177,7 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool ISGestaoHistorias::associarHistoriaPessoa </td>
+          <td class="memname">virtual bool ISGestaoHistorias::associarPessoa </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_codigo.html">Codigo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>codigoHistoria</em></span>, </td>
         </tr>
@@ -206,8 +206,8 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
 
 </div>
 </div>
-<a id="a58b8b78285cf4720181d9e8287703a07" name="a58b8b78285cf4720181d9e8287703a07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58b8b78285cf4720181d9e8287703a07">&#9670;&#160;</a></span>atualizarHistoria()</h2>
+<a id="a30d610df071a84b1d8c8394248d6f27c" name="a30d610df071a84b1d8c8394248d6f27c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d610df071a84b1d8c8394248d6f27c">&#9670;&#160;</a></span>atualizar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -216,7 +216,7 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool ISGestaoHistorias::atualizarHistoria </td>
+          <td class="memname">virtual bool ISGestaoHistorias::atualizar </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>historia</em></span></td><td>)</td>
           <td></td>
@@ -240,8 +240,8 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
 
 </div>
 </div>
-<a id="a614caa50522b26208726eefae2b62fcb" name="a614caa50522b26208726eefae2b62fcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a614caa50522b26208726eefae2b62fcb">&#9670;&#160;</a></span>criarHistoria()</h2>
+<a id="aa7941116bd31dc2cc7dc7e3c261df9d0" name="aa7941116bd31dc2cc7dc7e3c261df9d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7941116bd31dc2cc7dc7e3c261df9d0">&#9670;&#160;</a></span>criar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +250,7 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool ISGestaoHistorias::criarHistoria </td>
+          <td class="memname">virtual bool ISGestaoHistorias::criar </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>historia</em></span></td><td>)</td>
           <td></td>
@@ -274,8 +274,8 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
 
 </div>
 </div>
-<a id="a3afc0b9d871be4d613d211bc3360b641" name="a3afc0b9d871be4d613d211bc3360b641"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3afc0b9d871be4d613d211bc3360b641">&#9670;&#160;</a></span>excluirHistoria()</h2>
+<a id="aa9cf3e543c342c381c0d0cdd2977c672" name="aa9cf3e543c342c381c0d0cdd2977c672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9cf3e543c342c381c0d0cdd2977c672">&#9670;&#160;</a></span>excluir()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -284,7 +284,7 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool ISGestaoHistorias::excluirHistoria </td>
+          <td class="memname">virtual bool ISGestaoHistorias::excluir </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_codigo.html">Codigo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>codigoHistoria</em></span></td><td>)</td>
           <td></td>
@@ -308,8 +308,8 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
 
 </div>
 </div>
-<a id="adfb21d8c2266bf098b351e6481505043" name="adfb21d8c2266bf098b351e6481505043"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfb21d8c2266bf098b351e6481505043">&#9670;&#160;</a></span>lerHistoria()</h2>
+<a id="acce2bd4b7dac8749e56bbeb1be0587e6" name="acce2bd4b7dac8749e56bbeb1be0587e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acce2bd4b7dac8749e56bbeb1be0587e6">&#9670;&#160;</a></span>ler()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -318,7 +318,7 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool ISGestaoHistorias::lerHistoria </td>
+          <td class="memname">virtual bool ISGestaoHistorias::ler </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_historia_de_usuario.html">HistoriaDeUsuario</a> *</td>          <td class="paramname"><span class="paramname"><em>historia</em></span></td><td>)</td>
           <td></td>
@@ -459,8 +459,8 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
 
 </div>
 </div>
-<a id="ad36256fe9a61e661cba4802821379591" name="ad36256fe9a61e661cba4802821379591"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad36256fe9a61e661cba4802821379591">&#9670;&#160;</a></span>moverHistoriaParaPlanoSprint()</h2>
+<a id="a7665973eb53fcf72f5101e853cc779db" name="a7665973eb53fcf72f5101e853cc779db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7665973eb53fcf72f5101e853cc779db">&#9670;&#160;</a></span>moverParaPlanoSprint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,7 +469,7 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool ISGestaoHistorias::moverHistoriaParaPlanoSprint </td>
+          <td class="memname">virtual bool ISGestaoHistorias::moverParaPlanoSprint </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_codigo.html">Codigo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>codigoHistoria</em></span>, </td>
         </tr>
@@ -498,8 +498,8 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
 
 </div>
 </div>
-<a id="a8eea07c40ce103d51ef7a7db325c194d" name="a8eea07c40ce103d51ef7a7db325c194d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8eea07c40ce103d51ef7a7db325c194d">&#9670;&#160;</a></span>removerAssociacaoHistoriaPessoa()</h2>
+<a id="a5093e67f1eff16b19a85c59e2f7fd2e8" name="a5093e67f1eff16b19a85c59e2f7fd2e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5093e67f1eff16b19a85c59e2f7fd2e8">&#9670;&#160;</a></span>removerAssociacaoPessoa()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -508,7 +508,7 @@ virtual&#160;</td><td class="memItemRight"><b>~ISGestaoHistorias</b> ()</td></tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool ISGestaoHistorias::removerAssociacaoHistoriaPessoa </td>
+          <td class="memname">virtual bool ISGestaoHistorias::removerAssociacaoPessoa </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_codigo.html">Codigo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>codigoHistoria</em></span>, </td>
         </tr>

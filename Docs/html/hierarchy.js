@@ -17,6 +17,7 @@ var hierarchy =
     [ "IACadastro", "class_i_a_cadastro.html", null ],
     [ "IAGestaoHistorias", "class_i_a_gestao_historias.html", null ],
     [ "IAGestaoProjetos", "class_i_a_gestao_projetos.html", null ],
+    [ "IAInicial", "class_i_a_inicial.html", null ],
     [ "ISAutenticacao", "class_i_s_autenticacao.html", null ],
     [ "ISCadastro", "class_i_s_cadastro.html", null ],
     [ "ISGestaoHistorias", "class_i_s_gestao_historias.html", null ],

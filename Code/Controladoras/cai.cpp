@@ -2,7 +2,7 @@
 #include <iostream>
 
 void CntrIAInicial::executar() {
-    int opcao;
+    int opcao = 0;
     bool executando = true;
     bool logado = false;
     Email emailSessao;
@@ -26,6 +26,8 @@ void CntrIAInicial::executar() {
         }
         std::cout << "Escolha uma opcao: ";
         std::cin >> opcao;
+        std::cin.clear();
+        std::cin.ignore();
 
         if (!logado) {
             switch (opcao) {
@@ -71,7 +73,7 @@ void CntrIAInicial::executar() {
                     break;
                 default:
                     std::cout << "\nOpcao invalida! Pressione ENTER para tentar novamente...\n";
-                    std::cout << "Prima ENTER para continuar...";
+                    std::cout << "Pressione ENTER para continuar...";
                     std::cin.ignore(); std::cin.get();
                     break;
             }

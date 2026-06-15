@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 void CntrIAGestaoProjetos::executar(const Email& email) {
-    int opcao;
+    int opcao = 0;
     bool executando = true;
 
     while (executando) {
@@ -30,6 +30,7 @@ void CntrIAGestaoProjetos::executar(const Email& email) {
         std::cout << "Escolha uma opcao: ";
         
         std::cin >> opcao;
+        std::cin.clear(); std::cin.ignore();
 
         switch (opcao) {
             case CRIAR_PROJETO:

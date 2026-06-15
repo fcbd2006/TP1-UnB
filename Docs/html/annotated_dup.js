@@ -10,6 +10,7 @@ var annotated_dup =
     [ "IACadastro", "class_i_a_cadastro.html", "class_i_a_cadastro" ],
     [ "IAGestaoHistorias", "class_i_a_gestao_historias.html", "class_i_a_gestao_historias" ],
     [ "IAGestaoProjetos", "class_i_a_gestao_projetos.html", "class_i_a_gestao_projetos" ],
+    [ "IAInicial", "class_i_a_inicial.html", "class_i_a_inicial" ],
     [ "ISAutenticacao", "class_i_s_autenticacao.html", "class_i_s_autenticacao" ],
     [ "ISCadastro", "class_i_s_cadastro.html", "class_i_s_cadastro" ],
     [ "ISGestaoHistorias", "class_i_s_gestao_historias.html", "class_i_s_gestao_historias" ],

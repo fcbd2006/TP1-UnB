@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 void CntrIACadastro::executar(Email& email) {
-    int opcao;
+    int opcao = 0;
     bool executando = true;
 
     // Se o email não estiver preenchido, 
@@ -30,6 +30,7 @@ void CntrIACadastro::executar(Email& email) {
         
         std::cout << "Escolha uma opcao: ";
         std::cin >> opcao;
+        std::cin.clear(); std::cin.ignore();
 
         if(!logado){
             switch (opcao){
@@ -64,6 +65,7 @@ void CntrIACadastro::executar(Email& email) {
                     std::cout << "Tem certeza que deseja excluir sua conta? (S/N): ";
                     std::cin.ignore();
                     std::cin >> confirmacao;
+                    std::cin.clear(); std::cin.ignore();
 
                     if (confirmacao == 'S' || confirmacao == 's') {
                         if (cntrlISCadastro->excluir(email)) {
@@ -115,6 +117,8 @@ void CntrIACadastro::cadastrar(Email& email, bool& logado){
         std::cout << "  3 - PROPRIETARIO DE PRODUTO\n";
         std::cout << "-> ";
         std::cin >> escPapel;
+        std::cin.clear(); std::cin.ignore();
+
         switch(escPapel){
             case 1:
                 strPapel = "DESENVOLVEDOR";
@@ -170,7 +174,7 @@ void CntrIACadastro::cadastrar(Email& email, bool& logado){
 void CntrIACadastro::ler(const Email& email, bool logado){
     if (!logado) return; // Bloqueia se não estiver logado
 
-    int opcao=0;
+    int opcao = 0;
     Pessoa pessoa;
 
     while(opcao == '0'){
@@ -180,6 +184,7 @@ void CntrIACadastro::ler(const Email& email, bool logado){
         std::cout << "  2 - Outra conta.\n";
         std::cout << "   -> ";
         std::cin >> opcao;
+        std::cin.clear(); std::cin.ignore();
         
         switch(opcao){
             case 1:{
@@ -241,6 +246,8 @@ void CntrIACadastro::atualizar(const Email& email, bool logado){
         std::cout << "  3 - PROPRIETARIO DE PRODUTO\n";
         std::cout << "-> ";
         std::cin >> escPapel;
+        std::cin.clear(); std::cin.ignore();
+        
         switch(escPapel){
             case 1:
                 strPapel = "DESENVOLVEDOR";

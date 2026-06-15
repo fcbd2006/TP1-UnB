@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 void CntrIAGestaoHistorias::executar(const Email& email) {
-    int opcao;
+    int opcao = 0;
     bool executando = true;
 
     while (executando) {
@@ -31,6 +31,7 @@ void CntrIAGestaoHistorias::executar(const Email& email) {
         std::cout << "Escolha uma opcao: ";
         
         std::cin >> opcao;
+        std::cin.clear(); std::cin.ignore();
 
         switch (opcao) {
             case CRIAR:
@@ -128,7 +129,7 @@ void CntrIAGestaoHistorias::criar(const Email& email){
     std::cout << "\nDigite a Estimativa: ";
     std::getline(std::cin, strTempoE);
 
-    int esc;
+    int esc = 0;
     while(!esc){
         std::cout << "Selecione a Prioridade:\n";
         std::cout << "  1 - ALTA\n";
@@ -136,6 +137,8 @@ void CntrIAGestaoHistorias::criar(const Email& email){
         std::cout << "  3 - BAIXA\n";
         std::cout << "-> ";
         std::cin >> esc;
+        std::cin.clear(); std::cin.ignore();
+
         switch(esc){
             case 1:
                 strPrioridade = "ALTA";
@@ -161,6 +164,8 @@ void CntrIAGestaoHistorias::criar(const Email& email){
         std::cout << "  3 - FEITO\n";
         std::cout << "-> ";
         std::cin >> esc;
+        std::cin.clear(); std::cin.ignore();
+
         switch(esc){
             case 1:
                 strEstado = "A FAZER";
@@ -276,6 +281,8 @@ void CntrIAGestaoHistorias::atualizar(const Email& email){
         std::cout << "  3 - BAIXA\n";
         std::cout << "-> ";
         std::cin >> esc;
+        std::cin.clear(); std::cin.ignore();
+
         switch(esc){
             case 1:
                 strPrioridade = "ALTA";
@@ -301,6 +308,8 @@ void CntrIAGestaoHistorias::atualizar(const Email& email){
         std::cout << "  3 - FEITO\n";
         std::cout << "-> ";
         std::cin >> esc;
+        std::cin.clear(); std::cin.ignore();
+        
         switch(esc){
             case 1:
                 strEstado = "A FAZER";
