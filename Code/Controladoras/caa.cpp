@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <limits>
 
 bool CntrIAAutenticacao::autenticar(Email& email) {
     std::string entradaEmail, entradaSenha;
@@ -18,22 +19,25 @@ bool CntrIAAutenticacao::autenticar(Email& email) {
         std::cout << "1 - Entrar\n";
         std::cout << "2 - Retornar\n";
         std::cout << "Escolha uma opcao: ";
-        std::cin >> entrada;
-        std::cin.clear(); std::cin.ignore();
+        if(!(std::cin >> entrada)){
+            std::cin.clear();
+            entrada = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         if (entrada == 2) {
             return false;
         }
         else if(entrada != 1) {
             std::cout << "Opcao invalida. Pressione ENTER para tentar novamente...";
-            std::cin.ignore(); std::cin.get();
+            std::cin.get();
             continue;
         }
         std::cout << "Digite o E-mail: ";
-        std::cin >> entradaEmail;
+        std::getline(std::cin, entradaEmail);
 
         std::cout << "Digite a Senha: ";
-        std::cin >> entradaSenha;
+        std::getline(std::cin, entradaSenha);
 
         try {
             // a validação de formato acontece aqui
@@ -45,19 +49,19 @@ bool CntrIAAutenticacao::autenticar(Email& email) {
                 email.setValor(emailTemp.getValor()); // Salva o e-mail na sessão
                 std::cout << "\nAutenticacao realizada com sucesso.\n";
                 std::cout << "Pressione ENTER para continuar...";
-                std::cin.ignore(); std::cin.get();
+                std::cin.get();
                 return true;
             } else {
                 std::cout << "\nFalha na autenticacao: E-mail ou senha incorretos.\n";
                 std::cout << "Pressione ENTER para tentar novamente...";
-                std::cin.ignore(); std::cin.get();
+                std::cin.get();
             }
         } 
         catch (std::invalid_argument &exp) {
             // Captura as exceções lançadas pelas classes Email e Senha
             std::cout << "\nErro de formato: " << exp.what() << "\n";
             std::cout << "Pressione ENTER para tentar novamente...";
-            std::cin.ignore(); std::cin.get();
+            std::cin.get();
         }
     }
 }

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <limits>
 
 void CntrIACadastro::executar(Email& email) {
     int opcao = 0;
@@ -29,8 +30,11 @@ void CntrIACadastro::executar(Email& email) {
         }
         
         std::cout << "Escolha uma opcao: ";
-        std::cin >> opcao;
-        std::cin.clear(); std::cin.ignore();
+        if(!(std::cin >> opcao)){
+            std::cin.clear();
+            opcao = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         if(!logado){
             switch (opcao){
@@ -63,9 +67,11 @@ void CntrIACadastro::executar(Email& email) {
                     std::cout << "\n--- Exclusao de Conta ---\n";
                     std::cout << "ATENCAO: Esta acao e irreversivel.\n";
                     std::cout << "Tem certeza que deseja excluir sua conta? (S/N): ";
-                    std::cin.ignore();
-                    std::cin >> confirmacao;
-                    std::cin.clear(); std::cin.ignore();
+                    if(!(std::cin >> confirmacao)){
+                        std::cin.clear();
+                        confirmacao = 0;
+                    }
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
                     if (confirmacao == 'S' || confirmacao == 's') {
                         if (cntrlISCadastro->excluir(email)) {
@@ -94,7 +100,7 @@ void CntrIACadastro::executar(Email& email) {
 
         if (executando) {
             std::cout << "Pressione ENTER para continuar...";
-            std::cin.ignore(); std::cin.get();
+            std::cin.get();
         }
     }
 }
@@ -106,7 +112,6 @@ void CntrIACadastro::cadastrar(Email& email, bool& logado){
     int escPapel = 0;
     std::cout << "\n--- Criacao de Nova Conta ---\n";
     
-    std::cin.ignore(); // Limpa o buffer do enter antes dos getlines
     std::cout << "Digite o Nome: ";
     std::getline(std::cin, strNome);
     
@@ -116,8 +121,11 @@ void CntrIACadastro::cadastrar(Email& email, bool& logado){
         std::cout << "  2 - MESTRE SCRUM\n";
         std::cout << "  3 - PROPRIETARIO DE PRODUTO\n";
         std::cout << "-> ";
-        std::cin >> escPapel;
-        std::cin.clear(); std::cin.ignore();
+        if(!(std::cin >> escPapel)){
+            std::cin.clear();
+            escPapel = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         switch(escPapel){
             case 1:
@@ -135,7 +143,6 @@ void CntrIACadastro::cadastrar(Email& email, bool& logado){
                 break;
         }
     }
-    std::cin.ignore();
     
     std::cout << "Digite a Senha: ";
     std::getline(std::cin, strSenha);
@@ -183,8 +190,11 @@ void CntrIACadastro::ler(const Email& email, bool logado){
         std::cout << "  1 - Própria conta;\n";
         std::cout << "  2 - Outra conta.\n";
         std::cout << "   -> ";
-        std::cin >> opcao;
-        std::cin.clear(); std::cin.ignore();
+        if(!(std::cin >> opcao)){
+            std::cin.clear();
+            opcao = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         
         switch(opcao){
             case 1:{
@@ -195,7 +205,6 @@ void CntrIACadastro::ler(const Email& email, bool logado){
             case 2:{
                 Email novoEmail;
                 std::string strEmail;
-                std::cin.ignore();
                 std::cout << "Digite o Email: ";
                 std::getline(std::cin, strEmail);
                 try{
@@ -245,9 +254,12 @@ void CntrIACadastro::atualizar(const Email& email, bool logado){
         std::cout << "  2 - MESTRE SCRUM\n";
         std::cout << "  3 - PROPRIETARIO DE PRODUTO\n";
         std::cout << "-> ";
-        std::cin >> escPapel;
-        std::cin.clear(); std::cin.ignore();
-        
+        if(!(std::cin >> escPapel)){
+            std::cin.clear();
+            escPapel = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
         switch(escPapel){
             case 1:
                 strPapel = "DESENVOLVEDOR";
@@ -264,7 +276,6 @@ void CntrIACadastro::atualizar(const Email& email, bool logado){
                 break;
         }
     }
-    std::cin.ignore();
     
     std::cout << "Digite a nova Senha: ";
     std::getline(std::cin, strSenha);
@@ -278,7 +289,7 @@ void CntrIACadastro::atualizar(const Email& email, bool logado){
         pessoaAtualizada.setNome(nome);
         pessoaAtualizada.setPapel(papel);
         pessoaAtualizada.setSenha(senha);
-        pessoaAtualizada.setEmail(email); // O Email (PK) não muda
+        pessoaAtualizada.setEmail(email);
 
         if (cntrlISCadastro->atualizar(pessoaAtualizada)) {
             std::cout << "\nDados atualizados com sucesso!\n";

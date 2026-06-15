@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <limits>
 
 void CntrIAGestaoProjetos::executar(const Email& email) {
     int opcao = 0;
@@ -29,8 +30,11 @@ void CntrIAGestaoProjetos::executar(const Email& email) {
         std::cout << RETORNAR << " - Retornar\n";
         std::cout << "Escolha uma opcao: ";
         
-        std::cin >> opcao;
-        std::cin.clear(); std::cin.ignore();
+        if(!(std::cin >> opcao)){
+            std::cin.clear();
+            opcao = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         switch (opcao) {
             case CRIAR_PROJETO:
@@ -66,7 +70,7 @@ void CntrIAGestaoProjetos::executar(const Email& email) {
 
         if (executando) {
             std::cout << "Pressione ENTER para continuar...";
-            std::cin.ignore(); std::cin.get();
+            std::cin.get();
         }
     }
 }

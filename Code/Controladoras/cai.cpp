@@ -1,5 +1,6 @@
 #include "Controladoras/Headers/cai.hpp"
 #include <iostream>
+#include <limits>
 
 void CntrIAInicial::executar() {
     int opcao = 0;
@@ -25,9 +26,11 @@ void CntrIAInicial::executar() {
             std::cout << SAIR << " - Fazer Logout (Sair da sessao)\n";
         }
         std::cout << "Escolha uma opcao: ";
-        std::cin >> opcao;
-        std::cin.clear();
-        std::cin.ignore();
+        if(!(std::cin >> opcao)){
+            std::cin.clear();
+            opcao = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         if (!logado) {
             switch (opcao) {
@@ -47,7 +50,7 @@ void CntrIAInicial::executar() {
                     break;
                 default:
                     std::cout << "\nOpcao invalida! Pressione ENTER para tentar novamente...\n";
-                    std::cin.ignore(); std::cin.get();
+                    std::cin.get();
                     break;
             }
         }else{
@@ -69,12 +72,12 @@ void CntrIAInicial::executar() {
                     emailSessao = Email();
                     std::cout << "\nSessao terminada com sucesso.\n";
                     std::cout << "Pressione ENTER para continuar...";
-                    std::cin.ignore(); std::cin.get();
+                    std::cin.get();
                     break;
                 default:
                     std::cout << "\nOpcao invalida! Pressione ENTER para tentar novamente...\n";
                     std::cout << "Pressione ENTER para continuar...";
-                    std::cin.ignore(); std::cin.get();
+                    std::cin.get();
                     break;
             }
         }

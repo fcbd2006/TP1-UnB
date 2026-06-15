@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <limits>
 
 void CntrIAGestaoHistorias::executar(const Email& email) {
     int opcao = 0;
@@ -30,8 +31,11 @@ void CntrIAGestaoHistorias::executar(const Email& email) {
         std::cout << RETORNAR << " - Retornar\n";
         std::cout << "Escolha uma opcao: ";
         
-        std::cin >> opcao;
-        std::cin.clear(); std::cin.ignore();
+        if(!(std::cin >> opcao)){
+            std::cin.clear();
+            opcao = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         switch (opcao) {
             case CRIAR:
@@ -47,7 +51,6 @@ void CntrIAGestaoHistorias::executar(const Email& email) {
                 std::string strCodigo;
                 std::cout << "\n--- Exclusao de Historia ---\n";
 
-                std::cin.ignore();
                 std::cout << "\nDigite o Codigo da historia que deseja excluir: ";
                 std::getline(std::cin, strCodigo);
                 try{
@@ -56,8 +59,11 @@ void CntrIAGestaoHistorias::executar(const Email& email) {
                     char confirmacao;
                     std::cout << "ATENCAO: Esta acao e irreversivel.\n";
                     std::cout << "Tem certeza que deseja excluir essa historia? (S/N): ";
-                    std::cin.ignore();
-                    std::cin >> confirmacao;
+                    if(!(std::cin >> confirmacao)){
+                        std::cin.clear();
+                        confirmacao = 0;
+                    }
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
                     if (confirmacao == 'S' || confirmacao == 's') {
                         if (cntrlISGestaoHistorias->excluir(codigo)) {
@@ -101,7 +107,7 @@ void CntrIAGestaoHistorias::executar(const Email& email) {
 
         if (executando) {
             std::cout << "Pressione ENTER para continuar...";
-            std::cin.ignore(); std::cin.get();
+            std::cin.get();
         }
     }
 }
@@ -110,7 +116,6 @@ void CntrIAGestaoHistorias::criar(const Email& email){
     std::string strCodigo, strTextoT, strTextoP, strTextoA, strTextoV, strTempoE, strPrioridade, strEstado;
     std::cout << "\n--- Criacao de Nova Historia ---\n";
     
-    std::cin.ignore();
     std::cout << "\nDigite o Codigo: ";
     std::getline(std::cin, strCodigo);
     
@@ -136,8 +141,11 @@ void CntrIAGestaoHistorias::criar(const Email& email){
         std::cout << "  2 - MEDIA\n";
         std::cout << "  3 - BAIXA\n";
         std::cout << "-> ";
-        std::cin >> esc;
-        std::cin.clear(); std::cin.ignore();
+        if(!(std::cin >> esc)){
+            std::cin.clear();
+            esc = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         switch(esc){
             case 1:
@@ -163,8 +171,11 @@ void CntrIAGestaoHistorias::criar(const Email& email){
         std::cout << "  2 - FAZENDO\n";
         std::cout << "  3 - FEITO\n";
         std::cout << "-> ";
-        std::cin >> esc;
-        std::cin.clear(); std::cin.ignore();
+        if(!(std::cin >> esc)){
+            std::cin.clear();
+            esc = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         switch(esc){
             case 1:
@@ -222,7 +233,6 @@ void CntrIAGestaoHistorias::ler(){
     std::string strCodigo;
     std::cout << "\n--- Visualizar Historia ---\n";
     
-    std::cin.ignore();
     std::cout << "\nDigite o Codigo: ";
     std::getline(std::cin, strCodigo);
 
@@ -255,7 +265,6 @@ void CntrIAGestaoHistorias::atualizar(const Email& email){
     int esc = 0;
     std::cout << "\n--- Atualizar Historia ---\n";
     
-    std::cin.ignore();
     std::cout << "\nDigite o Codigo: ";
     std::getline(std::cin, strCodigo);
     
@@ -280,8 +289,11 @@ void CntrIAGestaoHistorias::atualizar(const Email& email){
         std::cout << "  2 - MEDIA\n";
         std::cout << "  3 - BAIXA\n";
         std::cout << "-> ";
-        std::cin >> esc;
-        std::cin.clear(); std::cin.ignore();
+        if(!(std::cin >> esc)){
+            std::cin.clear();
+            esc = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         switch(esc){
             case 1:
@@ -307,8 +319,11 @@ void CntrIAGestaoHistorias::atualizar(const Email& email){
         std::cout << "  2 - FAZENDO\n";
         std::cout << "  3 - FEITO\n";
         std::cout << "-> ";
-        std::cin >> esc;
-        std::cin.clear(); std::cin.ignore();
+        if(!(std::cin >> esc)){
+            std::cin.clear();
+            esc = 0;
+        }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         
         switch(esc){
             case 1:
