@@ -16,8 +16,9 @@ class Codigo : public Dominio{
     private:
         /**
          * @brief Método de validação específico para o domínio Codigo.
+         * @param string String contendo o valor do código a ser validado.
          * * Este método é responsável por verificar se o valor do código atende aos critérios de formatação
-         * estabelecidos pelo sistema.
+         * estabelecidos pelo sistema. Lançará uma exceção em caso de falha.
          */
         void validar(const std::string&) override;
 
