@@ -12,7 +12,7 @@
 class StubAutenticacao : public ISAutenticacao {
 public:
     bool autenticar(const Email& email, const Senha& senha) override {
-        if(senha.getValor()!="A1b2c3") return false;
+        if(email.getValor() == "carlos@abc" && senha.getValor()!="A1b2c3") return false;
         else return true; 
     }
 };
@@ -24,23 +24,31 @@ public:
 class StubCadastro : public ISCadastro {
 public:
     bool criar(const Pessoa& pessoa) override {
-        if(pessoa.getEmail().getValor()=="abc@abc") return false;
+        if(pessoa.getEmail().getValor()!="carlos@abc") return false;
         else return true;
     }
 
     bool ler(Pessoa* pessoa) override {
-        pessoa->setNome(Nome("carlos"));
-        pessoa->setPapel(Papel("DESENVOLVEDOR"));
-        pessoa->setSenha(Senha("A1b2c3"));
-        return true;
+        if(pessoa == nullptr) return false;
+        if(pessoa->getEmail().getValor() == "carlos@abc"){
+            pessoa->setNome(Nome("carlos"));
+            pessoa->setPapel(Papel("DESENVOLVEDOR"));
+            pessoa->setSenha(Senha("A1b2c3"));
+            return true;
+        }
+        return false;
     }
 
     bool atualizar(const Pessoa& pessoa) override {
-        return true;
+        if(pessoa.getEmail().getValor() == "bruno@abc"){
+            return false;
+        }else return true;
     }
 
     bool excluir(const Email& email) override {
-        return true;
+        if(email.getValor() == "bruno@abc"){
+            return false;
+        }else return true;
     }
 };
 
@@ -51,23 +59,38 @@ public:
 class StubGestaoHistorias : public ISGestaoHistorias {
 public:
     bool criar(const HistoriaDeUsuario& historia) override {
-        return true;
+        if(historia.getCodigo().getValor() != "AB123") return false;
+        else return true;
     }
 
     bool ler(HistoriaDeUsuario* historia) override {
-        return true;
+        if(historia == nullptr) return false;
+        if(historia->getCodigo().getValor() == "AB123"){
+            historia->setAcao(Texto("texto1"));
+            historia->setEstado(Estado("FAZENDO"));
+            historia->setPapel(Texto("texto2"));
+            historia->setPrioridade(Prioridade("MEDIA"));
+            historia->setTempo(Tempo("150"));
+            historia->setTitulo(Texto("texto3"));
+            historia->setValor(Texto("texto4"));
+            return true;
+        }
+        else return false;
     }
 
     bool atualizar(const HistoriaDeUsuario& historia) override {
-        return true;
+        if(historia.getCodigo().getValor() != "AB123") return false;
+        else return true;
     }
 
     bool excluir(const Codigo& codigoHistoria) override {
-        return true;
+        if(codigoHistoria.getValor() != "AB123") return false;
+        else return true;
     }
 
     bool associarPessoa(const Codigo& codigoHistoria, const Email& emailPessoa) override {
-        return true;
+        if(codigoHistoria.getValor() == "AB123" && emailPessoa.getValor() == "carlos@abc") return true;
+        else return false;
     }
     
     bool removerAssociacaoPessoa(const Codigo& codigoHistoria, const Email& emailPessoa) override {
