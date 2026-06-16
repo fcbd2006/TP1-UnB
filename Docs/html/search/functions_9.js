@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['_7edominio_0',['~Dominio',['../class_dominio.html#a7dcc0fbb141f6bd1c65dd742bc6f2c11',1,'Dominio']]],
-  ['_7eiaautenticacao_1',['~IAAutenticacao',['../class_i_a_autenticacao.html#a3db80f26e7a5b45937270f74a818c715',1,'IAAutenticacao']]],
-  ['_7eiacadastro_2',['~IACadastro',['../class_i_a_cadastro.html#a66fb9eb2a276398938b45f20afd923b5',1,'IACadastro']]],
-  ['_7eiagestaohistorias_3',['~IAGestaoHistorias',['../class_i_a_gestao_historias.html#ac2d6043e11dca0e6034be3f74db7b374',1,'IAGestaoHistorias']]],
-  ['_7eiagestaoprojetos_4',['~IAGestaoProjetos',['../class_i_a_gestao_projetos.html#a26beced82b7d585279010210858f5d41',1,'IAGestaoProjetos']]],
-  ['_7eiainicial_5',['~IAInicial',['../class_i_a_inicial.html#aef7f568825534a963928d4d994aed814',1,'IAInicial']]],
-  ['_7eisautenticacao_6',['~ISAutenticacao',['../class_i_s_autenticacao.html#af0b6fd5cc2afd985070db8991b3da3a9',1,'ISAutenticacao']]],
-  ['_7eiscadastro_7',['~ISCadastro',['../class_i_s_cadastro.html#afb770bba08d1dd9da44c3dd946b1f76c',1,'ISCadastro']]],
-  ['_7eisgestaohistorias_8',['~ISGestaoHistorias',['../class_i_s_gestao_historias.html#a262c19eb4181db8c4b32b5f3f1157600',1,'ISGestaoHistorias']]],
-  ['_7eisgestaoprojetos_9',['~ISGestaoProjetos',['../class_i_s_gestao_projetos.html#a6fbc68d7d8ca1138aaaa32e859a71006',1,'ISGestaoProjetos']]]
+  ['setapresentacaoautenticacao_0',['setApresentacaoAutenticacao',['../class_i_a_inicial.html#ae3c7ecccfb5bdd27338eace4301fe9da',1,'IAInicial']]],
+  ['setapresentacaocadastro_1',['setApresentacaoCadastro',['../class_i_a_inicial.html#aa93242981bdb98b7b4e89985e0a157af',1,'IAInicial']]],
+  ['setapresentacaohistorias_2',['setApresentacaoHistorias',['../class_i_a_inicial.html#a2e5610b4339d978d6986d44b51e1ee10',1,'IAInicial']]],
+  ['setapresentacaoprojetos_3',['setApresentacaoProjetos',['../class_i_a_inicial.html#aedf9186a904e41e3c266e2d5d3315fbe',1,'IAInicial']]],
+  ['setservicoautenticacao_4',['setServicoAutenticacao',['../class_i_a_autenticacao.html#a7e9fcd83d94462036342bcca87a55444',1,'IAAutenticacao']]],
+  ['setservicocadastro_5',['setServicoCadastro',['../class_i_a_cadastro.html#ad3f242f399e4a2678755cf2e896a07a9',1,'IACadastro']]],
+  ['setservicogestaohistorias_6',['setServicoGestaoHistorias',['../class_i_a_gestao_historias.html#a8b1bfdfe17763a3f78679441b63a2be5',1,'IAGestaoHistorias']]],
+  ['setservicogestaoprojetos_7',['setServicoGestaoProjetos',['../class_i_a_gestao_projetos.html#a2fdef5125901c4e69746aa8aa0b04df7',1,'IAGestaoProjetos']]],
+  ['setvalor_8',['setValor',['../class_dominio.html#a220fafcb42edefedd265cedec3f84070',1,'Dominio']]]
 ];

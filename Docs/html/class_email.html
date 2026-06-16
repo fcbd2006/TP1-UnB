@@ -92,12 +92,19 @@ $(function(){initNavTree('class_email.html','','class_email-members'); });
 </div><!--header-->
 <div class="contents">
 
+<p>Representa o domínio de um endereço de email.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="outros__dominios_8hpp_source.html">outros_dominios.hpp</a>&gt;</code></p>
+
 <p>Inherits <a class="el" href="class_dominio.html">Dominio</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5d121ca6ef0ad5923fe66f0ee7f3e53c" id="r_a5d121ca6ef0ad5923fe66f0ee7f3e53c"><td class="memItemLeft"><a id="a5d121ca6ef0ad5923fe66f0ee7f3e53c" name="a5d121ca6ef0ad5923fe66f0ee7f3e53c"></a>
-&#160;</td><td class="memItemRight"><b>Email</b> (std::string v)</td></tr>
+<tr class="memitem:a5d121ca6ef0ad5923fe66f0ee7f3e53c" id="r_a5d121ca6ef0ad5923fe66f0ee7f3e53c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5d121ca6ef0ad5923fe66f0ee7f3e53c">Email</a> (std::string v)</td></tr>
+<tr class="memdesc:a5d121ca6ef0ad5923fe66f0ee7f3e53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor parametrizado da classe <a class="el" href="class_email.html" title="Representa o domínio de um endereço de email.">Email</a>.  <br /></td></tr>
+<tr class="memitem:a5b74ed2ee8c170edc6d32eee149c2edf" id="r_a5b74ed2ee8c170edc6d32eee149c2edf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5b74ed2ee8c170edc6d32eee149c2edf">Email</a> ()=default</td></tr>
+<tr class="memdesc:a5b74ed2ee8c170edc6d32eee149c2edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor padrão da classe <a class="el" href="class_email.html" title="Representa o domínio de um endereço de email.">Email</a>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_dominio"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_dominio')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_dominio.html">Dominio</a></td></tr>
 <tr class="memitem:a36e14a1dee7f834f9d481149928ba3e7 inherit pub_methods_class_dominio" id="r_a36e14a1dee7f834f9d481149928ba3e7"><td class="memItemLeft">
 &#160;</td><td class="memItemRight"><b>Dominio</b> ()=default</td></tr>
@@ -110,7 +117,81 @@ void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;
 <tr class="memdesc:a220fafcb42edefedd265cedec3f84070 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para definir o valor do domínio. <br /></td></tr>
 <tr class="memitem:a2d3f7e5c12c57aabdf44ed2e81b39308 inherit pub_methods_class_dominio" id="r_a2d3f7e5c12c57aabdf44ed2e81b39308"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308">getValor</a> () const</td></tr>
 <tr class="memdesc:a2d3f7e5c12c57aabdf44ed2e81b39308 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obter o valor do domínio.  <br /></td></tr>
+<tr class="memitem:afb67029bc90a8f7f027199779e84ad3d inherit pub_methods_class_dominio" id="r_afb67029bc90a8f7f027199779e84ad3d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="class_dominio.html#afb67029bc90a8f7f027199779e84ad3d">operator==</a> (const <a class="el" href="class_dominio.html">Dominio</a> &amp;outro) const</td></tr>
+<tr class="memdesc:afb67029bc90a8f7f027199779e84ad3d inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador de igualdade. Compara o valor deste domínio com o valor de outro domínio.  <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Representa o domínio de um endereço de email. </p>
+<ul>
+<li>Esta classe herda da classe base <a class="el" href="class_dominio.html" title="Classe base abstrata para padronização dos domínios. Esta classe fornece a estrutura fundamental para...">Dominio</a> e armazena e garante a integridade de um valor de email, que deve seguir as regras de formatação de endereço de email estabelecidas pelo sistema, incluindo a presença de um símbolo '@' e um domínio válido após o símbolo como em "usuario@dominio.com". </li>
+</ul>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5d121ca6ef0ad5923fe66f0ee7f3e53c" name="a5d121ca6ef0ad5923fe66f0ee7f3e53c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d121ca6ef0ad5923fe66f0ee7f3e53c">&#9670;&#160;</a></span>Email() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Email::Email </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construtor parametrizado da classe <a class="el" href="class_email.html" title="Representa o domínio de um endereço de email.">Email</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>String com o email a ser armazenado.<ul>
+<li>Este construtor recebe uma string como argumento e utiliza o método <a class="el" href="class_dominio.html#a220fafcb42edefedd265cedec3f84070" title="Método para definir o valor do domínio.">setValor()</a> para armazenar o valor do email, garantindo que a validação seja realizada automaticamente e que apenas endereços de email corretamente formatados sejam aceitos pelo sistema. Lançará uma exceção em caso de falha na validação. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5b74ed2ee8c170edc6d32eee149c2edf" name="a5b74ed2ee8c170edc6d32eee149c2edf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b74ed2ee8c170edc6d32eee149c2edf">&#9670;&#160;</a></span>Email() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Email::Email </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construtor padrão da classe <a class="el" href="class_email.html" title="Representa o domínio de um endereço de email.">Email</a>. </p>
+<ul>
+<li>Permite a instanciação de um objeto <a class="el" href="class_email.html" title="Representa o domínio de um endereço de email.">Email</a> sem um valor inicial. O valor real deverá ser inserido posteriormente através do método <a class="el" href="class_dominio.html#a220fafcb42edefedd265cedec3f84070" title="Método para definir o valor do domínio.">setValor()</a>. </li>
+</ul>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="outros__dominios_8hpp_source.html">outros_dominios.hpp</a></li>
 <li><b>dominios.cpp</b></li>

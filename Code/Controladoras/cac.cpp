@@ -244,7 +244,6 @@ void CntrIACadastro::atualizar(const Email& email, bool logado){
     int escPapel = 0;
     std::cout << "\n--- Atualizacao de Conta ---\n";
     
-    std::cin.ignore();
     std::cout << "Digite o novo Nome: ";
     std::getline(std::cin, strNome);
     

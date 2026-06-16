@@ -110,29 +110,40 @@ $(function(){initNavTree('dominio__base_8hpp_source.html','',''); });
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_dominio.html#a220fafcb42edefedd265cedec3f84070">setValor</a>(<span class="keyword">const</span> std::string&amp;);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308">getValor</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_dominio.html#afb67029bc90a8f7f027199779e84ad3d">operator==</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_dominio.html#a36e14a1dee7f834f9d481149928ba3e7">Dominio</a>&amp; outro) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">// Método para acesso do valor armazenado</span></div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308">   52</a></span><span class="keyword">inline</span> <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308">Dominio::getValor</a>()<span class="keyword"> const</span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> valor;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">// Método para acesso do valor armazenado</span></div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308">   62</a></span><span class="keyword">inline</span> <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308">Dominio::getValor</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> valor;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">// Método para armazenar um valor</span></div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_dominio.html#a220fafcb42edefedd265cedec3f84070">   57</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_dominio.html#a220fafcb42edefedd265cedec3f84070">Dominio::setValor</a>(<span class="keyword">const</span> std::string&amp; value){</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    validar(value);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    valor = value;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">// Método para armazenar um valor</span></div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_dominio.html#a220fafcb42edefedd265cedec3f84070">   67</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_dominio.html#a220fafcb42edefedd265cedec3f84070">Dominio::setValor</a>(<span class="keyword">const</span> std::string&amp; value){</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    validar(value);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    valor = value;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_dominio_html_a220fafcb42edefedd265cedec3f84070"><div class="ttname"><a href="class_dominio.html#a220fafcb42edefedd265cedec3f84070">Dominio::setValor</a></div><div class="ttdeci">void setValor(const std::string &amp;)</div><div class="ttdoc">Método para definir o valor do domínio.</div><div class="ttdef"><b>Definition</b> dominio_base.hpp:57</div></div>
-<div class="ttc" id="aclass_dominio_html_a2d3f7e5c12c57aabdf44ed2e81b39308"><div class="ttname"><a href="class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308">Dominio::getValor</a></div><div class="ttdeci">const std::string &amp; getValor() const</div><div class="ttdoc">Método para obter o valor do domínio.</div><div class="ttdef"><b>Definition</b> dominio_base.hpp:52</div></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">// Operador de Igualdade</span></div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_dominio.html#afb67029bc90a8f7f027199779e84ad3d">   73</a></span><span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_dominio.html#afb67029bc90a8f7f027199779e84ad3d">Dominio::operator==</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_dominio.html#a36e14a1dee7f834f9d481149928ba3e7">Dominio</a>&amp; outro)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> this-&gt;valor == outro.valor;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_dominio_html_a220fafcb42edefedd265cedec3f84070"><div class="ttname"><a href="class_dominio.html#a220fafcb42edefedd265cedec3f84070">Dominio::setValor</a></div><div class="ttdeci">void setValor(const std::string &amp;)</div><div class="ttdoc">Método para definir o valor do domínio.</div><div class="ttdef"><b>Definition</b> dominio_base.hpp:67</div></div>
+<div class="ttc" id="aclass_dominio_html_a2d3f7e5c12c57aabdf44ed2e81b39308"><div class="ttname"><a href="class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308">Dominio::getValor</a></div><div class="ttdeci">const std::string &amp; getValor() const</div><div class="ttdoc">Método para obter o valor do domínio.</div><div class="ttdef"><b>Definition</b> dominio_base.hpp:62</div></div>
 <div class="ttc" id="aclass_dominio_html_a36e14a1dee7f834f9d481149928ba3e7"><div class="ttname"><a href="class_dominio.html#a36e14a1dee7f834f9d481149928ba3e7">Dominio::Dominio</a></div><div class="ttdeci">Dominio()=default</div><div class="ttdoc">Construtor padrão da classe domínio.</div></div>
 <div class="ttc" id="aclass_dominio_html_a7dcc0fbb141f6bd1c65dd742bc6f2c11"><div class="ttname"><a href="class_dominio.html#a7dcc0fbb141f6bd1c65dd742bc6f2c11">Dominio::~Dominio</a></div><div class="ttdeci">virtual ~Dominio()=default</div><div class="ttdoc">Destrutor virtual padrão da classe domínio. Garante a destruição correta das classes derivadas.</div></div>
+<div class="ttc" id="aclass_dominio_html_afb67029bc90a8f7f027199779e84ad3d"><div class="ttname"><a href="class_dominio.html#afb67029bc90a8f7f027199779e84ad3d">Dominio::operator==</a></div><div class="ttdeci">bool operator==(const Dominio &amp;outro) const</div><div class="ttdoc">Sobrecarga do operador de igualdade. Compara o valor deste domínio com o valor de outro domínio.</div><div class="ttdef"><b>Definition</b> dominio_base.hpp:73</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

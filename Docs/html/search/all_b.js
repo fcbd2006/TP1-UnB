@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['removerassociacaopessoa_0',['removerAssociacaoPessoa',['../class_i_s_gestao_historias.html#a5093e67f1eff16b19a85c59e2f7fd2e8',1,'ISGestaoHistorias']]]
+  ['papel_0',['Papel',['../class_papel.html',1,'']]],
+  ['pessoa_1',['Pessoa',['../class_pessoa.html',1,'']]],
+  ['planodesprint_2',['PlanoDeSprint',['../class_plano_de_sprint.html',1,'']]],
+  ['prioridade_3',['Prioridade',['../class_prioridade.html',1,'']]],
+  ['projeto_4',['Projeto',['../class_projeto.html',1,'']]]
 ];

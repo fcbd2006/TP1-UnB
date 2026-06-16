@@ -137,7 +137,8 @@ void Nome::validar(const std::string& nome){
     if(nome[0]==' ' || nome[nome.size()-1]==' ') throw std::invalid_argument("Valor Inválido para Nome -> Espaço no início ou final");
     
     // verifica cada caracter
-    for(int index=0;index<=(int(nome.size())-1);index++){
+    
+    for(int index=0;index<int(nome.size());index++){
         
         // verifica se é letra dps de cada espaço
         if(nome[index]==' ' && !isalpha(nome[index+1]))

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['email_0',['Email',['../class_email.html',1,'']]],
+  ['email_0',['Email',['../class_email.html',1,'Email'],['../class_email.html#a5d121ca6ef0ad5923fe66f0ee7f3e53c',1,'Email::Email(std::string v)'],['../class_email.html#a5b74ed2ee8c170edc6d32eee149c2edf',1,'Email::Email()=default']]],
   ['estado_1',['Estado',['../class_estado.html',1,'']]],
   ['excluir_2',['excluir',['../class_i_s_cadastro.html#a4491551cc6d80da0d3528e981a04cf89',1,'ISCadastro::excluir()'],['../class_i_s_gestao_historias.html#aa9cf3e543c342c381c0d0cdd2977c672',1,'ISGestaoHistorias::excluir()']]],
   ['excluirplanosprint_3',['excluirPlanoSprint',['../class_i_s_gestao_projetos.html#a433b1254d2888880950c3dab90b1d7d5',1,'ISGestaoProjetos']]],

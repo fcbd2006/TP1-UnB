@@ -112,6 +112,8 @@ void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;
 <tr class="memdesc:a220fafcb42edefedd265cedec3f84070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para definir o valor do domínio. <br /></td></tr>
 <tr class="memitem:a2d3f7e5c12c57aabdf44ed2e81b39308" id="r_a2d3f7e5c12c57aabdf44ed2e81b39308"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2d3f7e5c12c57aabdf44ed2e81b39308">getValor</a> () const</td></tr>
 <tr class="memdesc:a2d3f7e5c12c57aabdf44ed2e81b39308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obter o valor do domínio.  <br /></td></tr>
+<tr class="memitem:afb67029bc90a8f7f027199779e84ad3d" id="r_afb67029bc90a8f7f027199779e84ad3d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#afb67029bc90a8f7f027199779e84ad3d">operator==</a> (const <a class="el" href="class_dominio.html">Dominio</a> &amp;outro) const</td></tr>
+<tr class="memdesc:afb67029bc90a8f7f027199779e84ad3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador de igualdade. Compara o valor deste domínio com o valor de outro domínio.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe base abstrata para padronização dos domínios. Esta classe fornece a estrutura fundamental para armazenar um valor de domínio. As classes derivadas devem obrigatoriamente implementar a lógica específica de validação através do método validar(). </p>
@@ -141,6 +143,42 @@ void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;
 
 <p>Método para obter o valor do domínio. </p>
 <dl class="section return"><dt>Returns</dt><dd>Retorna uma referência constante para a string contendo o valor do domínio. </dd></dl>
+
+</div>
+</div>
+<a id="afb67029bc90a8f7f027199779e84ad3d" name="afb67029bc90a8f7f027199779e84ad3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb67029bc90a8f7f027199779e84ad3d">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Dominio::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_dominio.html">Dominio</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>outro</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sobrecarga do operador de igualdade. Compara o valor deste domínio com o valor de outro domínio. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outro</td><td>O objeto <a class="el" href="class_dominio.html" title="Classe base abstrata para padronização dos domínios. Esta classe fornece a estrutura fundamental para...">Dominio</a> a ser comparado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Se os valores armazenados forem estritamente iguais. </dd>
+<dd>
+false Se os valores forem diferentes. </dd></dl>
 
 </div>
 </div>

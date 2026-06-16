@@ -3,7 +3,7 @@ var annotated_dup =
     [ "Codigo", "class_codigo.html", "class_codigo" ],
     [ "Data", "class_data.html", "class_data" ],
     [ "Dominio", "class_dominio.html", "class_dominio" ],
-    [ "Email", "class_email.html", null ],
+    [ "Email", "class_email.html", "class_email" ],
     [ "Estado", "class_estado.html", null ],
     [ "HistoriaDeUsuario", "class_historia_de_usuario.html", null ],
     [ "IAAutenticacao", "class_i_a_autenticacao.html", "class_i_a_autenticacao" ],
