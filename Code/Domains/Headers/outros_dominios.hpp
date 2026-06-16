@@ -94,16 +94,47 @@ inline bool Data::ehBisexto(int ano) const{
 
 
 // EMAIL
+/**
+ * @class Email
+ * @brief Representa o domínio de um endereço de email.
+ * * Esta classe herda da classe base Dominio e armazena e garante a integridade de um valor de email, que deve seguir as regras de formatação
+ * de endereço de email estabelecidas pelo sistema, incluindo a presença de um símbolo '@' e um domínio válido após o símbolo como em "usuario@dominio.com".
+ */
 class Email : public Dominio{
     private:
+        /**
+         * @brief Método de validação específico para o domínio Email.
+         * @param string O valor do email a ser validado.
+         * * Este método é responsável por verificar se o valor do email atende aos critérios de formatação específicos, como a presença de um símbolo '@'
+         * e um domínio válido após o símbolo, garantindo que apenas endereços de email corretamente formatados sejam aceitos pelo sistema.
+         * Lançará uma exceção em caso de falha na validação.
+         */
         void validar(const std::string&) override;
+
+        /**
+         * @brief Método auxiliar para validar o formato do email.
+         * @param string String a ser analisada.
+         * * Este método auxiliar verifica as regras sintáticas do email, como a presença obrigatória e única do '@', uso correto de pontos e ausência de
+         * caracteres inválidos.
+         */
         void validar_formato(const std::string&);
 
     public:
+        /**
+         * @brief Construtor parametrizado da classe Email.
+         * @param v String com o email a ser armazenado.
+         * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor do email, garantindo que a validação seja
+         * realizada automaticamente e que apenas endereços de email corretamente formatados sejam aceitos pelo sistema. Lançará uma exceção em caso de falha na validação.
+         * 
+         */
         Email(std::string v){
             setValor(v);
         };
-
+        
+        /**
+         * @brief Construtor padrão da classe Email.
+         * * Permite a instanciação de um objeto Email sem um valor inicial. O valor real deverá ser inserido posteriormente através do método setValor().
+         */
         Email() = default;
 };
 
