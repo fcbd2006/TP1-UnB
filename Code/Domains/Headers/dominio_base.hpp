@@ -46,6 +46,16 @@ class Dominio {
          * @return Retorna uma referência constante para a string contendo o valor do domínio.
          */
         const std::string& getValor() const;
+        
+        /**
+         * @brief Sobrecarga do operador de igualdade.
+         * Compara o valor deste domínio com o valor de outro domínio.
+         * @param outro O objeto Dominio a ser comparado.
+         * @return true Se os valores armazenados forem estritamente iguais.
+         * @return false Se os valores forem diferentes.
+         */
+        bool operator==(const Dominio& outro) const;
+
 };
 
 // Método para acesso do valor armazenado
@@ -57,6 +67,11 @@ inline const std::string& Dominio::getValor() const{
 inline void Dominio::setValor(const std::string& value){
     validar(value);
     valor = value;
+}
+
+// Operador de Igualdade
+inline bool Dominio::operator==(const Dominio& outro) const {
+    return this->valor == outro.valor;
 }
 
 #endif
