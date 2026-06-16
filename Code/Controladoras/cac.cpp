@@ -184,7 +184,7 @@ void CntrIACadastro::ler(const Email& email, bool logado){
     int opcao = 0;
     Pessoa pessoa;
 
-    while(opcao == '0'){
+    while(opcao == 0){
         std::cout << "\n--- Buscar Conta ---\n";
         std::cout << "\n Deseja buscar: \n";
         std::cout << "  1 - Própria conta;\n";
