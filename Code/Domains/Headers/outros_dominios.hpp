@@ -85,7 +85,7 @@ class Data : public Dominio{
 
 // Método para verificar se o ano é bissexto ou não
 inline bool Data::ehBisexto(int ano) const{
-    if((!ano%4 && ano%100) || (!ano%400 && !ano%100)) 
+    if(((!(ano%4)) && (ano%100)) || ((!(ano%400)) && (!(ano%100)))) 
         return true;
     else 
         return false;
