@@ -92,7 +92,7 @@ void Email::validar(const std::string& email){
 }
 
 //Função auxiliar para validar as partes do email.
-void Email::validar_formato(const std::string& parte){
+void Email::validar_formato(const std::string& parte) const{
     if(parte.front() == '.' || parte.front() == '-' || parte.back() == '.' || parte.back() == '-'){
         throw std::invalid_argument("Valor Inválido para  Email.");
     }
