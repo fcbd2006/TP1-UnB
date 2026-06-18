@@ -134,7 +134,7 @@ void Nome::validar(const std::string& nome){
     if(nome.size()>10) throw std::invalid_argument("Valor Inválido para Nome -> Longo demais");
 
     // verifica se o primeiro ou ultimo caracteres sao espaços
-    if(nome[0]==' ' || nome[nome.size()-1]==' ') throw std::invalid_argument("Valor Inválido para Nome -> Espaço no início ou final");
+    if(nome[0]==' ' || *(nome.end()-1)==' ') throw std::invalid_argument("Valor Inválido para Nome -> Espaço no início ou final");
     
     // verifica cada caracter
     
@@ -145,7 +145,7 @@ void Nome::validar(const std::string& nome){
             throw std::invalid_argument("Valor Inválido para Nome -> Espaço duplicado");
         
         // verifica se algum caracter não é letra ou ' '
-        if(!(isalpha(nome[index]) || nome[index]!=' '))
+        if(!(isalpha(nome[index]) || nome[index]==' '))
             throw std::invalid_argument("Valor Inválido para Nome -> Caractere inválido");
     }
 }
@@ -223,7 +223,7 @@ void Senha::validar(const std::string& senha){
 // 1 a 365
 void Tempo::validar(const std::string& tempo){
     // verifica se tem de 1 a 3 caracteres
-    if(tempo.size()>3) throw std::invalid_argument("Valor Inválido para Tempo -> Excede tamanho");
+    if(tempo.empty() || tempo.size()>3) throw std::invalid_argument("Valor Inválido para Tempo -> Excede tamanho");
 
     // verifica se todos os caracteres são dígitos
     for(auto& c : tempo){
