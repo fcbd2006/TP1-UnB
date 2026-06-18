@@ -306,15 +306,44 @@ class Prioridade : public Dominio{
 //-----------------------------------------------------------
 
 // SENHA
+/**
+ * @class Senha
+ * @brief Representa o domínio de uma Senha.
+ * * Esta classe herda da classe base Dominio e é responsável por armazenar 
+ * e garantir a validade e o nível de segurança (Presença de letras maiúsculas, minúsculas, números e tamanho) de uma senha utilizada 
+ * para autenticação no sistema.
+ */
 class Senha : public Dominio{
     private:
+        /**
+         * @brief Implementa a regra de validação de segurança para a Senha.
+         * @param string String contendo a senha a ser testada.
+         * * Sobrescreve a função virtual pura da classe base. Este método 
+         * deve verificar se a string atende aos rigorosos critérios de 
+         * formatação e segurança do sistema (por exemplo: tamanho mínimo/máximo, 
+         * exigência de letras maiúsculas/minúsculas, números, caracteres especiais, 
+         * e ausência de espaços em branco). Lançará uma exceção em caso de falha na validação.
+         */
         void validar(const std::string&) override;
 
     public:
+        /**
+         * @brief Construtor parametrizado da classe Senha.
+         * @param v String com a senha inicial a ser atribuída.
+         * * Ao instanciar o objeto, o valor é repassado ao método setValor(),
+         * que aciona automaticamente a validação de 
+         * segurança antes de permitir o armazenamento da senha.
+         */
         Senha(std::string v){
             setValor(v);
         };
 
+        /**
+         * @brief Construtor padrão da classe Senha.
+         * * Permite a criação de um objeto Senha sem um valor inicial 
+         * definido. O valor real deverá ser atribuído posteriormente 
+         * utilizando o método setValor().
+         */
         Senha() = default;
 };
 
