@@ -176,7 +176,7 @@ void CntrIAGestaoProjetos::lerProjeto(){
         Codigo codigo; codigo.setValor(strCodigo);
         Projeto projeto; projeto.setCodigo(codigo);
 
-        if(cntrlISGestaoProjetos->lerProjeto(&projeto)){
+        if(cntrlISGestaoProjetos->lerProjeto(projeto)){
             std::cout << "\nProjeto requisitado:\n";
             std::cout << "- Codigo: " << projeto.getCodigo().getValor() << "\n";
             std::cout << "- Nome: " << projeto.getNome().getValor() << "\n";
@@ -315,7 +315,7 @@ void CntrIAGestaoProjetos::lerSprint(){
         Codigo codigo; codigo.setValor(strCodigo);
         PlanoDeSprint sprint; sprint.setCodigo(codigo);
 
-        if(cntrlISGestaoProjetos->lerPlanoSprint(&sprint)){
+        if(cntrlISGestaoProjetos->lerPlanoSprint(sprint)){
             std::cout << "\nPLano de Sprint requisitado:\n";
             std::cout << "- Codigo: " << sprint.getCodigo().getValor() << "\n";
             std::cout << "- Objetivo: " << sprint.getTexto().getValor() << "\n";

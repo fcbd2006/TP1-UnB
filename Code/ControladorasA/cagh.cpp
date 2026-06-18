@@ -249,7 +249,7 @@ void CntrIAGestaoHistorias::ler(){
         Codigo codigo; codigo.setValor(strCodigo);
         HistoriaDeUsuario historia; historia.setCodigo(codigo);
 
-        if(cntrlISGestaoHistorias->ler(&historia)){
+        if(cntrlISGestaoHistorias->ler(historia)){
             std::cout << "\nHistoria requisitada:\n";
             std::cout << "- Codigo: " << historia.getCodigo().getValor() << "\n";
             std::cout << "- Titulo: " << historia.getTitulo().getValor() << "\n";

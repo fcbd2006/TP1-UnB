@@ -228,7 +228,7 @@ void CntrIACadastro::ler(const Email& email, bool logado){
     }
     
     // Envia o email da sessão para o serviço buscar
-    if (cntrlISCadastro->ler(&pessoa)) {
+    if (cntrlISCadastro->ler(pessoa)) {
         std::cout << "\n--- Dados Pessoais ---\n";
         std::cout << "Nome:   " << pessoa.getNome().getValor() << "\n";
         std::cout << "Papel:  " << pessoa.getPapel().getValor() << "\n";

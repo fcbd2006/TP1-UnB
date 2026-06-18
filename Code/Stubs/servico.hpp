@@ -28,12 +28,11 @@ public:
         else return true;
     }
 
-    bool ler(Pessoa* pessoa) override {
-        if(pessoa == nullptr) return false;
-        if(pessoa->getEmail().getValor() == "carlos@abc"){
-            pessoa->setNome(Nome("carlos"));
-            pessoa->setPapel(Papel("DESENVOLVEDOR"));
-            pessoa->setSenha(Senha("A1b2c3"));
+    bool ler(Pessoa& pessoa) override {
+        if(pessoa.getEmail().getValor() == "carlos@abc"){
+            pessoa.setNome(Nome("carlos"));
+            pessoa.setPapel(Papel("DESENVOLVEDOR"));
+            pessoa.setSenha(Senha("A1b2c3"));
             return true;
         }
         return false;
@@ -63,16 +62,15 @@ public:
         else return true;
     }
 
-    bool ler(HistoriaDeUsuario* historia) override {
-        if(historia == nullptr) return false;
-        if(historia->getCodigo().getValor() == "AB123"){
-            historia->setAcao(Texto("texto1"));
-            historia->setEstado(Estado("FAZENDO"));
-            historia->setPapel(Texto("texto2"));
-            historia->setPrioridade(Prioridade("MEDIA"));
-            historia->setTempo(Tempo("150"));
-            historia->setTitulo(Texto("texto3"));
-            historia->setValor(Texto("texto4"));
+    bool ler(HistoriaDeUsuario& historia) override {
+        if(historia.getCodigo().getValor() == "AB123"){
+            historia.setAcao(Texto("texto1"));
+            historia.setEstado(Estado("FAZENDO"));
+            historia.setPapel(Texto("texto2"));
+            historia.setPrioridade(Prioridade("MEDIA"));
+            historia.setTempo(Tempo("150"));
+            historia.setTitulo(Texto("texto3"));
+            historia.setValor(Texto("texto4"));
             return true;
         }
         else return false;
@@ -105,16 +103,16 @@ public:
         return true;
     } 
 
-    bool listarHistoriasDeProjeto(const Codigo& codigoProjeto, std::vector<HistoriaDeUsuario>* historias) override {
+    bool listarHistoriasDeProjeto(const Codigo& codigoProjeto, std::vector<HistoriaDeUsuario>& historias) override {
         // Simulação de listagem. Inserir instâncias fictícias de HistoriaDeUsuario no vetor para testes.
         return true;
     }
 
-    bool listarHistoriasDePlanoSprint(const Codigo& codigoPlano, std::vector<HistoriaDeUsuario>* historias) override {
+    bool listarHistoriasDePlanoSprint(const Codigo& codigoPlano, std::vector<HistoriaDeUsuario>& historias) override {
         return true;
     }
 
-    bool listarHistoriasDePessoa(const Email& emailPessoa, std::vector<HistoriaDeUsuario>* historias) override {
+    bool listarHistoriasDePessoa(const Email& emailPessoa, std::vector<HistoriaDeUsuario>& historias) override {
         return true;
     }
 };

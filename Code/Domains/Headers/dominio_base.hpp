@@ -58,6 +58,15 @@ class Dominio {
          */
         bool operator==(const Dominio& outro) const;
 
+        /**
+         * @brief Sobrecarga do operador de desigualdade (menor que).
+         * Compara o valor deste domínio com o valor de outro domínio.
+         * @param outro O objeto Dominio a ser comparado.
+         * @return true Se o valor à esquerda for menor que o à direita.
+         * @return false caso contrário.
+         */
+        bool operator<(const Dominio& outro) const;
+
 };
 
 // Método para acesso do valor armazenado
@@ -74,6 +83,11 @@ inline void Dominio::setValor(const std::string& valor){
 // Operador de Igualdade
 inline bool Dominio::operator==(const Dominio& outro) const {
     return this->valor == outro.valor;
+}
+
+// Operador de menor que
+inline bool Dominio::operator<(const Dominio& outro) const {
+    return this->valor < outro.valor;
 }
 
 #endif
