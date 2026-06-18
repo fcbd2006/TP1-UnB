@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['senha_0',['Senha',['../class_senha.html',1,'']]],
+  ['senha_0',['Senha',['../class_senha.html',1,'Senha'],['../class_senha.html#aeaf935b25b13858d3a98468159e84c33',1,'Senha::Senha(std::string v)'],['../class_senha.html#a8edc05ab921361e329254814f8d4e801',1,'Senha::Senha()=default']]],
   ['setapresentacaoautenticacao_1',['setApresentacaoAutenticacao',['../class_i_a_inicial.html#ae3c7ecccfb5bdd27338eace4301fe9da',1,'IAInicial']]],
   ['setapresentacaocadastro_2',['setApresentacaoCadastro',['../class_i_a_inicial.html#aa93242981bdb98b7b4e89985e0a157af',1,'IAInicial']]],
   ['setapresentacaohistorias_3',['setApresentacaoHistorias',['../class_i_a_inicial.html#a2e5610b4339d978d6986d44b51e1ee10',1,'IAInicial']]],

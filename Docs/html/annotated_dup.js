@@ -4,7 +4,7 @@ var annotated_dup =
     [ "Data", "class_data.html", "class_data" ],
     [ "Dominio", "class_dominio.html", "class_dominio" ],
     [ "Email", "class_email.html", "class_email" ],
-    [ "Estado", "class_estado.html", null ],
+    [ "Estado", "class_estado.html", "class_estado" ],
     [ "HistoriaDeUsuario", "class_historia_de_usuario.html", null ],
     [ "IAAutenticacao", "class_i_a_autenticacao.html", "class_i_a_autenticacao" ],
     [ "IACadastro", "class_i_a_cadastro.html", "class_i_a_cadastro" ],
@@ -15,13 +15,13 @@ var annotated_dup =
     [ "ISCadastro", "class_i_s_cadastro.html", "class_i_s_cadastro" ],
     [ "ISGestaoHistorias", "class_i_s_gestao_historias.html", "class_i_s_gestao_historias" ],
     [ "ISGestaoProjetos", "class_i_s_gestao_projetos.html", "class_i_s_gestao_projetos" ],
-    [ "Nome", "class_nome.html", null ],
-    [ "Papel", "class_papel.html", null ],
+    [ "Nome", "class_nome.html", "class_nome" ],
+    [ "Papel", "class_papel.html", "class_papel" ],
     [ "Pessoa", "class_pessoa.html", null ],
     [ "PlanoDeSprint", "class_plano_de_sprint.html", null ],
-    [ "Prioridade", "class_prioridade.html", null ],
+    [ "Prioridade", "class_prioridade.html", "class_prioridade" ],
     [ "Projeto", "class_projeto.html", null ],
-    [ "Senha", "class_senha.html", null ],
-    [ "Tempo", "class_tempo.html", null ],
-    [ "Texto", "class_texto.html", null ]
+    [ "Senha", "class_senha.html", "class_senha" ],
+    [ "Tempo", "class_tempo.html", "class_tempo" ],
+    [ "Texto", "class_texto.html", "class_texto" ]
 ];

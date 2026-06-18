@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['removerassociacaopessoa_0',['removerAssociacaoPessoa',['../class_i_s_gestao_historias.html#a5093e67f1eff16b19a85c59e2f7fd2e8',1,'ISGestaoHistorias']]]
+  ['operator_3d_3d_0',['operator==',['../class_dominio.html#afb67029bc90a8f7f027199779e84ad3d',1,'Dominio']]]
 ];

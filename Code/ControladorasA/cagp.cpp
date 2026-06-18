@@ -1,11 +1,11 @@
-#include "Controladoras/Headers/cagp.hpp"
+#include "ControladorasA/Headers/cagp.hpp"
 #include "Interfaces/Headers/interfaces_servico.hpp"
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <limits>
 
-void CntrIAGestaoProjetos::executar(const Email& email) {
+void CntrIAGestaoProjetos::executar(const Email& email, const Papel& papel) {
     int opcao = 0;
     bool executando = true;
 
@@ -14,6 +14,7 @@ void CntrIAGestaoProjetos::executar(const Email& email) {
         std::cout << "======================================\n";
         std::cout << "      GESTAO DE PROJETOS E SPRINTS    \n";
         std::cout << "      Utilizador: " << email.getValor() << "\n";
+        std::cout << "      Papel: " << papel.getValor() << "\n";
         std::cout << "======================================\n";
         std::cout << CRIAR_PROJETO << " - Criar novo Projeto\n";
         std::cout << LER_PROJETO << " - Visualizar Projeto\n";
@@ -37,35 +38,74 @@ void CntrIAGestaoProjetos::executar(const Email& email) {
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         switch (opcao) {
+
+            // GESTÃO DE PROJETOS
+
             case CRIAR_PROJETO:
-                this->criarProjeto(email);
+                if (papel.getValor() == "PROPRIETARIO DE PRODUTO") {
+                    this->criarProjeto(email);
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Proprietario de Produto pode criar projetos.\n";
+                }
                 break;
+                
             case LER_PROJETO:
                 this->lerProjeto();
                 break;
+                
             case ATUALIZAR_PROJETO:
-                this->atualizarProjeto(email);
+                if (papel.getValor() == "PROPRIETARIO DE PRODUTO") {
+                    this->atualizarProjeto(email);
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Proprietario de Produto pode atualizar projetos.\n";
+                }
                 break;
+                
             case EXCLUIR_PROJETO:
-                this->excluirProjeto(email);
+                if (papel.getValor() == "PROPRIETARIO DE PRODUTO") {
+                    this->excluirProjeto(email);
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Proprietario de Produto pode excluir projetos.\n";
+                }
                 break;
+                
             case LISTAR_PROJETOS_PESSOA:
-                std::cout << "\n--- Projetos de uma Pessoa ---\n"; break;
-            
-            case CRIAR_SPRINT:
-                this->criarSprint(email);
+                std::cout << "\n--- Projetos de uma Pessoa ---\n"; 
                 break;
+            
+            // ---- GESTÃO DE PLANOS DE SPRINT ----
+
+            case CRIAR_SPRINT:
+                if (papel.getValor() == "MESTRE SCRUM") {
+                    this->criarSprint(email);
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Mestre Scrum pode criar planos de sprint.\n";
+                }
+                break;
+                
             case LER_SPRINT:
                 this->lerSprint();
                 break;
+                
             case ATUALIZAR_SPRINT:
-                this->atualizarSprint(email);
+                if (papel.getValor() == "MESTRE SCRUM") {
+                    this->atualizarSprint(email);
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Mestre Scrum pode atualizar planos de sprint.\n";
+                }
                 break;
+                
             case EXCLUIR_SPRINT:
-                this->excluirSprint(email);
+                if (papel.getValor() == "MESTRE SCRUM") {
+                    this->excluirSprint(email);
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Mestre Scrum pode excluir planos de sprint.\n";
+                }
                 break;
+                
             case LISTAR_SPRINTS_PROJETO:
-                std::cout << "\n--- Sprints do Projeto ---\n"; break; // cntrlISGestaoProjetos->listarPlanosSprintDeProjeto(codigoProjeto, &vetorSprints)
+                std::cout << "\n--- Sprints do Projeto ---\n";
+                break; 
 
             case RETORNAR:
                 executando = false;

@@ -55,7 +55,7 @@ public:
      * @brief Executa o menu principal de gestão de Histórias de Usuário.
      * @param email Referência constante para o e-mail do usuário atualmente autenticado.
      */
-    void executar(const Email& email) override;
+    void executar(const Email& email, const Papel& papel) override;
 
     /**
      * @brief Define o módulo de serviço de gestão de histórias que será dependência.

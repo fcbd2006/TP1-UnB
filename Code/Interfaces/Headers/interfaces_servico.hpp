@@ -18,9 +18,10 @@ public:
      * @brief Método virtual puro para autenticar um usuário.
      * @param email Instância da classe de domínio Email.
      * @param senha Instância da classe de domínio Senha.
+     * @param papel Instância de classe papel a ser preenchida com o papel do usuário, caso a autenticação seja bem sucedida.
      * @return true se as credenciais forem válidas, false caso contrário.
      */
-    virtual bool autenticar(const Email& email, const Senha& senha) = 0;
+    virtual bool autenticar(const Email& email, const Senha& senha, Papel& papel) = 0;
 
     //-----------------------------------------------------------
 
@@ -53,7 +54,7 @@ public:
      * @param pessoa Ponteiro para o objeto Pessoa que será preenchido com os dados recuperados.
      * @return true se a leitura foi bem-sucedida, false se a pessoa não foi encontrada.
      */
-    virtual bool ler(Pessoa* pessoa) = 0;
+    virtual bool ler(Pessoa& pessoa) = 0;
 
     /**
      * @brief Atualiza os dados de uma Pessoa existente (Serviço 3).
@@ -103,7 +104,7 @@ public:
      * @param projeto Ponteiro para o objeto Projeto que receberá os dados recuperados do sistema.
      * @return true se a leitura foi bem-sucedida, false se o projeto não foi encontrado.
      */
-    virtual bool lerProjeto(Projeto* projeto) = 0;
+    virtual bool lerProjeto(Projeto& projeto) = 0;
 
     /**
      * @brief Atualiza os dados de um Projeto existente (Serviço 7).
@@ -135,7 +136,7 @@ public:
      * @param plano Ponteiro para o objeto PlanoDeSprint que receberá os dados do sistema.
      * @return true se a leitura foi bem-sucedida, false se o plano de sprint não foi encontrado.
      */
-    virtual bool lerPlanoSprint(PlanoDeSprint* plano) = 0;
+    virtual bool lerPlanoSprint(PlanoDeSprint& plano) = 0;
 
     /**
      * @brief Atualiza os dados de um Plano de Sprint existente (Serviço 11).
@@ -161,7 +162,7 @@ public:
      * @param projetos Ponteiro para um vetor que será populado com as instâncias de Projeto encontradas.
      * @return true se a operação de busca foi bem-sucedida, false em caso de falha.
      */
-    virtual bool listarProjetosDePessoa(const Email& emailPessoa, std::vector<Projeto>* projetos) = 0;
+    virtual bool listarProjetosDePessoa(const Email& emailPessoa, std::vector<Projeto>& projetos) = 0;
 
     /**
      * @brief Lista todos os Planos de Sprint associados a um Projeto (Serviço 21).
@@ -169,7 +170,7 @@ public:
      * @param planos Ponteiro para um vetor que será populado com as instâncias de PlanoDeSprint encontradas.
      * @return true se a operação de busca foi bem-sucedida, false em caso de falha.
      */
-    virtual bool listarPlanosSprintDeProjeto(const Codigo& codigoProjeto, std::vector<PlanoDeSprint>* planos) = 0;
+    virtual bool listarPlanosSprintDeProjeto(const Codigo& codigoProjeto, std::vector<PlanoDeSprint>& planos) = 0;
 
     //-----------------------------------------------------------
 
@@ -198,7 +199,7 @@ public:
      * @param historia Ponteiro para o objeto HistoriaDeUsuario que receberá os dados do sistema.
      * @return true se a leitura foi bem-sucedida, false se a história de usuário não foi encontrada.
      */
-    virtual bool ler(HistoriaDeUsuario* historia) = 0;
+    virtual bool ler(HistoriaDeUsuario& historia) = 0;
 
     /**
      * @brief Atualiza os dados de uma História de Usuário existente (Serviço 15).
@@ -256,7 +257,7 @@ public:
      * @param historias Ponteiro para um vetor que será populado com as instâncias de HistoriaDeUsuario encontradas.
      * @return true se a operação de busca foi bem-sucedida, false em caso de falha.
      */
-    virtual bool listarHistoriasDeProjeto(const Codigo& codigoProjeto, std::vector<HistoriaDeUsuario>* historias) = 0;
+    virtual bool listarHistoriasDeProjeto(const Codigo& codigoProjeto, std::vector<HistoriaDeUsuario>& historias) = 0;
 
     /**
      * @brief Lista todas as Histórias de Usuário associadas a um Plano de Sprint (Serviço 22).
@@ -264,7 +265,7 @@ public:
      * @param historias Ponteiro para um vetor que será populado com as instâncias de HistoriaDeUsuario encontradas.
      * @return true se a operação de busca foi bem-sucedida, false em caso de falha.
      */
-    virtual bool listarHistoriasDePlanoSprint(const Codigo& codigoPlano, std::vector<HistoriaDeUsuario>* historias) = 0;
+    virtual bool listarHistoriasDePlanoSprint(const Codigo& codigoPlano, std::vector<HistoriaDeUsuario>& historias) = 0;
 
     /**
      * @brief Lista todas as Histórias de Usuário associadas a uma Pessoa (Serviço 23).
@@ -272,7 +273,7 @@ public:
      * @param historias Ponteiro para um vetor que será populado com as instâncias de HistoriaDeUsuario encontradas.
      * @return true se a operação de busca foi bem-sucedida, false em caso de falha.
      */
-    virtual bool listarHistoriasDePessoa(const Email& emailPessoa, std::vector<HistoriaDeUsuario>* historias) = 0;
+    virtual bool listarHistoriasDePessoa(const Email& emailPessoa, std::vector<HistoriaDeUsuario>& historias) = 0;
 
     //-----------------------------------------------------------
 

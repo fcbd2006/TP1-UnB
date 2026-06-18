@@ -1,4 +1,4 @@
-#include "Controladoras/Headers/cai.hpp"
+#include "ControladorasA/Headers/cai.hpp"
 #include <iostream>
 #include <limits>
 
@@ -7,6 +7,7 @@ void CntrIAInicial::executar() {
     bool executando = true;
     bool logado = false;
     Email emailSessao;
+    Papel papelSessao;
 
     while (executando) {
         system("clear");
@@ -35,12 +36,12 @@ void CntrIAInicial::executar() {
         if (!logado) {
             switch (opcao) {
                 case AUTENTICAR:
-                    if (cntrlIAAutenticacao->autenticar(emailSessao)) {
+                    if (cntrlIAAutenticacao->autenticar(emailSessao, papelSessao)) {
                         logado = true;
                     }
                     break;
                 case CADASTRO:
-                    cntrlIACadastro->executar(emailSessao);
+                    cntrlIACadastro->executar(emailSessao, papelSessao);
                     if(emailSessao.getValor() != ""){
                         logado = true;
                     }
@@ -56,16 +57,16 @@ void CntrIAInicial::executar() {
         }else{
             switch (opcao) {
                 case CADASTRO:
-                    cntrlIACadastro->executar(emailSessao);
+                    cntrlIACadastro->executar(emailSessao, papelSessao);
                     if (emailSessao.getValor() == "") {
                         logado = false;
                     }
                     break;
                 case GESTAO_P:
-                    cntrlIAGestaoProjetos->executar(emailSessao);
+                    cntrlIAGestaoProjetos->executar(emailSessao, papelSessao);
                     break;
                 case GESTAO_H:
-                    cntrlIAGestaoHistorias->executar(emailSessao);
+                    cntrlIAGestaoHistorias->executar(emailSessao, papelSessao);
                     break;
                 case SAIR:
                     logado = false;
