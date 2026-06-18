@@ -97,27 +97,46 @@ class Projeto{
         void setDataEnd(const Data& termino){this->termino = termino;};
 };
 
+/**
+ * @class PlanoDeSprint
+ * @brief Entidade que representa um Plano de Sprint.
+ * * Mantém os dados referentes a uma iteração de trabalho (Sprint), 
+ * incluindo o seu objetivo principal e a capacidade de tempo alocada.
+ */
 class PlanoDeSprint{
     private:
-        Codigo codigo;
-        Texto objetivo;
-        Tempo capacidade;
+        Codigo codigo; ///< Identificador único do plano de sprint.
+        Texto objetivo; ///< Descrição do objetivo principal da sprint.
+        Tempo capacidade; ///< Capacidade total de tempo alocada para a sprint.
     public:
         // Construtor
         //PlanoDeSprint(const Codigo& codigo, const Texto& objetivo, const Tempo& capacidade)
         // : capacidade(capacidade), objetivo(objetivo), codigo(codigo){};
+        /**
+         * @brief Construtor padrão da classe PlanoDeSprint.
+         */
         PlanoDeSprint() = default;
         
         // Destrutor
+        /**
+         * @brief Destrutor virtual da classe PlanoDeSprint.
+         */
         virtual ~PlanoDeSprint() = default;
-        // Métodos get referente aos atributos da Entidade
+
+        // Métodos getters referentes aos atributos da Entidade
+        /** @brief Recupera o código da sprint. @return Objeto Codigo. */
         Codigo getCodigo() const{return codigo;};
+        /** @brief Recupera o objetivo da sprint. @return Objeto Texto. */
         Texto getTexto() const{return objetivo;};
+        /** @brief Recupera a capacidade da sprint. @return Objeto Tempo. */
         Tempo getTempo() const{return capacidade;};
 
-        //Métodos set referentes aos atributos dessa Entidades
+        //Métodos setters referentes aos atributos da Entidade
+        /** @brief Atribui o código da sprint. @param codigo Objeto Codigo. */
         void setCodigo(const Codigo& codigo){this->codigo = codigo;};
+        /** @brief Atribui o objetivo da sprint. @param objetivo Objeto Texto. */
         void setTexto(const Texto& objetivo){this->objetivo = objetivo;};
+        /** @brief Atribui a capacidade de tempo. @param capacidade Objeto Tempo. */
         void setTempo(const Tempo& capacidade){this->capacidade = capacidade;};
 
 };
