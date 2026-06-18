@@ -233,7 +233,6 @@ void CntrIACadastro::ler(const Email& email, bool logado){
         std::cout << "Nome:   " << pessoa.getNome().getValor() << "\n";
         std::cout << "Papel:  " << pessoa.getPapel().getValor() << "\n";
         std::cout << "E-mail: " << pessoa.getEmail().getValor() << "\n";
-        std::cout << "Senha:  " << pessoa.getSenha().getValor() << "\n";
     } else {
         std::cout << "\nErro crítico: Dados da conta não encontrados.\n";
     }
