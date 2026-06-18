@@ -142,15 +142,39 @@ class Email : public Dominio{
 //-----------------------------------------------------------
 
 // ESTADO
+/**
+ * @class Estado
+ * @brief Representa o domínio de um Estado (status de progresso).
+ * * Esta classe herda da classe base Dominio e é responsável por armazenar 
+ * e garantir a validade do status de uma atividade ou processo no sistema.
+ */
 class Estado : public Dominio{
     private:
+        /**
+         * @brief Método de validação específico para o dommínio Estado.
+         * @param string String contendo o estado a ser testado.
+         * * Sobrescreve a função virtual pura da classe base. Este método 
+         * deve verificar se a string fornecida corresponde a um estado válido dentro das epecificações do sistema. Lançará uma exceção em caso de falha na validação.
+         */
         void validar(const std::string&) override;
 
     public:
+        /**
+         * @brief Construtor parametrizado da classe Estado.
+         * @param v String contendo o estado a ser armazenado.
+         * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor do estado, garantindo que a validação
+         *  seja realizada automaticamente e que apenas estados válidos sejam aceitos pelo sistema. Lançará uma exceção em caso de falha na validação.
+         */
         Estado(std::string v){
             setValor(v);
         };
 
+        /**
+         * @brief Construtor padrão da classe Estado.
+         * * Permite criar um objeto Estado sem um status inicial definido. 
+         * Útil para instanciar o objeto primeiramente e atribuir o seu valor 
+         * mais tarde através do método setValor().
+         */
         Estado() = default;
 };
 
