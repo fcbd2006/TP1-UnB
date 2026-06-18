@@ -18,11 +18,12 @@ class Dominio {
 
         /**
          * @brief Método virtual puro para validação do valor.
+         * @param valor_candidato O valor a ser testado pelas regras de validação da classe filha.
          ** Este método é chamado automaticamente pelo método setValor().
          * Classes filhas devem implementá-lo, tipicamente lançando uma exceção (ex: std::invalid_argument)
          * caso a validação falhe.
          */
-        virtual void validar(const std::string&) = 0;
+        virtual void validar(const std::string& valor_candidato) = 0;
 
     public:
         /**
@@ -38,8 +39,9 @@ class Dominio {
 
         /** 
          * @brief Método para definir o valor do domínio.
+         * @param valor O valor em formato de string a ser validado e armazenado no domínio.
         */ 
-        void setValor(const std::string&);
+        void setValor(const std::string& valor);
 
         /**
          * @brief Método para obter o valor do domínio.
@@ -64,9 +66,9 @@ inline const std::string& Dominio::getValor() const{
 }
 
 // Método para armazenar um valor
-inline void Dominio::setValor(const std::string& value){
-    validar(value);
-    valor = value;
+inline void Dominio::setValor(const std::string& valor){
+    validar(valor);
+    this->valor = valor;
 }
 
 // Operador de Igualdade
