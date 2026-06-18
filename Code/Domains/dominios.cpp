@@ -100,7 +100,7 @@ void Email::validar_formato(const std::string& parte) const{
     for(size_t i = 0; i < parte.length(); i++){
         char c = parte[i];
 
-        if(!isalnum(c) && c != '.' && c != '-'){
+        if(!(islower(c) || isdigit(c)) && c != '.' && c != '-'){
             throw std::invalid_argument("Valor Inválido para Email.");
         }
 
