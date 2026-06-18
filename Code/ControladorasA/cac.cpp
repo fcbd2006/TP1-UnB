@@ -154,7 +154,7 @@ void CntrIACadastro::cadastrar(Email& email, Papel& papel, bool& logado){
     try {
         // Instancia os domínios e valida o formato
         Nome nome;       nome.setValor(strNome);
-        Papel novoPapel;     papel.setValor(strPapel);
+        Papel novoPapel; novoPapel.setValor(strPapel);
         Senha senha;     senha.setValor(strSenha);
         Email novoEmail; novoEmail.setValor(strEmail);
 
