@@ -17,11 +17,50 @@ template <typename K, typename V>
 class Container {
     private:
         /**
+         * @brief Construtor padrão privado.
+         * * Ocultado para impedir a criação de instâncias da classe de forma 
+         * direta garantindo, assim, o padrão Singleton.
+         */
+        Container() = default;
+
+        /**
+         * @brief Destrutor padrão privado.
+         * * Ocultado para impedir que a instância única seja destruída manualmente.
+         */
+        ~Container() = default;
+
+        /**
          * @brief Contêiner interno do tipo mapa que armazena os dados.
          */
         std::map<K, V> container;
 
     public:
+        /**
+         * @brief Construtor de cópia deletado para garantir o padrão Singleton.
+         * * Impede que a instância do contêiner seja copiada acidentalmente. 
+         * Isso é fundamental para o padrão Singleton, pois garante que 
+         * nunca existirá mais de um objeto deste tipo em memória.
+         */
+        Container(const Container&) = delete;
+
+        /**
+         * @brief Operador de atribuição deletado para garantir o padrão Singleton.
+         * * Evita que o estado da instância única seja sobrescrito ou atribuído 
+         * através do operador de igualdade (=), mantendo a integridade da instância.
+         */
+        Container& operator=(const Container&) = delete;
+
+        /**
+         * @brief Obtém a instância única e global do contêiner.
+         * * Este método é o único ponto de acesso ao contêiner. A instância é 
+         * criada apenas na primeira vez em que esta função é chamada.
+         * * @return Container& Referência para a instância única do contêiner.
+         */
+        static Container& getInstance(){
+            static Container instance;
+            return instance;
+        }
+
         /**
          * @brief Inclui um novo item no contêiner.
          * * @param chave A chave identificadora do item a ser incluído.
