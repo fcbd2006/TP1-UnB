@@ -221,15 +221,42 @@ class Nome : public Dominio{
 //-----------------------------------------------------------
 
 // PAPEL
+/**
+ * @class Papel
+ * @brief Representa o domínio de um Papel (contribuição no projeto).
+ * * Esta classe herda da classe base Dominio e é responsável por armazenar 
+ * e garantir a validade da função desempenhada por um indivíduo dentro 
+ * do contexto de um projeto ou programa.
+ */
 class Papel : public Dominio{
     private:
+        /**
+         * @brief Implementa a regra de validação para o Papel.
+         * @param string String contendo o papel a ser testado.
+         * * Sobrescreve a função virtual pura da classe base. Este método 
+         * deve verificar se a string fornecida corresponde estritamente a 
+         * um dos papéis permitidos pelo sistema (por exemplo: "desenvolvedor"). Lançará uma exceção em caso de falha na validação.
+         */
         void validar(const std::string&) override;
 
     public:
+    /**
+         * @brief Construtor parametrizado da classe Papel.
+         * @param v String com o papel inicial a ser atribuído.
+         * * Ao ser instanciado, o construtor repassa o valor recebido para 
+         * o método setValor(), que automaticamente 
+         * invoca a validação restrita antes de armazenar o dado.
+         */
         Papel(std::string v){
             setValor(v);
         };
 
+        /**
+         * @brief Construtor padrão da classe Papel.
+         * * Permite a instanciação de um objeto Papel sem um valor inicial. 
+         * Útil para alocação prévia, sendo que o valor real deverá ser 
+         * inserido posteriormente através do método setValor().
+         */
         Papel() = default;
 };
 
