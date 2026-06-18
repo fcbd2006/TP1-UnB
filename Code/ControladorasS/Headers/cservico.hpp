@@ -171,10 +171,6 @@ public:
      */
     bool excluir(const Codigo& codigoHistoria) override;
 
-    // ==========================================
-    // Métodos de Relacionamento e Estado
-    // ==========================================
-
     /**
      * @brief Associa uma pessoa (desenvolvedor/responsável) a uma história de usuário.
      * @param codigoHistoria Código identificador da história.
@@ -206,10 +202,6 @@ public:
      * @return true se a alteração for bem-sucedida, false caso contrário.
      */
     bool alterarEstado(const Codigo& codigoHistoria, const Estado& novoEstado) override;
-
-    // ==========================================
-    // Listagens
-    // ==========================================
 
     /**
      * @brief Lista todas as histórias de usuário pertencentes a um projeto.

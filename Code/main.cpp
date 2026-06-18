@@ -3,6 +3,7 @@
 #include "ControladorasA/Headers/cagh.hpp"
 #include "ControladorasA/Headers/cagp.hpp"
 #include "ControladorasA/Headers/caa.hpp"
+#include "ControladorasS/Headers/cservico.hpp"
 #include "Stubs/servico.hpp"
 
 using namespace std;
@@ -14,8 +15,8 @@ int main()
     CntrIACadastro cad;
     CntrIAGestaoHistorias hist;
     CntrIAGestaoProjetos proj;
-    auth.setServicoAutenticacao(new StubAutenticacao);
-    cad.setServicoCadastro(new StubCadastro);
+    auth.setServicoAutenticacao(new CntrISAutenticacao);
+    cad.setServicoCadastro(new CntrISCadastro);
     hist.setServicoGestaoHistorias(new StubGestaoHistorias);
     programa.setApresentacaoAutenticacao(&auth);
     programa.setApresentacaoCadastro(&cad);
