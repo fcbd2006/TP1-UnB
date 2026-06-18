@@ -99,8 +99,8 @@ $(function(){initNavTree('class_i_s_autenticacao.html','','class_i_s_autenticaca
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af094ec8508182967beea13762e2df9b0" id="r_af094ec8508182967beea13762e2df9b0"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#af094ec8508182967beea13762e2df9b0">autenticar</a> (const <a class="el" href="class_email.html">Email</a> &amp;email, const <a class="el" href="class_senha.html">Senha</a> &amp;senha)=0</td></tr>
-<tr class="memdesc:af094ec8508182967beea13762e2df9b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método virtual puro para autenticar um usuário.  <br /></td></tr>
+<tr class="memitem:a3cf84baa2ee1190b378d2a868f58b0f5" id="r_a3cf84baa2ee1190b378d2a868f58b0f5"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a3cf84baa2ee1190b378d2a868f58b0f5">autenticar</a> (const <a class="el" href="class_email.html">Email</a> &amp;email, const <a class="el" href="class_senha.html">Senha</a> &amp;senha, <a class="el" href="class_papel.html">Papel</a> &amp;papel)=0</td></tr>
+<tr class="memdesc:a3cf84baa2ee1190b378d2a868f58b0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método virtual puro para autenticar um usuário.  <br /></td></tr>
 <tr class="memitem:af0b6fd5cc2afd985070db8991b3da3a9" id="r_af0b6fd5cc2afd985070db8991b3da3a9"><td class="memItemLeft"><a id="af0b6fd5cc2afd985070db8991b3da3a9" name="af0b6fd5cc2afd985070db8991b3da3a9"></a>
 virtual&#160;</td><td class="memItemRight"><b>~ISAutenticacao</b> ()</td></tr>
 <tr class="memdesc:af0b6fd5cc2afd985070db8991b3da3a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual padrão. <br /></td></tr>
@@ -108,8 +108,8 @@ virtual&#160;</td><td class="memItemRight"><b>~ISAutenticacao</b> ()</td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface de serviço de autenticação (ISA). Esta classe abstrata define o contrato para a validação de acesso ao sistema. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="af094ec8508182967beea13762e2df9b0" name="af094ec8508182967beea13762e2df9b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af094ec8508182967beea13762e2df9b0">&#9670;&#160;</a></span>autenticar()</h2>
+<a id="a3cf84baa2ee1190b378d2a868f58b0f5" name="a3cf84baa2ee1190b378d2a868f58b0f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf84baa2ee1190b378d2a868f58b0f5">&#9670;&#160;</a></span>autenticar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +125,12 @@ virtual&#160;</td><td class="memItemRight"><b>~ISAutenticacao</b> ()</td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_senha.html">Senha</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>senha</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="class_senha.html">Senha</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>senha</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_papel.html">Papel</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>papel</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -139,7 +144,8 @@ virtual&#160;</td><td class="memItemRight"><b>~ISAutenticacao</b> ()</td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">email</td><td>Instância da classe de domínio <a class="el" href="class_email.html" title="Representa o domínio de um endereço de email.">Email</a>. </td></tr>
-    <tr><td class="paramname">senha</td><td>Instância da classe de domínio <a class="el" href="class_senha.html">Senha</a>. </td></tr>
+    <tr><td class="paramname">senha</td><td>Instância da classe de domínio <a class="el" href="class_senha.html" title="Representa o domínio de uma Senha.">Senha</a>. </td></tr>
+    <tr><td class="paramname">papel</td><td>Instância de classe papel a ser preenchida com o papel do usuário, caso a autenticação seja bem sucedida. </td></tr>
   </table>
   </dd>
 </dl>

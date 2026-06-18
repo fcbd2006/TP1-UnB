@@ -1,11 +1,11 @@
-#include "Controladoras/Headers/caa.hpp"
+#include "ControladorasA/Headers/caa.hpp"
 #include "Interfaces/Headers/interfaces_servico.hpp"
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <limits>
 
-bool CntrIAAutenticacao::autenticar(Email& email) {
+bool CntrIAAutenticacao::autenticar(Email& email, Papel& papel) {
     std::string entradaEmail, entradaSenha;
     int entrada = 0;
     Email emailTemp;
@@ -45,7 +45,7 @@ bool CntrIAAutenticacao::autenticar(Email& email) {
             senhaTemp.setValor(entradaSenha);
 
             // chama a camada de serviço que vai verificar no banco de dados
-            if (cntrlISAutenticacao->autenticar(emailTemp, senhaTemp)) {
+            if (cntrlISAutenticacao->autenticar(emailTemp, senhaTemp, papel)) {
                 email.setValor(emailTemp.getValor()); // Salva o e-mail na sessão
                 std::cout << "\nAutenticacao realizada com sucesso.\n";
                 std::cout << "Pressione ENTER para continuar...";

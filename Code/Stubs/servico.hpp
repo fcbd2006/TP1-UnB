@@ -11,8 +11,8 @@
 
 class StubAutenticacao : public ISAutenticacao {
 public:
-    bool autenticar(const Email& email, const Senha& senha) override {
-        if(email.getValor() == "carlos@abc" && senha.getValor() =="A1b2c3") return true;
+    bool autenticar(const Email& email, const Senha& senha, Papel& papel) override {
+        if(email.getValor() == "carlos@abc" && senha.getValor() =="A1b2c3"){ papel.setValor("DESENVOLVEDOR"); return true;}
         else return false; 
     }
 };

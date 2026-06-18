@@ -30,10 +30,11 @@ public:
      * Solicita as credenciais de acesso (e-mail e senha), realiza a validação de 
      * formato dos dados inseridos e invoca a camada de serviço para confirmar a autenticidade.
      *
-     * @param email Ponteiro para o objeto Email que será preenchido com o identificador do utilizador autenticado em caso de sucesso.
+     * @param email Objeto Email que será preenchido com o identificador do utilizador autenticado em caso de sucesso.
+     * @param papel Objeto Papel que será preenchido com o papel do utilizador autenticado em caso de sucesso.
      * @return true se o utilizador for autenticado com sucesso, false caso contrário.
      */
-    virtual bool autenticar(Email& email) = 0;
+    virtual bool autenticar(Email& email, Papel& papel) = 0;
 
     /**
      * @brief Define a ligação com o respectivo módulo de serviço de autenticação.
@@ -66,9 +67,10 @@ public:
      * Caso o e-mail fornecido esteja vazio, apresenta o fluxo de criação de uma nova conta.
      * Caso contrário, apresenta as opções de visualização, modificação ou exclusão dos dados da conta logada.
      *
-     * @param email Referência constante para o e-mail do utilizador em sessão (pode ser um objeto vazio).
+     * @param email Referência para o e-mail do utilizador em sessão (pode ser um objeto vazio).
+     * @param papel Referência para o papel do utilizador em sessão (pode ser um objeto vazio).
      */
-    virtual void executar(Email& email) = 0;
+    virtual void executar(Email& email, Papel& papel) = 0;
 
     /**
      * @brief Define a ligação com o respectivo módulo de serviço de cadastro.
@@ -102,8 +104,9 @@ public:
      * As opções exibidas devem respeitar as restrições de permissões do papel associado ao e-mail.
      *
      * @param email Referência constante para o e-mail do utilizador autenticado que está operando o sistema.
+     * @param papel Referência constante para o papel do utilizador autenticado que está operando o sistema.
      */
-    virtual void executar(const Email& email) = 0;
+    virtual void executar(const Email& email, const Papel& papel) = 0;
 
     /**
      * @brief Define a ligação com o respectivo módulo de serviço de gestão de projetos.
@@ -132,8 +135,9 @@ public:
      * As opções exibidas devem respeitar as restrições de permissões do papel associado ao e-mail.
      *
      * @param email Referência constante para o e-mail do utilizador autenticado que está operando o sistema.
+     * @param papel Referência constante para o papel do utilizador autenticado que está operando o sistema.
      */
-    virtual void executar(const Email& email) = 0;
+    virtual void executar(const Email& email, const Papel& papel) = 0;
 
     /**
      * @brief Define a ligação com o respectivo módulo de serviço de gestão de histórias.

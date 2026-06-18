@@ -99,8 +99,8 @@ $(function(){initNavTree('class_i_a_autenticacao.html','','class_i_a_autenticaca
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8841e1d384637703d402ecfb353ea8be" id="r_a8841e1d384637703d402ecfb353ea8be"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a8841e1d384637703d402ecfb353ea8be">autenticar</a> (<a class="el" href="class_email.html">Email</a> &amp;email)=0</td></tr>
-<tr class="memdesc:a8841e1d384637703d402ecfb353ea8be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o menu de autenticação de usuário.  <br /></td></tr>
+<tr class="memitem:a57255c3eeeb30ed079f80c8b4c6b1015" id="r_a57255c3eeeb30ed079f80c8b4c6b1015"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a57255c3eeeb30ed079f80c8b4c6b1015">autenticar</a> (<a class="el" href="class_email.html">Email</a> &amp;email, <a class="el" href="class_papel.html">Papel</a> &amp;papel)=0</td></tr>
+<tr class="memdesc:a57255c3eeeb30ed079f80c8b4c6b1015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o menu de autenticação de usuário.  <br /></td></tr>
 <tr class="memitem:a7e9fcd83d94462036342bcca87a55444" id="r_a7e9fcd83d94462036342bcca87a55444"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a7e9fcd83d94462036342bcca87a55444">setServicoAutenticacao</a> (<a class="el" href="class_i_s_autenticacao.html">ISAutenticacao</a> *servico)=0</td></tr>
 <tr class="memdesc:a7e9fcd83d94462036342bcca87a55444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a ligação com o respectivo módulo de serviço de autenticação.  <br /></td></tr>
 <tr class="memitem:a3db80f26e7a5b45937270f74a818c715" id="r_a3db80f26e7a5b45937270f74a818c715"><td class="memItemLeft"><a id="a3db80f26e7a5b45937270f74a818c715" name="a3db80f26e7a5b45937270f74a818c715"></a>
@@ -111,8 +111,8 @@ virtual&#160;</td><td class="memItemRight"><b>~IAAutenticacao</b> ()</td></tr>
 <div class="textblock"><p>Interface de apresentação de autenticação (IAA). </p>
 <p>Esta classe abstrata estabelece o contrato para a interação com o utilizador durante o fluxo de entrada e login no sistema. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a8841e1d384637703d402ecfb353ea8be" name="a8841e1d384637703d402ecfb353ea8be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8841e1d384637703d402ecfb353ea8be">&#9670;&#160;</a></span>autenticar()</h2>
+<a id="a57255c3eeeb30ed079f80c8b4c6b1015" name="a57255c3eeeb30ed079f80c8b4c6b1015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57255c3eeeb30ed079f80c8b4c6b1015">&#9670;&#160;</a></span>autenticar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,8 +123,12 @@ virtual&#160;</td><td class="memItemRight"><b>~IAAutenticacao</b> ()</td></tr>
         <tr>
           <td class="memname">virtual bool IAAutenticacao::autenticar </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_email.html">Email</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_email.html">Email</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_papel.html">Papel</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>papel</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -138,7 +142,8 @@ virtual&#160;</td><td class="memItemRight"><b>~IAAutenticacao</b> ()</td></tr>
 <p>Solicita as credenciais de acesso (e-mail e senha), realiza a validação de formato dos dados inseridos e invoca a camada de serviço para confirmar a autenticidade.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">email</td><td>Ponteiro para o objeto <a class="el" href="class_email.html" title="Representa o domínio de um endereço de email.">Email</a> que será preenchido com o identificador do utilizador autenticado em caso de sucesso. </td></tr>
+    <tr><td class="paramname">email</td><td>Objeto <a class="el" href="class_email.html" title="Representa o domínio de um endereço de email.">Email</a> que será preenchido com o identificador do utilizador autenticado em caso de sucesso. </td></tr>
+    <tr><td class="paramname">papel</td><td>Objeto <a class="el" href="class_papel.html" title="Representa o domínio de um Papel (contribuição no projeto).">Papel</a> que será preenchido com o papel do utilizador autenticado em caso de sucesso. </td></tr>
   </table>
   </dd>
 </dl>

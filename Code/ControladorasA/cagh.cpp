@@ -1,11 +1,11 @@
-#include "Controladoras/Headers/cagh.hpp"
+#include "ControladorasA/Headers/cagh.hpp"
 #include "Interfaces/Headers/interfaces_servico.hpp"
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <limits>
 
-void CntrIAGestaoHistorias::executar(const Email& email) {
+void CntrIAGestaoHistorias::executar(const Email& email, const Papel& papel) {
     int opcao = 0;
     bool executando = true;
 
@@ -14,6 +14,7 @@ void CntrIAGestaoHistorias::executar(const Email& email) {
         std::cout << "======================================\n";
         std::cout << "      GESTAO DE HISTORIAS DE USUARIO  \n";
         std::cout << "      Utilizador: " << email.getValor() << "\n";
+        std::cout << "      Papel: " << papel.getValor() << "\n";
         std::cout << "======================================\n";
         std::cout << CRIAR << " - Criar nova Historia\n";
         std::cout << LER << " - Visualizar Historia\n";
@@ -39,29 +40,70 @@ void CntrIAGestaoHistorias::executar(const Email& email) {
 
         switch (opcao) {
             case CRIAR:
-                this->criar(email);
+                if (papel.getValor() == "PROPRIETARIO DE PRODUTO") {
+                    this->criar(email);
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Proprietario de Produto pode criar historias.\n";
+                }
                 break;
+                
             case LER:
                 this->ler();
                 break;
+                
             case ATUALIZAR:
-                this->atualizar(email);
+                if (papel.getValor() == "PROPRIETARIO DE PRODUTO") {
+                    this->atualizar(email);
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Proprietario de Produto pode atualizar historias.\n";
+                }
                 break;
+                
             case EXCLUIR:
+                if (papel.getValor() == "PROPRIETARIO DE PRODUTO") {
+                    this->excluir(email);
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Proprietario de Produto pode excluir historias.\n";
+                }
+                break;
                 
             case ASSOCIAR:
-                std::cout << "\n--- Associar Pessoa ---\n"; break;
+                if (papel.getValor() == "MESTRE SCRUM") {
+                    std::cout << "\n--- Associar Pessoa ---\n";
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Mestre Scrum pode estabelecer associacao.\n";
+                }
+                break;
+                
             case MOVER:
-                std::cout << "\n--- Mover para Sprint ---\n"; break;
+                if (papel.getValor() == "MESTRE SCRUM") {
+                    std::cout << "\n--- Mover para Sprint ---\n";
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Mestre Scrum pode mover historias para Sprint.\n";
+                }
+                break;
+                
             case ALTERAR_EST:
-                std::cout << "\n--- Alterar Estado ---\n"; break;
+                if (papel.getValor() == "PROPRIETARIO DE PRODUTO" || papel.getValor() == "MESTRE SCRUM") {
+                    std::cout << "\n--- Alterar Estado ---\n";
+                    // Lógica de alterar estado aqui
+                } else {
+                    std::cout << "\n[Acesso Negado] Apenas Proprietario de Produto e Mestre Scrum podem alterar o estado.\n";
+                }
+                break;
 
+            // Todos os papéis podem realizar listagens
             case LISTAR_HISTORIAS_PROJETO:
-                std::cout << "\n--- Historias de um Projeto ---\n"; break;
+                std::cout << "\n--- Historias de um Projeto ---\n"; 
+                break;
+                
             case LISTAR_HISTORIAS_SPRINT:
-                std::cout << "\n--- Historias de um Sprint ---\n"; break;
+                std::cout << "\n--- Historias de um Sprint ---\n"; 
+                break;
+                
             case LISTAR_HISTORIAS_PESSOA:
-                std::cout << "\n--- Historias de uma Pessoa ---\n"; break; // cntrlISGestaoHistorias->listarHistoriasDePessoa(email, &vetorHistorias)
+                std::cout << "\n--- Historias de uma Pessoa ---\n"; 
+                break; 
             
             case RETORNAR:
                 executando = false;

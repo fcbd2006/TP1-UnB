@@ -1,11 +1,11 @@
-#include "Controladoras/Headers/cac.hpp"
+#include "ControladorasA/Headers/cac.hpp"
 #include "Interfaces/Headers/interfaces_servico.hpp"
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <limits>
 
-void CntrIACadastro::executar(Email& email) {
+void CntrIACadastro::executar(Email& email, Papel& papel) {
     int opcao = 0;
     bool executando = true;
 
@@ -39,7 +39,7 @@ void CntrIACadastro::executar(Email& email) {
         if(!logado){
             switch (opcao){
                 case CRIAR: 
-                    this->cadastrar(email, logado);
+                    this->cadastrar(email, papel, logado);
                     break;
 
                 case RETORNAR:
@@ -57,7 +57,7 @@ void CntrIACadastro::executar(Email& email) {
                     break;
 
                 case ATUALIZAR: 
-                    this->atualizar(email, logado);
+                    this->atualizar(email, papel, logado);
                     break;
 
                 case EXCLUIR: {
@@ -77,6 +77,7 @@ void CntrIACadastro::executar(Email& email) {
                         if (cntrlISCadastro->excluir(email)) {
                             std::cout << "\nConta excluida com sucesso. Voce sera desconectado.\n";
                             email = Email();
+                            papel = Papel();
                             executando = false; // Força a saída do menu e o fim da sessão
                         } else {
                             std::cout << "\nErro ao tentar excluir a conta.\n";
@@ -105,7 +106,7 @@ void CntrIACadastro::executar(Email& email) {
     }
 }
 
-void CntrIACadastro::cadastrar(Email& email, bool& logado){
+void CntrIACadastro::cadastrar(Email& email, Papel& papel, bool& logado){
     if (logado) return; // Bloqueia se já estiver logado
 
     std::string strNome, strPapel, strSenha, strEmail;
@@ -153,20 +154,21 @@ void CntrIACadastro::cadastrar(Email& email, bool& logado){
     try {
         // Instancia os domínios e valida o formato
         Nome nome;       nome.setValor(strNome);
-        Papel papel;     papel.setValor(strPapel);
+        Papel novoPapel;     papel.setValor(strPapel);
         Senha senha;     senha.setValor(strSenha);
         Email novoEmail; novoEmail.setValor(strEmail);
 
         // Monta a entidade
         Pessoa novaPessoa;
         novaPessoa.setNome(nome);
-        novaPessoa.setPapel(papel);
+        novaPessoa.setPapel(novoPapel);
         novaPessoa.setSenha(senha);
         novaPessoa.setEmail(novoEmail);
 
         // Passa para a camada de serviço
         if (cntrlISCadastro->criar(novaPessoa)) {
             email = novoEmail;
+            papel = novoPapel;
             logado = true;
             std::cout << "\nConta criada com sucesso! Voce ja esta logado.\n";
         } else {
@@ -237,7 +239,7 @@ void CntrIACadastro::ler(const Email& email, bool logado){
     }
 }
 
-void CntrIACadastro::atualizar(const Email& email, bool logado){
+void CntrIACadastro::atualizar(const Email& email, Papel& papel, bool logado){
     if (!logado) return;
 
     std::string strNome, strPapel, strSenha;
@@ -281,16 +283,17 @@ void CntrIACadastro::atualizar(const Email& email, bool logado){
 
     try {
         Nome nome;   nome.setValor(strNome);
-        Papel papel; papel.setValor(strPapel);
+        Papel novoPapel; novoPapel.setValor(strPapel);
         Senha senha; senha.setValor(strSenha);
 
         Pessoa pessoaAtualizada;
         pessoaAtualizada.setNome(nome);
-        pessoaAtualizada.setPapel(papel);
+        pessoaAtualizada.setPapel(novoPapel);
         pessoaAtualizada.setSenha(senha);
         pessoaAtualizada.setEmail(email);
 
         if (cntrlISCadastro->atualizar(pessoaAtualizada)) {
+            papel = novoPapel;
             std::cout << "\nDados atualizados com sucesso!\n";
         } else {
             std::cout << "\nFalha na atualizacao dos dados.\n";

@@ -78,7 +78,7 @@ public:
      * @brief Executa o menu principal de gestão de Projetos e Sprints.
      * @param email Referência constante para o e-mail do usuário atualmente autenticado.
      */
-    void executar(const Email& email) override;
+    void executar(const Email& email, const Papel& papel) override;
 
     /**
      * @brief Define o módulo de serviço de gestão de projetos que será dependência.

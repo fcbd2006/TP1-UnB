@@ -18,9 +18,10 @@ public:
      * @brief Método virtual puro para autenticar um usuário.
      * @param email Instância da classe de domínio Email.
      * @param senha Instância da classe de domínio Senha.
+     * @param papel Instância de classe papel a ser preenchida com o papel do usuário, caso a autenticação seja bem sucedida.
      * @return true se as credenciais forem válidas, false caso contrário.
      */
-    virtual bool autenticar(const Email& email, const Senha& senha) = 0;
+    virtual bool autenticar(const Email& email, const Senha& senha, Papel& papel) = 0;
 
     //-----------------------------------------------------------
 

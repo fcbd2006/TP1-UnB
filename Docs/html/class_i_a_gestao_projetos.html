@@ -99,8 +99,8 @@ $(function(){initNavTree('class_i_a_gestao_projetos.html','','class_i_a_gestao_p
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a22e3bcbc1e206672bbc2540173c4c925" id="r_a22e3bcbc1e206672bbc2540173c4c925"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a22e3bcbc1e206672bbc2540173c4c925">executar</a> (const <a class="el" href="class_email.html">Email</a> &amp;email)=0</td></tr>
-<tr class="memdesc:a22e3bcbc1e206672bbc2540173c4c925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o menu principal de gestão de projetos e planos de sprint.  <br /></td></tr>
+<tr class="memitem:af2b562401b6c8c4be17c807541ff3159" id="r_af2b562401b6c8c4be17c807541ff3159"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af2b562401b6c8c4be17c807541ff3159">executar</a> (const <a class="el" href="class_email.html">Email</a> &amp;email, const <a class="el" href="class_papel.html">Papel</a> &amp;papel)=0</td></tr>
+<tr class="memdesc:af2b562401b6c8c4be17c807541ff3159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o menu principal de gestão de projetos e planos de sprint.  <br /></td></tr>
 <tr class="memitem:a2fdef5125901c4e69746aa8aa0b04df7" id="r_a2fdef5125901c4e69746aa8aa0b04df7"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a2fdef5125901c4e69746aa8aa0b04df7">setServicoGestaoProjetos</a> (<a class="el" href="class_i_s_gestao_projetos.html">ISGestaoProjetos</a> *servico)=0</td></tr>
 <tr class="memdesc:a2fdef5125901c4e69746aa8aa0b04df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a ligação com o respectivo módulo de serviço de gestão de projetos.  <br /></td></tr>
 <tr class="memitem:a26beced82b7d585279010210858f5d41" id="r_a26beced82b7d585279010210858f5d41"><td class="memItemLeft"><a id="a26beced82b7d585279010210858f5d41" name="a26beced82b7d585279010210858f5d41"></a>
@@ -111,8 +111,8 @@ virtual&#160;</td><td class="memItemRight"><b>~IAGestaoProjetos</b> ()</td></tr>
 <div class="textblock"><p>Interface de apresentação de gestão de projetos (IAGP). </p>
 <p>Estabelece o contrato para a exibição dos menus de controle de projetos e planos de sprint. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a22e3bcbc1e206672bbc2540173c4c925" name="a22e3bcbc1e206672bbc2540173c4c925"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22e3bcbc1e206672bbc2540173c4c925">&#9670;&#160;</a></span>executar()</h2>
+<a id="af2b562401b6c8c4be17c807541ff3159" name="af2b562401b6c8c4be17c807541ff3159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2b562401b6c8c4be17c807541ff3159">&#9670;&#160;</a></span>executar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,8 +123,12 @@ virtual&#160;</td><td class="memItemRight"><b>~IAGestaoProjetos</b> ()</td></tr>
         <tr>
           <td class="memname">virtual void IAGestaoProjetos::executar </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_email.html">Email</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="class_email.html">Email</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="class_papel.html">Papel</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>papel</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -139,6 +143,7 @@ virtual&#160;</td><td class="memItemRight"><b>~IAGestaoProjetos</b> ()</td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">email</td><td>Referência constante para o e-mail do utilizador autenticado que está operando o sistema. </td></tr>
+    <tr><td class="paramname">papel</td><td>Referência constante para o papel do utilizador autenticado que está operando o sistema. </td></tr>
   </table>
   </dd>
 </dl>
