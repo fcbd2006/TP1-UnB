@@ -16,11 +16,11 @@ class Codigo : public Dominio{
     private:
         /**
          * @brief Método de validação específico para o domínio Codigo.
-         * @param string String contendo o valor do código a ser validado.
+         * @param valor_candidato String contendo o valor do código a ser validado.
          * * Este método é responsável por verificar se o valor do código atende aos critérios de formatação
          * estabelecidos pelo sistema. Lançará uma exceção em caso de falha.
          */
-        void validar(const std::string&) override;
+        void validar(const std::string& valor_candidato) override;
 
     public:
         /**
@@ -57,14 +57,15 @@ class Data : public Dominio{
          * * Este método atua como uma função auxiliar para o método de validação da classe Data, 
          * garantindo que datas como 29 de fevereiro sejam aceitas apenas em anos bissextos.
          */
-        bool ehBisexto(int) const;
+        bool ehBisexto(int ano) const;
 
         /**
          * @brief Método de validação específico para o domínio Data.
+         * @param valor_candidato String contendo o valor da data a ser validado.
          * * Este método é responsável por verificar se o valor da data atende aos critérios de formatação e validade, 
          * incluindo a verificação de dias, meses e anos, bem como a consideração de anos bissextos.
          */
-        void validar(const std::string&) override;
+        void validar(const std::string& valor_candidato) override;
 
     public:
         /**
@@ -73,7 +74,7 @@ class Data : public Dominio{
          * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor da data, 
          * garantindo que a validação seja realizada automaticamente.
          */
-        Data(std::string v){
+        Data(const std::string& v){
             setValor(v);
         };
         
@@ -105,20 +106,20 @@ class Email : public Dominio{
     private:
         /**
          * @brief Método de validação específico para o domínio Email.
-         * @param string O valor do email a ser validado.
+         * @param valor_candidato O valor do email a ser validado.
          * * Este método é responsável por verificar se o valor do email atende aos critérios de formatação específicos, como a presença de um símbolo '@'
          * e um domínio válido após o símbolo, garantindo que apenas endereços de email corretamente formatados sejam aceitos pelo sistema.
          * Lançará uma exceção em caso de falha na validação.
          */
-        void validar(const std::string&) override;
+        void validar(const std::string& valor_candidato) override;
 
         /**
          * @brief Método auxiliar para validar o formato do email.
-         * @param string String a ser analisada.
+         * @param valor_candidato String a ser analisada.
          * * Este método auxiliar verifica as regras sintáticas do email, como a presença obrigatória e única do '@', uso correto de pontos e ausência de
          * caracteres inválidos.
          */
-        void validar_formato(const std::string&);
+        void validar_formato(const std::string& valor_candidato) const;
 
     public:
         /**
@@ -128,7 +129,7 @@ class Email : public Dominio{
          * realizada automaticamente e que apenas endereços de email corretamente formatados sejam aceitos pelo sistema. Lançará uma exceção em caso de falha na validação.
          * 
          */
-        Email(std::string v){
+        Email(const std::string& v){
             setValor(v);
         };
         
@@ -152,11 +153,11 @@ class Estado : public Dominio{
     private:
         /**
          * @brief Método de validação específico para o dommínio Estado.
-         * @param string String contendo o estado a ser testado.
+         * @param valor_candidato String contendo o estado a ser testado.
          * * Sobrescreve a função virtual pura da classe base. Este método 
          * deve verificar se a string fornecida corresponde a um estado válido dentro das epecificações do sistema. Lançará uma exceção em caso de falha na validação.
          */
-        void validar(const std::string&) override;
+        void validar(const std::string& valor_candidato) override;
 
     public:
         /**
@@ -165,7 +166,7 @@ class Estado : public Dominio{
          * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor do estado, garantindo que a validação
          *  seja realizada automaticamente e que apenas estados válidos sejam aceitos pelo sistema. Lançará uma exceção em caso de falha na validação.
          */
-        Estado(std::string v){
+        Estado(const std::string& v){
             setValor(v);
         };
 
@@ -191,12 +192,12 @@ class Nome : public Dominio{
     private:
         /**
          * @brief Implementa a regra de validação para um Nome.
-         * @param string String contendo o nome a ser testado.
+         * @param valor_candidato String contendo o nome a ser testado.
          * * Sobrescreve a função virtual pura da classe base. Este método 
          * deve verificar se a string atende aos critérios de formatação 
          * do sistema para nomes. Lançará uma exceção em caso de falha na validação.
          */
-        void validar(const std::string&) override;
+        void validar(const std::string& valor_candidato) override;
 
     public:
         /**
@@ -205,7 +206,7 @@ class Nome : public Dominio{
          * * Ao ser instanciado, o construtor repassa o valor recebido para 
          * o método setValor(), que automaticamente invoca a validação antes de armazenar o dado. Lançará uma exceção em caso de falha na validação.
          */
-        Nome(std::string v){
+        Nome(const std::string& v){
             setValor(v);
         };
 
@@ -232,12 +233,12 @@ class Papel : public Dominio{
     private:
         /**
          * @brief Implementa a regra de validação para o Papel.
-         * @param string String contendo o papel a ser testado.
+         * @param valor_candidato String contendo o papel a ser testado.
          * * Sobrescreve a função virtual pura da classe base. Este método 
          * deve verificar se a string fornecida corresponde estritamente a 
          * um dos papéis permitidos pelo sistema (por exemplo: "desenvolvedor"). Lançará uma exceção em caso de falha na validação.
          */
-        void validar(const std::string&) override;
+        void validar(const std::string& valor_candidato) override;
 
     public:
     /**
@@ -247,7 +248,7 @@ class Papel : public Dominio{
          * o método setValor(), que automaticamente 
          * invoca a validação restrita antes de armazenar o dado.
          */
-        Papel(std::string v){
+        Papel(const std::string& v){
             setValor(v);
         };
 
@@ -274,13 +275,13 @@ class Prioridade : public Dominio{
     private:
         /**
          * @brief Implementa a regra de validação para a Prioridade.
-         * @param string String contendo a prioridade a ser testada.
+         * @param valor_candidato String contendo a prioridade a ser testada.
          * * Sobrescreve a função virtual pura da classe base. Este método 
          * deve verificar se a string fornecida corresponde estritamente a 
          * um dos níveis de prioridade permitidos pelas regras do sistema 
          * (por exemplo: "Alta", "Média" ou "Baixa"). Lançará uma exceção em caso de falha na validação.
          */
-        void validar(const std::string&) override;
+        void validar(const std::string& valor_candidato) override;
 
     public:
         /**
@@ -290,7 +291,7 @@ class Prioridade : public Dominio{
          * que aciona automaticamente a validação antes 
          * do armazenamento definitivo.
          */
-        Prioridade(std::string v){
+        Prioridade(const std::string& v){
             setValor(v);
         };
 
@@ -317,14 +318,14 @@ class Senha : public Dominio{
     private:
         /**
          * @brief Implementa a regra de validação de segurança para a Senha.
-         * @param string String contendo a senha a ser testada.
+         * @param valor_candidato String contendo a senha a ser testada.
          * * Sobrescreve a função virtual pura da classe base. Este método 
          * deve verificar se a string atende aos rigorosos critérios de 
          * formatação e segurança do sistema (por exemplo: tamanho mínimo/máximo, 
          * exigência de letras maiúsculas/minúsculas, números, caracteres especiais, 
          * e ausência de espaços em branco). Lançará uma exceção em caso de falha na validação.
          */
-        void validar(const std::string&) override;
+        void validar(const std::string& valor_candidato) override;
 
     public:
         /**
@@ -334,7 +335,7 @@ class Senha : public Dominio{
          * que aciona automaticamente a validação de 
          * segurança antes de permitir o armazenamento da senha.
          */
-        Senha(std::string v){
+        Senha(const std::string& v){
             setValor(v);
         };
 
@@ -361,12 +362,12 @@ class Tempo : public Dominio{
     private:
         /**
          * @brief Implementa a regra de validação para o Tempo.
-         * @param string String contendo o valor numérico a ser testado.
+         * @param valor_candidato String contendo o valor numérico a ser testado.
          * * Sobrescreve a função virtual pura da classe base. Este método 
          * deve converter a string fornecida para um valor numérico (inteiro) 
          * e verificar se ele se encontra dentro do intervalo fechado [1, 365]. Lançará uma exceção em caso de falha na validação.
          */
-        void validar(const std::string&) override;
+        void validar(const std::string& valor_candidato) override;
 
     public:
         /**
@@ -376,7 +377,7 @@ class Tempo : public Dominio{
          * que aciona automaticamente a validação de 
          * intervalo matemático antes de permitir o armazenamento.
          */
-        Tempo(std::string v){
+        Tempo(const std::string& v){
             setValor(v);
         };
 
@@ -404,14 +405,14 @@ class Texto : public Dominio{
     private:
         /**
          * @brief Implementa a regra de validação para o Texto.
-         * @param string String contendo o texto a ser testado.
+         * @param valor_candidato String contendo o texto a ser testado.
          * * Sobrescreve a função virtual pura da classe base. Este método 
          * deve verificar se a string fornecida atende às regras do sistema
          * para textos (por exemplo: tamanho mínimo e máximo de caracteres, 
          * formatação de espaçamento ou restrição a determinados caracteres 
          * especiais). Lançará uma exceção em caso de falha na validação.
          */
-        void validar(const std::string&) override;
+        void validar(const std::string& valor_candidato) override;
 
     public:
         /**
@@ -421,7 +422,7 @@ class Texto : public Dominio{
          * o método setValor(), que automaticamente 
          * invoca a validação antes de armazenar o dado.
          */
-        Texto(std::string v){
+        Texto(const std::string& v){
             setValor(v);
         };
 
