@@ -31,7 +31,7 @@ class Pessoa{
          */
         virtual ~Pessoa() = default;
 
-        // Métodos getters referentes aos atributos das Entidade
+        // Métodos getters referentes aos atributos da Entidade
         /** @brief Recupera o e-mail da pessoa. @return Objeto do domínio Email. */
         Email getEmail() const{return email;};
         /** @brief Recupera o nome da pessoa. @return Objeto do domínio Nome. */
@@ -40,7 +40,7 @@ class Pessoa{
         Senha getSenha() const{return senha;};
         /** @brief Recupera o papel da pessoa. @return Objeto do domínio Papel. */
         Papel getPapel() const{return papel;};
-        //Métodos setters referentes aos atributos das Entidades
+        //Métodos setters referentes aos atributos da Entidade
         /** @brief Atribui um e-mail validado. @param email Objeto Email. */
         void setEmail(const Email& email){this->email = email;};
         /** @brief Atribui um nome validado. @param nome Objeto Nome. */
@@ -51,28 +51,49 @@ class Pessoa{
         void setPapel(const Papel& papel){this->papel = papel;};
 };
 
+/**
+ * @class Projeto
+ * @brief Entidade que representa um Projeto.
+ * * Agrupa as informações de identificação e cronograma de um projeto, 
+ * garantindo que as datas de início e término sejam válidas.
+ */
 class Projeto{
     private:
-        Codigo codigo;
-        Nome nome;
-        Data inicio, termino;
+        Codigo codigo; ///< Identificador único do projeto.
+        Nome nome; ///< Título ou nome do projeto.
+        Data inicio; ///< Data de início do projeto.
+        Data termino; ///< Data de encerramento prevista ou real do projeto.
     public:
         // Construtor
         //Projeto(const Codigo& codigo, const Nome& nome, const Data& inicio, const Data& termino) : termino(termino), inicio(inicio), nome(nome), codigo(codigo){};
+        /**
+         * @brief Construtor padrão da classe Projeto.
+         */
         Projeto() = default;
 
         // Destrutor
+        /**
+         * @brief Destrutor virtual da classe Projeto.
+         */
         virtual ~Projeto() = default;
-        // Métodos get referente aos atributos da Entidade
+        // Métodos getters referentes aos atributos da Entidade
+        /** @brief Recupera o código do projeto. @return Objeto do domínio Codigo. */
         Codigo getCodigo() const{return codigo;};
+        /** @brief Recupera o nome do projeto. @return Objeto do domínio Nome. */
         Nome getNome() const{return nome;};
+        /** @brief Recupera a data de início. @return Objeto do domínio Data. */
         Data getDataStart() const{return inicio;};
+        /** @brief Recupera a data de término. @return Objeto do domínio Data. */
         Data getDataEnd() const{return termino;};
 
-        //Métodos set referentes aos atributos dessa Entidades
+        //Métodos setters referentes aos atributos da Entidade
+        /** @brief Atribui um código validado. @param codigo Objeto Codigo. */
         void setCodigo(const Codigo& codigo){this->codigo = codigo;};
+        /** @brief Atribui um nome validado. @param nome Objeto Nome. */
         void setNome(const Nome& nome){this->nome = nome;};
+        /** @brief Atribui a data de início. @param inicio Objeto Data validado. */
         void setDataStart(const Data& inicio){this->inicio = inicio;};
+        /** @brief Atribui a data de término. @param termino Objeto Data validado. */
         void setDataEnd(const Data& termino){this->termino = termino;};
 };
 
