@@ -181,15 +181,40 @@ class Estado : public Dominio{
 //-----------------------------------------------------------
 
 // NOME
+/**
+ * @class Nome
+ * @brief Representa o domínio de um Nome.
+ * * Esta classe herda da classe base Dominio e é responsável por armazenar 
+ * e garantir a validade de uma string que representa um nome.
+ */
 class Nome : public Dominio{
     private:
+        /**
+         * @brief Implementa a regra de validação para um Nome.
+         * @param string String contendo o nome a ser testado.
+         * * Sobrescreve a função virtual pura da classe base. Este método 
+         * deve verificar se a string atende aos critérios de formatação 
+         * do sistema para nomes. Lançará uma exceção em caso de falha na validação.
+         */
         void validar(const std::string&) override;
 
     public:
+        /**
+         * @brief Construtor parametrizado da classe Nome.
+         * @param v String com o nome inicial a ser atribuído.
+         * * Ao ser instanciado, o construtor repassa o valor recebido para 
+         * o método setValor(), que automaticamente invoca a validação antes de armazenar o dado. Lançará uma exceção em caso de falha na validação.
+         */
         Nome(std::string v){
             setValor(v);
         };
 
+        /**
+         * @brief Construtor padrão da classe Nome.
+         * * Permite a instanciação de um objeto Nome sem um valor inicial. 
+         * O valor real deverá ser inserido posteriormente através do 
+         * método setValor().
+         */
         Nome() = default;
 };
 
