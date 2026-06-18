@@ -2,29 +2,52 @@
 #define ENTIDADES_HPP_INCLUDED
 #include "Domains/Headers/outros_dominios.hpp"
 
+/**
+ * @class Pessoa
+ * @brief Entidade que representa um usuário ou colaborador do sistema.
+ * * Agrupa as informações essenciais de um indivíduo, utilizando domínios 
+ * já validados para garantir a integridade dos dados de contato, 
+ * credenciais e responsabilidades.
+ */
 class Pessoa{
     private:
-        Email email;
-        Nome nome;
-        Senha senha;
-        Papel papel;
+        Email email; ///< Endereço de email do usuário.
+        Nome nome; ///< Nome formatado do usuário.
+        Senha senha; ///< Credencial de acesso do usuário.
+        Papel papel; ///< Função desempenhada pelo usuário dento do sistema (ex: desenvolvedor).
+
     public:
         // Construtor
         //Pessoa(const Email& email, const Nome& nome, const Senha& senha, const Papel& papel): 
         //papel(papel), email(email), nome(nome), senha(senha){};
+        /**
+         * @brief Construtor padrão da classe Pessoa.
+         */
         Pessoa() = default;
 
         // Destrutor
+        /**
+         * @brief Destrutor virtual da classe Pessoa.
+         */
         virtual ~Pessoa() = default;
-        // Métodos get referente aos atributos da Entidade
+
+        // Métodos getters referentes aos atributos das Entidade
+        /** @brief Recupera o e-mail da pessoa. @return Objeto do domínio Email. */
         Email getEmail() const{return email;};
+        /** @brief Recupera o nome da pessoa. @return Objeto do domínio Nome. */
         Nome getNome() const{return nome;};
+        /** @brief Recupera a senha da pessoa. @return Objeto do domínio Senha. */
         Senha getSenha() const{return senha;};
+        /** @brief Recupera o papel da pessoa. @return Objeto do domínio Papel. */
         Papel getPapel() const{return papel;};
-        //Métodos set referentes aos atributos dessa Entidades
+        //Métodos setters referentes aos atributos das Entidades
+        /** @brief Atribui um e-mail validado. @param email Objeto Email. */
         void setEmail(const Email& email){this->email = email;};
+        /** @brief Atribui um nome validado. @param nome Objeto Nome. */
         void setNome(const Nome& nome){this->nome = nome;};
+        /** @brief Atribui uma senha validada. @param senha Objeto Senha. */
         void setSenha(const Senha& senha){this->senha = senha;};
+        /** @brief Atribui um papel validado. @param papel Objeto Papel. */
         void setPapel(const Papel& papel){this->papel = papel;};
 };
 
