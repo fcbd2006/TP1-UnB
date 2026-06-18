@@ -131,10 +131,10 @@ void Estado::validar(const std::string& estado){
 // 10 caracteres, " ", a-z, A-Z
 void Nome::validar(const std::string& nome){
     // verifica o tamanho
-    if(nome.size()>10) throw std::invalid_argument("Valor Inválido para Nome -> Longo demais");
+    if(nome.empty() || nome.size()>10) throw std::invalid_argument("Valor Inválido para Nome -> Longo demais");
 
     // verifica se o primeiro ou ultimo caracteres sao espaços
-    if(nome[0]==' ' || *(nome.end()-1)==' ') throw std::invalid_argument("Valor Inválido para Nome -> Espaço no início ou final");
+    if(nome[0]==' ' || nome[nome.size()-1]==' ') throw std::invalid_argument("Valor Inválido para Nome -> Espaço no início ou final");
     
     // verifica cada caracter
     
