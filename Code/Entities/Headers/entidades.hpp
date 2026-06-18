@@ -141,41 +141,73 @@ class PlanoDeSprint{
 
 };
 
+/**
+ * @class HistoriaDeUsuario
+ * @brief Entidade que representa uma História de Usuário.
+ * * Estrutura fundamental do desenvolvimento ágil, descrevendo uma 
+ * funcionalidade sob a perspectiva do usuário, seu valor de negócio, 
+ * estimativas e estado de progresso.
+ */
 class HistoriaDeUsuario{
     private:
-        Codigo codigo;
-        Texto titulo, papel, acao, valor;
-        Tempo estimativa;
-        Prioridade prioridade;
-        Estado estado;
+        Codigo codigo; ///< Identificador único da história de usuário.
+        Texto titulo; ///< Título da história de usuário.
+        Texto papel; ///< Papel do usuário na história.
+        Texto acao; ///< Ação que o usuário deseja realizar.
+        Texto valor; ///< Valor de negócio da história.
+        Tempo estimativa; ///< Estimativa de tempo para conclusão.
+        Prioridade prioridade; ///< Prioridade da história.
+        Estado estado; ///< Estado de progresso da história (ex: "A fazer").
     public:
         // Construtor
         //HistoriaDeUsuario(const Codigo& codigo, const Texto& titulo, const Texto& papel, const Texto& acao, const Texto& valor, 
         //const Tempo& estimativa, const Prioridade& prioridade, const Estado& estado) 
         //: titulo(titulo), papel(papel), acao(acao), codigo(codigo), valor(valor)
         //, estimativa(estimativa), prioridade(prioridade), estado(estado){};
+        /**
+         * @brief Construtor padrão da classe HistoriaDeUsuario.
+         */
         HistoriaDeUsuario() = default;
         
         // Destrutor
+        /**
+         * @brief Destrutor virtual da classe HistoriaDeUsuario.
+         */
         virtual ~HistoriaDeUsuario() = default;
-        // Métodos get referente aos atributos da Entidade
+        // Métodos getters referentes aos atributos da Entidade
+        /** @brief Recupera o código da história. @return Objeto Codigo. */
         Codigo getCodigo() const{return codigo;};
+        /** @brief Recupera o título da história. @return Objeto Texto. */
         Texto getTitulo() const{return titulo;};
+        /** @brief Recupera o papel do usuário na história. @return Objeto Texto. */
         Texto getPapel() const{return papel;};
+        /** @brief Recupera a ação que o usuário deseja realizar. @return Objeto Texto. */
         Texto getAcao() const{return acao;};
+        /** @brief Recupera o valor de negócio da história. @return Objeto Texto. */
         Texto getValor() const{return valor;};
+        /** @brief Recupera a estimativa de tempo da história. @return Objeto Tempo. */
         Tempo getTempo() const{return estimativa;};
+        /** @brief Recupera a prioridade. @return Objeto Prioridade. */
         Prioridade getPrioridade() const{return prioridade;};
+        /** @brief Recupera o estado de progresso da história. @return Objeto Estado. */
         Estado getEstado() const{return estado;};
 
-        //Métodos set referentes aos atributos dessa Entidades
+        //Métodos setters referentes aos atributos da Entidade
+        /** @brief Atribui um código. @param codigo Objeto Codigo. */
         void setCodigo(const Codigo& codigo){this->codigo = codigo;};
+        /** @brief Atribui um título. @param titulo Objeto Texto. */
         void setTitulo(const Texto& titulo){this->titulo = titulo;};
+        /** @brief Atribui um papel. @param papel Objeto Texto. */
         void setPapel(const Texto& papel){this->papel = papel;};
+        /** @brief Atribui uma ação. @param acao Objeto Texto. */
         void setAcao(const Texto& acao){this->acao = acao;};
+        /** @brief Atribui um valor de negócio. @param valor Objeto Texto. */
         void setValor(const Texto& valor){this->valor = valor;};
+        /** @brief Atribui uma estimativa de tempo. @param estimativa Objeto Tempo. */
         void setTempo(const Tempo& estimativa){this->estimativa = estimativa;};
+        /** @brief Atribui uma prioridade. @param prioridade Objeto Prioridade. */
         void setPrioridade(const Prioridade& prioridade){this->prioridade = prioridade;};
+        /** @brief Atribui o estado de progresso da história. @param estado Objeto Estado. */
         void setEstado(const Estado& estado){this->estado = estado;};
 
 };
