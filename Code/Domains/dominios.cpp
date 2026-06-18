@@ -263,7 +263,12 @@ void Texto::validar(const std::string& texto){
 
         if(i > 0){
             char anterior = texto[i - 1];
-            if((c == ' ' || c == ',' || c == '.') && (anterior == ' ' || anterior == ',' || anterior == '.')){
+            
+            if((anterior == ',' || anterior == '.') && (c == ',' || c == '.')){
+                throw std::invalid_argument("Valor Inválido para Texto.");
+            }
+            
+            if(anterior == ' ' && !isalnum(c)){
                 throw std::invalid_argument("Valor Inválido para Texto.");
             }
         }
