@@ -115,11 +115,11 @@ class Email : public Dominio{
 
         /**
          * @brief Método auxiliar para validar o formato do email.
-         * @param valor_candidato String a ser analisada.
-         * * Este método auxiliar verifica as regras sintáticas do email, como a presença obrigatória e única do '@', uso correto de pontos e ausência de
+         * @param parte String a ser analisada.
+         * * Este método auxiliar verifica as regras sintáticas das partes do email, como a presença obrigatória e única do '@', uso correto de pontos e ausência de
          * caracteres inválidos.
          */
-        void validar_formato(const std::string& valor_candidato) const;
+        void validar_formato(const std::string& parte) const;
 
     public:
         /**
