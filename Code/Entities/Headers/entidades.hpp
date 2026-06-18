@@ -111,7 +111,7 @@ class HistoriaDeUsuario{
         void setPapel(const Texto& papel){this->papel = papel;};
         void setAcao(const Texto& acao){this->acao = acao;};
         void setValor(const Texto& valor){this->valor = valor;};
-        void setTempo(const Tempo& estimetiva){this->estimativa = estimativa;};
+        void setTempo(const Tempo& estimativa){this->estimativa = estimativa;};
         void setPrioridade(const Prioridade& prioridade){this->prioridade = prioridade;};
         void setEstado(const Estado& estado){this->estado = estado;};
 
