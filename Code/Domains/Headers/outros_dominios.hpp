@@ -263,15 +263,43 @@ class Papel : public Dominio{
 //-----------------------------------------------------------
 
 // PRIORIDADE
+/**
+ * @class Prioridade
+ * @brief Representa o domínio de uma Prioridade.
+ * * Esta classe herda da classe base Dominio e é responsável por armazenar 
+ * e garantir a validade do nível de importância ou urgência de uma 
+ * atividade/entidade no sistema.
+ */
 class Prioridade : public Dominio{
     private:
+        /**
+         * @brief Implementa a regra de validação para a Prioridade.
+         * @param string String contendo a prioridade a ser testada.
+         * * Sobrescreve a função virtual pura da classe base. Este método 
+         * deve verificar se a string fornecida corresponde estritamente a 
+         * um dos níveis de prioridade permitidos pelas regras do sistema 
+         * (por exemplo: "Alta", "Média" ou "Baixa"). Lançará uma exceção em caso de falha na validação.
+         */
         void validar(const std::string&) override;
 
     public:
+        /**
+         * @brief Construtor parametrizado da classe Prioridade.
+         * @param v String com a prioridade inicial a ser atribuída.
+         * * Ao instanciar o objeto, o valor é repassado ao método setValor(),
+         * que aciona automaticamente a validação antes 
+         * do armazenamento definitivo.
+         */
         Prioridade(std::string v){
             setValor(v);
         };
 
+        /**
+         * @brief Construtor padrão da classe Prioridade.
+         * * Permite a criação de um objeto Prioridade sem um valor inicial 
+         * definido. O valor real deverá ser atribuído posteriormente 
+         * utilizando o método setValor().
+         */
         Prioridade() = default;
 };
 
