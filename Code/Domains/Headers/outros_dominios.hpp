@@ -322,7 +322,7 @@ class Senha : public Dominio{
          * * Sobrescreve a função virtual pura da classe base. Este método 
          * deve verificar se a string atende aos rigorosos critérios de 
          * formatação e segurança do sistema (por exemplo: tamanho mínimo/máximo, 
-         * exigência de letras maiúsculas/minúsculas, números, caracteres especiais, 
+         * exigência de letras maiúsculas/minúsculas, números
          * e ausência de espaços em branco). Lançará uma exceção em caso de falha na validação.
          */
         void validar(const std::string& valor_candidato) override;
