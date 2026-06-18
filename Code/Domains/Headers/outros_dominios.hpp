@@ -392,15 +392,45 @@ class Tempo : public Dominio{
 //-----------------------------------------------------------
 
 // TEXTO
+/**
+ * @class Texto
+ * @brief Representa o domínio de um Texto.
+ * * Esta classe herda da classe base Dominio e é responsável por armazenar 
+ * e garantir a validade de uma string de texto livre (como descrições, 
+ * comentários, mensagens ou detalhamentos), respeitando as regras de 
+ * formatação do sistema.
+ */
 class Texto : public Dominio{
     private:
+        /**
+         * @brief Implementa a regra de validação para o Texto.
+         * @param string String contendo o texto a ser testado.
+         * * Sobrescreve a função virtual pura da classe base. Este método 
+         * deve verificar se a string fornecida atende às regras do sistema
+         * para textos (por exemplo: tamanho mínimo e máximo de caracteres, 
+         * formatação de espaçamento ou restrição a determinados caracteres 
+         * especiais). Lançará uma exceção em caso de falha na validação.
+         */
         void validar(const std::string&) override;
 
     public:
+        /**
+         * @brief Construtor parametrizado da classe Texto.
+         * @param v String com o texto inicial a ser atribuído.
+         * * Ao ser instanciado, o construtor repassa o valor recebido para 
+         * o método setValor(), que automaticamente 
+         * invoca a validação antes de armazenar o dado.
+         */
         Texto(std::string v){
             setValor(v);
         };
 
+        /**
+         * @brief Construtor padrão da classe Texto.
+         * * Permite a instanciação de um objeto Texto sem um valor inicial. 
+         * O valor real deverá ser inserido posteriormente através do 
+         * método setValor().
+         */
         Texto() = default;
 };
 
