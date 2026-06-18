@@ -26,7 +26,7 @@ class Codigo : public Dominio{
         /**
          * @brief Construtor para a classe Codigo.
          * @param v String contendo o valor do código a ser armazenado.
-         * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor do código,
+         * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor do código, 
          * garantindo que a validação seja realizada automaticamente.
          */
         Codigo(const std::string& v){
@@ -54,14 +54,14 @@ class Data : public Dominio{
          * @brief Verifica se determinado ano é bissexto.
          * @param ano O ano a ser verificado.
          * @return Retorna true se o ano for bissexto, ou false caso contrário.
-         * * Este método atua como uma função auxiliar para o método de validação da classe Data,
+         * * Este método atua como uma função auxiliar para o método de validação da classe Data, 
          * garantindo que datas como 29 de fevereiro sejam aceitas apenas em anos bissextos.
          */
         bool ehBisexto(int) const;
 
         /**
          * @brief Método de validação específico para o domínio Data.
-         * * Este método é responsável por verificar se o valor da data atende aos critérios de formatação e validade,
+         * * Este método é responsável por verificar se o valor da data atende aos critérios de formatação e validade, 
          * incluindo a verificação de dias, meses e anos, bem como a consideração de anos bissextos.
          */
         void validar(const std::string&) override;
@@ -70,7 +70,7 @@ class Data : public Dominio{
         /**
          * @brief Construtor da classe Data.
          * @param v String contendo o valor da data a ser armazenada.
-         * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor da data,
+         * * Este construtor recebe uma string como argumento e utiliza o método setValor() para armazenar o valor da data, 
          * garantindo que a validação seja realizada automaticamente.
          */
         Data(std::string v){
@@ -286,7 +286,7 @@ class Prioridade : public Dominio{
         /**
          * @brief Construtor parametrizado da classe Prioridade.
          * @param v String com a prioridade inicial a ser atribuída.
-         * * Ao instanciar o objeto, o valor é repassado ao método setValor(),
+         * * Ao instanciar o objeto, o valor é repassado ao método setValor(), 
          * que aciona automaticamente a validação antes 
          * do armazenamento definitivo.
          */
@@ -330,7 +330,7 @@ class Senha : public Dominio{
         /**
          * @brief Construtor parametrizado da classe Senha.
          * @param v String com a senha inicial a ser atribuída.
-         * * Ao instanciar o objeto, o valor é repassado ao método setValor(),
+         * * Ao instanciar o objeto, o valor é repassado ao método setValor(), 
          * que aciona automaticamente a validação de 
          * segurança antes de permitir o armazenamento da senha.
          */
@@ -350,15 +350,42 @@ class Senha : public Dominio{
 //-----------------------------------------------------------
 
 // TEMPO
+/**
+ * @class Tempo
+ * @brief Representa o domínio de Tempo.
+ * * Esta classe herda da classe base Dominio e é responsável por armazenar 
+ * e garantir a validade de um período de tempo, estritamente limitado 
+ * ao intervalo de 1 a 365.
+ */
 class Tempo : public Dominio{
     private:
+        /**
+         * @brief Implementa a regra de validação para o Tempo.
+         * @param string String contendo o valor numérico a ser testado.
+         * * Sobrescreve a função virtual pura da classe base. Este método 
+         * deve converter a string fornecida para um valor numérico (inteiro) 
+         * e verificar se ele se encontra dentro do intervalo fechado [1, 365]. Lançará uma exceção em caso de falha na validação.
+         */
         void validar(const std::string&) override;
 
     public:
+        /**
+         * @brief Construtor parametrizado da classe Tempo.
+         * @param v String com o valor numérico de tempo a ser atribuído.
+         * * Ao instanciar o objeto, o valor é repassado ao método setValor(), 
+         * que aciona automaticamente a validação de 
+         * intervalo matemático antes de permitir o armazenamento.
+         */
         Tempo(std::string v){
             setValor(v);
         };
 
+        /**
+         * @brief Construtor padrão da classe Tempo.
+         * * Permite a criação de um objeto Tempo sem um valor inicial 
+         * definido. O valor real deverá ser atribuído posteriormente 
+         * utilizando o método setValor().
+         */
         Tempo() = default;
 };
 
