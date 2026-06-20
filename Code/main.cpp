@@ -17,7 +17,8 @@ int main()
     CntrIAGestaoProjetos proj;
     auth.setServicoAutenticacao(new CntrISAutenticacao);
     cad.setServicoCadastro(new CntrISCadastro);
-    hist.setServicoGestaoHistorias(new StubGestaoHistorias);
+    hist.setServicoGestaoHistorias(new CntrISGestaoHistorias);
+    proj.setServicoGestaoProjetos(new CntrISGestaoProjetos);
     programa.setApresentacaoAutenticacao(&auth);
     programa.setApresentacaoCadastro(&cad);
     programa.setApresentacaoHistorias(&hist);

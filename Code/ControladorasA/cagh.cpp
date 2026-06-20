@@ -21,7 +21,7 @@ void CntrIAGestaoHistorias::executar(const Email& email, const Papel& papel) {
         std::cout << ATUALIZAR << " - Atualizar Historia\n";
         std::cout << EXCLUIR << " - Excluir Historia\n";
         std::cout << "--------------------------------------\n";
-        std::cout << ASSOCIAR << " - Associar Historia a Desenvolvedor\n";
+        std::cout << ASSOCIAR << " - Associar Historia a Pessoa\n";
         std::cout << MOVER << " - Mover Historia para Plano de Sprint\n";
         std::cout << ALTERAR_EST << " - Alterar Estado da Historia\n";
         std::cout << "--------------------------------------\n";
