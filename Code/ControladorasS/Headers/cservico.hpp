@@ -141,7 +141,7 @@ public:
  * * Implementa a interface ISGestaoHistorias. Lida com o CRUD das Histórias de Usuário, 
  * bem como seu relacionamento com Pessoas, Planos de Sprint e controle de estados.
  */
-class CntrSGestaoHistorias : public ISGestaoHistorias {
+class CntrISGestaoHistorias : public ISGestaoHistorias {
 public:
     /**
      * @brief Cria uma nova história de usuário.

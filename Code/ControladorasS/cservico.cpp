@@ -42,7 +42,7 @@ bool CntrISCadastro::excluir(const Email& email){
 }
 
 // ---------------------------
-// PROJETO
+// PROJETOS
 // ---------------------------
 
 bool CntrISGestaoProjetos::criarProjeto(const Projeto& projeto){
@@ -83,4 +83,64 @@ bool CntrISGestaoProjetos::atualizarPlanoSprint(const PlanoDeSprint& sprint){
 bool CntrISGestaoProjetos::excluirPlanoSprint(const Codigo& codigo){
     auto& container = Container<Codigo, PlanoDeSprint>::getInstance();
     return container.excluir(codigo);
+}
+
+bool CntrISGestaoProjetos::listarProjetosDePessoa(const Email& email, std::vector<Projeto>& projetos){
+    return true;
+}
+
+bool CntrISGestaoProjetos::listarPlanosSprintDeProjeto(const Codigo& codigoProjeto, std::vector<PlanoDeSprint>& planos){
+    return true;
+}
+
+// ---------------------------
+// HISTORIAS
+// ---------------------------
+
+bool CntrISGestaoHistorias::criar(const HistoriaDeUsuario& historia){
+    auto& container = Container<Codigo, HistoriaDeUsuario>::getInstance();
+    return container.criar(historia.getCodigo(), historia);
+}
+
+bool CntrISGestaoHistorias::ler(HistoriaDeUsuario& historia){
+    auto& container = Container<Codigo, HistoriaDeUsuario>::getInstance();
+    return container.ler(historia.getCodigo(), historia);
+}
+
+bool CntrISGestaoHistorias::atualizar(const HistoriaDeUsuario& historia){
+    auto& container = Container<Codigo, HistoriaDeUsuario>::getInstance();
+    return container.atualizar(historia.getCodigo(), historia);
+}
+
+bool CntrISGestaoHistorias::excluir(const Codigo& codigo){
+    auto& container = Container<Codigo, HistoriaDeUsuario>::getInstance();
+    return container.excluir(codigo);
+}
+
+bool CntrISGestaoHistorias::associarPessoa(const Codigo& codigoHistoria, const Email& emailPessoa){
+    return true;
+}
+
+bool CntrISGestaoHistorias::removerAssociacaoPessoa(const Codigo& codigoHistoria, const Email& emailPessoa){
+    return true;
+}
+
+bool CntrISGestaoHistorias::moverParaPlanoSprint(const Codigo& codigoHistoria, const Codigo& codigoPlano){
+    return true;
+}
+
+bool CntrISGestaoHistorias::alterarEstado(const Codigo& codigoHistoria, const Estado& novoEstado){
+    return true;
+}
+
+bool CntrISGestaoHistorias::listarHistoriasDeProjeto(const Codigo& codigoProjeto, std::vector<HistoriaDeUsuario>& historias){
+    return true;
+}
+
+bool CntrISGestaoHistorias::listarHistoriasDePlanoSprint(const Codigo& codigoPlano, std::vector<HistoriaDeUsuario>& historias){
+    return true;
+}
+
+bool CntrISGestaoHistorias::listarHistoriasDePessoa(const Email& emailPessoa, std::vector<HistoriaDeUsuario>& historias){
+    return true;
 }
