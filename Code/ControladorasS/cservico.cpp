@@ -44,3 +44,43 @@ bool CntrISCadastro::excluir(const Email& email){
 // ---------------------------
 // PROJETO
 // ---------------------------
+
+bool CntrISGestaoProjetos::criarProjeto(const Projeto& projeto){
+    auto& container = Container<Codigo, Projeto>::getInstance();
+    return container.criar(projeto.getCodigo(), projeto);
+}
+
+bool CntrISGestaoProjetos::lerProjeto(Projeto& projeto){
+    auto& container = Container<Codigo, Projeto>::getInstance();
+    return container.ler(projeto.getCodigo(), projeto);
+}
+
+bool CntrISGestaoProjetos::atualizarProjeto(const Projeto& projeto){
+    auto& container = Container<Codigo, Projeto>::getInstance();
+    return container.atualizar(projeto.getCodigo(), projeto);
+}
+
+bool CntrISGestaoProjetos::excluirProjeto(const Codigo& codigo){
+    auto& container = Container<Codigo, Projeto>::getInstance();
+    return container.excluir(codigo);
+}
+
+bool CntrISGestaoProjetos::criarPlanoSprint(const PlanoDeSprint& sprint){
+    auto& container = Container<Codigo, PlanoDeSprint>::getInstance();
+    return container.criar(sprint.getCodigo(), sprint);
+}
+
+bool CntrISGestaoProjetos::lerPlanoSprint(PlanoDeSprint& sprint){
+    auto& container = Container<Codigo, PlanoDeSprint>::getInstance();
+    return container.ler(sprint.getCodigo(), sprint);
+}
+
+bool CntrISGestaoProjetos::atualizarPlanoSprint(const PlanoDeSprint& sprint){
+    auto& container = Container<Codigo, PlanoDeSprint>::getInstance();
+    return container.atualizar(sprint.getCodigo(), sprint);
+}
+
+bool CntrISGestaoProjetos::excluirPlanoSprint(const Codigo& codigo){
+    auto& container = Container<Codigo, PlanoDeSprint>::getInstance();
+    return container.excluir(codigo);
+}
