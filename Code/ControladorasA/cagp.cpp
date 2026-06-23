@@ -71,6 +71,7 @@ void CntrIAGestaoProjetos::executar(const Email& email, const Papel& papel) {
                 
             case LISTAR_PROJETOS_PESSOA:
                 std::cout << "\n--- Projetos de uma Pessoa ---\n"; 
+                std::cout << "\n-> FUNCAO EM DESENVOLVIMENTO\n";
                 break;
             
             // ---- GESTÃO DE PLANOS DE SPRINT ----
@@ -105,6 +106,7 @@ void CntrIAGestaoProjetos::executar(const Email& email, const Papel& papel) {
                 
             case LISTAR_SPRINTS_PROJETO:
                 std::cout << "\n--- Sprints do Projeto ---\n";
+                std::cout << "\n-> FUNCAO EM DESENVOLVIMENTO\n";
                 break; 
 
             case RETORNAR:

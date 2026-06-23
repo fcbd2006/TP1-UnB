@@ -70,7 +70,7 @@ void CntrIAGestaoHistorias::executar(const Email& email, const Papel& papel) {
             case ASSOCIAR:
                 if (papel.getValor() == "MESTRE SCRUM") {
                     std::cout << "\n--- Associar Pessoa ---\n";
-                    std::cout << "-> FUNCAO EM DESENVOLVIMENTO\n";
+                    std::cout << "\n-> FUNCAO EM DESENVOLVIMENTO\n";
                 } else {
                     std::cout << "\n[Acesso Negado] Apenas Mestre Scrum pode estabelecer associacao.\n";
                 }
@@ -96,14 +96,17 @@ void CntrIAGestaoHistorias::executar(const Email& email, const Papel& papel) {
             // Todos os papéis podem realizar listagens
             case LISTAR_HISTORIAS_PROJETO:
                 std::cout << "\n--- Historias de um Projeto ---\n"; 
+                std::cout << "\n-> FUNCAO EM DESENVOLVIMENTO\n";
                 break;
                 
             case LISTAR_HISTORIAS_SPRINT:
                 std::cout << "\n--- Historias de um Sprint ---\n"; 
+                std::cout << "\n-> FUNCAO EM DESENVOLVIMENTO\n";
                 break;
                 
             case LISTAR_HISTORIAS_PESSOA:
                 std::cout << "\n--- Historias de uma Pessoa ---\n"; 
+                std::cout << "\n-> FUNCAO EM DESENVOLVIMENTO\n";
                 break; 
             
             case RETORNAR:
