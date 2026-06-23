@@ -7,10 +7,10 @@
 
 /**
  * @brief Classe genérica para armazenar e gerenciar pares de chave e valor.
- * * Esta classe utiliza um std::map internamente para armazenar os dados, 
+ * Esta classe utiliza um std::map internamente para armazenar os dados, 
  * o que garante que as chaves sejam únicas e permite operações de busca,
  * inserção, remoção e atualização eficientes.
- * * @tparam K O tipo de dado utilizado para a chave.
+ * @tparam K O tipo de dado utilizado para a chave.
  * @tparam V O tipo de dado utilizado para o valor (item) associado à chave.
  */
 template <typename K, typename V>
@@ -18,14 +18,14 @@ class Container {
     private:
         /**
          * @brief Construtor padrão privado.
-         * * Ocultado para impedir a criação de instâncias da classe de forma 
+         * Ocultado para impedir a criação de instâncias da classe de forma 
          * direta garantindo, assim, o padrão Singleton.
          */
         Container() = default;
 
         /**
          * @brief Destrutor padrão privado.
-         * * Ocultado para impedir que a instância única seja destruída manualmente.
+         * Ocultado para impedir que a instância única seja destruída manualmente.
          */
         ~Container() = default;
 
@@ -37,7 +37,7 @@ class Container {
     public:
         /**
          * @brief Construtor de cópia deletado para garantir o padrão Singleton.
-         * * Impede que a instância do contêiner seja copiada acidentalmente. 
+         * Impede que a instância do contêiner seja copiada acidentalmente. 
          * Isso é fundamental para o padrão Singleton, pois garante que 
          * nunca existirá mais de um objeto deste tipo em memória.
          */
@@ -45,16 +45,16 @@ class Container {
 
         /**
          * @brief Operador de atribuição deletado para garantir o padrão Singleton.
-         * * Evita que o estado da instância única seja sobrescrito ou atribuído 
+         * Evita que o estado da instância única seja sobrescrito ou atribuído 
          * através do operador de igualdade (=), mantendo a integridade da instância.
          */
         Container& operator=(const Container&) = delete;
 
         /**
          * @brief Obtém a instância única e global do contêiner.
-         * * Este método é o único ponto de acesso ao contêiner. A instância é 
+         * Este método é o único ponto de acesso ao contêiner. A instância é 
          * criada apenas na primeira vez em que esta função é chamada.
-         * * @return Container& Referência para a instância única do contêiner.
+         * @return Container& Referência para a instância única do contêiner.
          */
         static Container& getInstance(){
             static Container instance;
@@ -63,7 +63,7 @@ class Container {
 
         /**
          * @brief Inclui um novo item no contêiner.
-         * * @param chave A chave identificadora do item a ser incluído.
+         * @param chave A chave identificadora do item a ser incluído.
          * @param item O valor do item a ser armazenado.
          * @return true Se o item foi incluído com sucesso.
          * @return false Se já existir um item com a mesma chave no contêiner.
@@ -72,7 +72,7 @@ class Container {
 
         /**
          * @brief Remove um item do contêiner com base na sua chave.
-         * * @param chave A chave do item que se deseja remover.
+         * @param chave A chave do item que se deseja remover.
          * @return true Se o item foi encontrado e removido com sucesso.
          * @return false Se a chave não for encontrada no contêiner.
          */
@@ -80,9 +80,9 @@ class Container {
 
         /**
          * @brief Pesquisa por um item no contêiner utilizando a sua chave.
-         * * Se a chave for encontrada, o valor associado a ela será copiado para
+         * Se a chave for encontrada, o valor associado a ela será copiado para
          * o endereço de memória apontado pelo parâmetro `item`.
-         * * @param chave A chave do item a ser pesquisado.
+         * @param chave A chave do item a ser pesquisado.
          * @param item Ponteiro onde o valor encontrado será armazenado.
          * @return true Se a chave for encontrada no contêiner.
          * @return false Se a chave não for encontrada.
@@ -91,7 +91,7 @@ class Container {
 
         /**
          * @brief Atualiza o valor de um item existente no contêiner.
-         * * @param chave A chave do item que terá seu valor atualizado.
+         * @param chave A chave do item que terá seu valor atualizado.
          * @param item O novo valor que substituirá o valor antigo.
          * @return true Se o item foi encontrado e atualizado com sucesso.
          * @return false Se a chave não for encontrada no contêiner.
