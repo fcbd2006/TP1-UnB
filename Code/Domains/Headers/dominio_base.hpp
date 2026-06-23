@@ -3,6 +3,11 @@
 #include <string>
 
 /**
+ * @file dominio_base.hpp
+ * @brief Declaração da classe base abstrata para todos os domínios do sistema.
+ */
+
+/**
  * @class Dominio
  * @brief Classe base abstrata para padronização dos domínios.
  ** Esta classe fornece a estrutura fundamental para armazenar um valor de domínio. 
