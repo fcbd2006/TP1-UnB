@@ -10,7 +10,7 @@
 /**
  * @class Dominio
  * @brief Classe base abstrata para padronização dos domínios.
- ** Esta classe fornece a estrutura fundamental para armazenar um valor de domínio. 
+ * Esta classe fornece a estrutura fundamental para armazenar um valor de domínio. 
  * As classes derivadas devem obrigatoriamente implementar a lógica específica 
  * de validação através do método validar().
  */
@@ -24,7 +24,7 @@ class Dominio {
         /**
          * @brief Método virtual puro para validação do valor.
          * @param valor_candidato O valor a ser testado pelas regras de validação da classe filha.
-         ** Este método é chamado automaticamente pelo método setValor().
+         * Este método é chamado automaticamente pelo método setValor().
          * Classes filhas devem implementá-lo, tipicamente lançando uma exceção (ex: std::invalid_argument)
          * caso a validação falhe.
          */
