@@ -49,6 +49,12 @@ private:
      * @param email Referência para o e-mail do usuário.
      */
     void excluir(const Email& email);
+    
+    /**
+     * @brief Subrotina para a alteração do estado de uma história.
+     * @param email Referência para o e-mail do usuário.
+     */
+    void alterarEst(const Email& email);
 
 public:
     /**

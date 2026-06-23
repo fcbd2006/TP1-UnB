@@ -130,7 +130,14 @@ bool CntrISGestaoHistorias::moverParaPlanoSprint(const Codigo& codigoHistoria, c
 }
 
 bool CntrISGestaoHistorias::alterarEstado(const Codigo& codigoHistoria, const Estado& novoEstado){
-    return true;
+    auto& container = Container<Codigo, HistoriaDeUsuario>::getInstance();
+    HistoriaDeUsuario historia;
+    if(container.ler(codigoHistoria, historia)){
+        historia.setEstado(novoEstado);
+        return container.atualizar(codigoHistoria, historia);
+    }else{
+        return false;
+    }
 }
 
 bool CntrISGestaoHistorias::listarHistoriasDeProjeto(const Codigo& codigoProjeto, std::vector<HistoriaDeUsuario>& historias){

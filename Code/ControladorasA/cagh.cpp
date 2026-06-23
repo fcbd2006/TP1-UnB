@@ -70,6 +70,7 @@ void CntrIAGestaoHistorias::executar(const Email& email, const Papel& papel) {
             case ASSOCIAR:
                 if (papel.getValor() == "MESTRE SCRUM") {
                     std::cout << "\n--- Associar Pessoa ---\n";
+                    std::cout << "-> FUNCAO EM DESENVOLVIMENTO\n";
                 } else {
                     std::cout << "\n[Acesso Negado] Apenas Mestre Scrum pode estabelecer associacao.\n";
                 }
@@ -78,6 +79,7 @@ void CntrIAGestaoHistorias::executar(const Email& email, const Papel& papel) {
             case MOVER:
                 if (papel.getValor() == "MESTRE SCRUM") {
                     std::cout << "\n--- Mover para Sprint ---\n";
+                    std::cout << "-> FUNCAO EM DESENVOLVIMENTO\n";
                 } else {
                     std::cout << "\n[Acesso Negado] Apenas Mestre Scrum pode mover historias para Sprint.\n";
                 }
@@ -85,8 +87,7 @@ void CntrIAGestaoHistorias::executar(const Email& email, const Papel& papel) {
                 
             case ALTERAR_EST:
                 if (papel.getValor() == "PROPRIETARIO DE PRODUTO" || papel.getValor() == "MESTRE SCRUM") {
-                    std::cout << "\n--- Alterar Estado ---\n";
-                    // Lógica de alterar estado aqui
+                    this->alterarEst(email);
                 } else {
                     std::cout << "\n[Acesso Negado] Apenas Proprietario de Produto e Mestre Scrum podem alterar o estado.\n";
                 }
@@ -418,3 +419,59 @@ void CntrIAGestaoHistorias::excluir(const Email& email){
         std::cout << "\nErro nos dados informados: " << exp.what() << "\n";
     }
 }
+
+void CntrIAGestaoHistorias::alterarEst(const Email& email){
+    std::string strCodigo;
+    std::cout << "\n--- Alterar Estado ---\n";
+
+    std::cout << "\nDigite o Codigo da historia que deseja alterar estado: ";
+    std::getline(std::cin, strCodigo);
+    try{
+        Codigo codigo; codigo.setValor(strCodigo);
+
+        std::string strEstado;
+        int esc=0;
+        while(!esc){
+            std::cout << "Selecione o Estado:\n";
+            std::cout << "  1 - A FAZER\n";
+            std::cout << "  2 - FAZENDO\n";
+            std::cout << "  3 - FEITO\n";
+            std::cout << "-> ";
+            if(!(std::cin >> esc)){
+                std::cin.clear();
+                esc = 0;
+            }
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+            switch(esc){
+                case 1:
+                    strEstado = "A FAZER";
+                    break;
+                case 2:
+                    strEstado = "FAZENDO";
+                    break;
+                case 3:
+                    strEstado = "FEITO";
+                    break;
+                default:
+                    esc=0;
+                    std::cout << "Entrada inválida. Tente novamente.\n\n";
+                    break;
+            }
+        }
+        try{
+            Estado novoEstado; novoEstado.setValor(strEstado);
+            if(cntrlISGestaoHistorias->alterarEstado(codigo, novoEstado)){
+                std::cout << "\nEstado alterado com sucesso.\n";
+            }else{
+                std::cout << "\nErro ao tentar excluir a historia. Codigo nao encontrado na base de dados.\n";
+            }
+        }catch (std::invalid_argument &exp){
+            std::cout << "\nErro nos dados informados: " << exp.what() << "\n";
+        }
+    }
+    catch (std::invalid_argument &exp) {
+        std::cout << "\nErro nos dados informados: " << exp.what() << "\n";
+    }
+}
+
