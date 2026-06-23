@@ -3,6 +3,11 @@
 #include "Domains/Headers/outros_dominios.hpp"
 
 /**
+ * @file entidades.hpp
+ * @brief Declaração das classes entidade do sistema: Pessoa, Projeto, PlanoDeSprint e HistoriaDeUsuario.
+ */
+
+/**
  * @class Pessoa
  * @brief Entidade que representa um usuário ou colaborador do sistema.
  * * Agrupa as informações essenciais de um indivíduo, utilizando domínios 
