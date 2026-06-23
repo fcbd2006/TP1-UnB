@@ -5,14 +5,14 @@
 
 /**
  * @brief Classe de controle para o serviço de Autenticação.
- * * Implementa a interface ISAutenticacao. Responsável por verificar as credenciais
+ * Implementa a interface ISAutenticacao. Responsável por verificar as credenciais
  * de um usuário para permitir o acesso ao sistema.
  */
 class CntrISAutenticacao : public ISAutenticacao {
 public:
     /**
      * @brief Autentica um usuário no sistema.
-     * * @param email Instância de Email contendo o endereço fornecido pelo usuário.
+     * @param email Instância de Email contendo o endereço fornecido pelo usuário.
      * @param senha Instância de Senha contendo a senha fornecida pelo usuário.
      * @param papel Parâmetro de saída onde será armazenado o papel do usuário, caso autenticado.
      * @return true se as credenciais forem válidas, false caso contrário.
@@ -22,7 +22,7 @@ public:
 
 /**
  * @brief Classe de controle para o serviço de Cadastro.
- * * Implementa a interface ISCadastro. Responsável por realizar as operações de
+ * Implementa a interface ISCadastro. Responsável por realizar as operações de
  * criação, leitura, atualização e exclusão (CRUD) de Pessoas.
  */
 class CntrISCadastro : public ISCadastro {
@@ -58,7 +58,7 @@ public:
 
 /**
  * @brief Classe de controle para o serviço de Gestão de Projetos.
- * * Implementa a interface ISGestaoProjetos. Gerencia as operações relacionadas 
+ * Implementa a interface ISGestaoProjetos. Gerencia as operações relacionadas 
  * aos Projetos e seus respectivos Planos de Sprint.
  */
 class CntrISGestaoProjetos : public ISGestaoProjetos {
@@ -138,7 +138,7 @@ public:
 
 /**
  * @brief Classe de controle para o serviço de Gestão de Histórias.
- * * Implementa a interface ISGestaoHistorias. Lida com o CRUD das Histórias de Usuário, 
+ * Implementa a interface ISGestaoHistorias. Lida com o CRUD das Histórias de Usuário, 
  * bem como seu relacionamento com Pessoas, Planos de Sprint e controle de estados.
  */
 class CntrISGestaoHistorias : public ISGestaoHistorias {
