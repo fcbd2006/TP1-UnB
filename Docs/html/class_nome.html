@@ -101,8 +101,8 @@ $(function(){initNavTree('class_nome.html','','class_nome-members'); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa32b377be551106f4fa9c6ae4dec4af6" id="r_aa32b377be551106f4fa9c6ae4dec4af6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa32b377be551106f4fa9c6ae4dec4af6">Nome</a> (std::string v)</td></tr>
-<tr class="memdesc:aa32b377be551106f4fa9c6ae4dec4af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor parametrizado da classe <a class="el" href="class_nome.html" title="Representa o domínio de um Nome.">Nome</a>.  <br /></td></tr>
+<tr class="memitem:a857d98876ef45fe9f7baac176e3153fe" id="r_a857d98876ef45fe9f7baac176e3153fe"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a857d98876ef45fe9f7baac176e3153fe">Nome</a> (const std::string &amp;v)</td></tr>
+<tr class="memdesc:a857d98876ef45fe9f7baac176e3153fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor parametrizado da classe <a class="el" href="class_nome.html" title="Representa o domínio de um Nome.">Nome</a>.  <br /></td></tr>
 <tr class="memitem:a7a232445ace414f29bab4a51378952c8" id="r_a7a232445ace414f29bab4a51378952c8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7a232445ace414f29bab4a51378952c8">Nome</a> ()=default</td></tr>
 <tr class="memdesc:a7a232445ace414f29bab4a51378952c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor padrão da classe <a class="el" href="class_nome.html" title="Representa o domínio de um Nome.">Nome</a>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_dominio"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_dominio')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_dominio.html">Dominio</a></td></tr>
@@ -112,13 +112,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7dcc0fbb141f6bd1c65dd742bc6f2c11 inherit pub_methods_class_dominio" id="r_a7dcc0fbb141f6bd1c65dd742bc6f2c11"><td class="memItemLeft">
 virtual&#160;</td><td class="memItemRight"><b>~Dominio</b> ()=default</td></tr>
 <tr class="memdesc:a7dcc0fbb141f6bd1c65dd742bc6f2c11 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual padrão da classe domínio. Garante a destruição correta das classes derivadas. <br /></td></tr>
-<tr class="memitem:a220fafcb42edefedd265cedec3f84070 inherit pub_methods_class_dominio" id="r_a220fafcb42edefedd265cedec3f84070"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;)</td></tr>
-<tr class="memdesc:a220fafcb42edefedd265cedec3f84070 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para definir o valor do domínio. <br /></td></tr>
+<tr class="memitem:a3ebd355a610d914beb205d70d2907491 inherit pub_methods_class_dominio" id="r_a3ebd355a610d914beb205d70d2907491"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_dominio.html#a3ebd355a610d914beb205d70d2907491">setValor</a> (const std::string &amp;valor)</td></tr>
+<tr class="memdesc:a3ebd355a610d914beb205d70d2907491 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para definir o valor do domínio.  <br /></td></tr>
 <tr class="memitem:a2d3f7e5c12c57aabdf44ed2e81b39308 inherit pub_methods_class_dominio" id="r_a2d3f7e5c12c57aabdf44ed2e81b39308"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308">getValor</a> () const</td></tr>
 <tr class="memdesc:a2d3f7e5c12c57aabdf44ed2e81b39308 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obter o valor do domínio.  <br /></td></tr>
 <tr class="memitem:afb67029bc90a8f7f027199779e84ad3d inherit pub_methods_class_dominio" id="r_afb67029bc90a8f7f027199779e84ad3d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="class_dominio.html#afb67029bc90a8f7f027199779e84ad3d">operator==</a> (const <a class="el" href="class_dominio.html">Dominio</a> &amp;outro) const</td></tr>
 <tr class="memdesc:afb67029bc90a8f7f027199779e84ad3d inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador de igualdade. Compara o valor deste domínio com o valor de outro domínio.  <br /></td></tr>
+<tr class="memitem:a41c29d298453c47ca50e7d36d1f6bd24 inherit pub_methods_class_dominio" id="r_a41c29d298453c47ca50e7d36d1f6bd24"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="class_dominio.html#a41c29d298453c47ca50e7d36d1f6bd24">operator&lt;</a> (const <a class="el" href="class_dominio.html">Dominio</a> &amp;outro) const</td></tr>
+<tr class="memdesc:a41c29d298453c47ca50e7d36d1f6bd24 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador de desigualdade (menor que). Compara o valor deste domínio com o valor de outro domínio.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Representa o domínio de um <a class="el" href="class_nome.html" title="Representa o domínio de um Nome.">Nome</a>. </p>
@@ -126,8 +127,8 @@ void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;
 <li>Esta classe herda da classe base <a class="el" href="class_dominio.html" title="Classe base abstrata para padronização dos domínios. Esta classe fornece a estrutura fundamental para...">Dominio</a> e é responsável por armazenar e garantir a validade de uma string que representa um nome. </li>
 </ul>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa32b377be551106f4fa9c6ae4dec4af6" name="aa32b377be551106f4fa9c6ae4dec4af6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa32b377be551106f4fa9c6ae4dec4af6">&#9670;&#160;</a></span>Nome() <span class="overload">[1/2]</span></h2>
+<a id="a857d98876ef45fe9f7baac176e3153fe" name="a857d98876ef45fe9f7baac176e3153fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a857d98876ef45fe9f7baac176e3153fe">&#9670;&#160;</a></span>Nome() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,7 +139,7 @@ void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;
         <tr>
           <td class="memname">Nome::Nome </td>
           <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -153,7 +154,7 @@ void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>String com o nome inicial a ser atribuído.<ul>
-<li>Ao ser instanciado, o construtor repassa o valor recebido para o método <a class="el" href="class_dominio.html#a220fafcb42edefedd265cedec3f84070" title="Método para definir o valor do domínio.">setValor()</a>, que automaticamente invoca a validação antes de armazenar o dado. Lançará uma exceção em caso de falha na validação. </li>
+<li>Ao ser instanciado, o construtor repassa o valor recebido para o método <a class="el" href="class_dominio.html#a3ebd355a610d914beb205d70d2907491" title="Método para definir o valor do domínio.">setValor()</a>, que automaticamente invoca a validação antes de armazenar o dado. Lançará uma exceção em caso de falha na validação. </li>
 </ul>
 </td></tr>
   </table>
@@ -187,7 +188,7 @@ void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;
 
 <p>Construtor padrão da classe <a class="el" href="class_nome.html" title="Representa o domínio de um Nome.">Nome</a>. </p>
 <ul>
-<li>Permite a instanciação de um objeto <a class="el" href="class_nome.html" title="Representa o domínio de um Nome.">Nome</a> sem um valor inicial. O valor real deverá ser inserido posteriormente através do método <a class="el" href="class_dominio.html#a220fafcb42edefedd265cedec3f84070" title="Método para definir o valor do domínio.">setValor()</a>. </li>
+<li>Permite a instanciação de um objeto <a class="el" href="class_nome.html" title="Representa o domínio de um Nome.">Nome</a> sem um valor inicial. O valor real deverá ser inserido posteriormente através do método <a class="el" href="class_dominio.html#a3ebd355a610d914beb205d70d2907491" title="Método para definir o valor do domínio.">setValor()</a>. </li>
 </ul>
 
 </div>

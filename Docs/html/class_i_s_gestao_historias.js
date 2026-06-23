@@ -6,10 +6,10 @@ var class_i_s_gestao_historias =
     [ "atualizar", "class_i_s_gestao_historias.html#a30d610df071a84b1d8c8394248d6f27c", null ],
     [ "criar", "class_i_s_gestao_historias.html#aa7941116bd31dc2cc7dc7e3c261df9d0", null ],
     [ "excluir", "class_i_s_gestao_historias.html#aa9cf3e543c342c381c0d0cdd2977c672", null ],
-    [ "ler", "class_i_s_gestao_historias.html#acce2bd4b7dac8749e56bbeb1be0587e6", null ],
-    [ "listarHistoriasDePessoa", "class_i_s_gestao_historias.html#ab84daf4eb0461d80112cd366f78e844e", null ],
-    [ "listarHistoriasDePlanoSprint", "class_i_s_gestao_historias.html#a5ab93b38a1c4977c51ed7994c4e2563d", null ],
-    [ "listarHistoriasDeProjeto", "class_i_s_gestao_historias.html#a3862541fd8bd4e5ae26eeed0b71393c6", null ],
+    [ "ler", "class_i_s_gestao_historias.html#a1522657c18bbb8c3362d6977daa62fff", null ],
+    [ "listarHistoriasDePessoa", "class_i_s_gestao_historias.html#aa1f6d79d6f8019e711a49ba622101840", null ],
+    [ "listarHistoriasDePlanoSprint", "class_i_s_gestao_historias.html#a27f89bac779f4137e934b7f98f43b7d7", null ],
+    [ "listarHistoriasDeProjeto", "class_i_s_gestao_historias.html#a0e9a3ef8cecd72c3ede40b5d4c475bb6", null ],
     [ "moverParaPlanoSprint", "class_i_s_gestao_historias.html#a7665973eb53fcf72f5101e853cc779db", null ],
     [ "removerAssociacaoPessoa", "class_i_s_gestao_historias.html#a5093e67f1eff16b19a85c59e2f7fd2e8", null ]
 ];

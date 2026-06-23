@@ -107,13 +107,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7dcc0fbb141f6bd1c65dd742bc6f2c11" id="r_a7dcc0fbb141f6bd1c65dd742bc6f2c11"><td class="memItemLeft"><a id="a7dcc0fbb141f6bd1c65dd742bc6f2c11" name="a7dcc0fbb141f6bd1c65dd742bc6f2c11"></a>
 virtual&#160;</td><td class="memItemRight"><b>~Dominio</b> ()=default</td></tr>
 <tr class="memdesc:a7dcc0fbb141f6bd1c65dd742bc6f2c11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual padrão da classe domínio. Garante a destruição correta das classes derivadas. <br /></td></tr>
-<tr class="memitem:a220fafcb42edefedd265cedec3f84070" id="r_a220fafcb42edefedd265cedec3f84070"><td class="memItemLeft"><a id="a220fafcb42edefedd265cedec3f84070" name="a220fafcb42edefedd265cedec3f84070"></a>
-void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;)</td></tr>
-<tr class="memdesc:a220fafcb42edefedd265cedec3f84070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para definir o valor do domínio. <br /></td></tr>
+<tr class="memitem:a3ebd355a610d914beb205d70d2907491" id="r_a3ebd355a610d914beb205d70d2907491"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3ebd355a610d914beb205d70d2907491">setValor</a> (const std::string &amp;valor)</td></tr>
+<tr class="memdesc:a3ebd355a610d914beb205d70d2907491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para definir o valor do domínio.  <br /></td></tr>
 <tr class="memitem:a2d3f7e5c12c57aabdf44ed2e81b39308" id="r_a2d3f7e5c12c57aabdf44ed2e81b39308"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2d3f7e5c12c57aabdf44ed2e81b39308">getValor</a> () const</td></tr>
 <tr class="memdesc:a2d3f7e5c12c57aabdf44ed2e81b39308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obter o valor do domínio.  <br /></td></tr>
 <tr class="memitem:afb67029bc90a8f7f027199779e84ad3d" id="r_afb67029bc90a8f7f027199779e84ad3d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#afb67029bc90a8f7f027199779e84ad3d">operator==</a> (const <a class="el" href="class_dominio.html">Dominio</a> &amp;outro) const</td></tr>
 <tr class="memdesc:afb67029bc90a8f7f027199779e84ad3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador de igualdade. Compara o valor deste domínio com o valor de outro domínio.  <br /></td></tr>
+<tr class="memitem:a41c29d298453c47ca50e7d36d1f6bd24" id="r_a41c29d298453c47ca50e7d36d1f6bd24"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a41c29d298453c47ca50e7d36d1f6bd24">operator&lt;</a> (const <a class="el" href="class_dominio.html">Dominio</a> &amp;outro) const</td></tr>
+<tr class="memdesc:a41c29d298453c47ca50e7d36d1f6bd24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador de desigualdade (menor que). Compara o valor deste domínio com o valor de outro domínio.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe base abstrata para padronização dos domínios. Esta classe fornece a estrutura fundamental para armazenar um valor de domínio. As classes derivadas devem obrigatoriamente implementar a lógica específica de validação através do método validar(). </p>
@@ -143,6 +144,42 @@ void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;
 
 <p>Método para obter o valor do domínio. </p>
 <dl class="section return"><dt>Returns</dt><dd>Retorna uma referência constante para a string contendo o valor do domínio. </dd></dl>
+
+</div>
+</div>
+<a id="a41c29d298453c47ca50e7d36d1f6bd24" name="a41c29d298453c47ca50e7d36d1f6bd24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41c29d298453c47ca50e7d36d1f6bd24">&#9670;&#160;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Dominio::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_dominio.html">Dominio</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>outro</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sobrecarga do operador de desigualdade (menor que). Compara o valor deste domínio com o valor de outro domínio. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outro</td><td>O objeto <a class="el" href="class_dominio.html" title="Classe base abstrata para padronização dos domínios. Esta classe fornece a estrutura fundamental para...">Dominio</a> a ser comparado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Se o valor à esquerda for menor que o à direita. </dd>
+<dd>
+false caso contrário. </dd></dl>
 
 </div>
 </div>
@@ -179,6 +216,39 @@ void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;
 <dl class="section return"><dt>Returns</dt><dd>true Se os valores armazenados forem estritamente iguais. </dd>
 <dd>
 false Se os valores forem diferentes. </dd></dl>
+
+</div>
+</div>
+<a id="a3ebd355a610d914beb205d70d2907491" name="a3ebd355a610d914beb205d70d2907491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ebd355a610d914beb205d70d2907491">&#9670;&#160;</a></span>setValor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dominio::setValor </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>valor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método para definir o valor do domínio. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>O valor em formato de string a ser validado e armazenado no domínio. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

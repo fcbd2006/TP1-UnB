@@ -113,13 +113,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7dcc0fbb141f6bd1c65dd742bc6f2c11 inherit pub_methods_class_dominio" id="r_a7dcc0fbb141f6bd1c65dd742bc6f2c11"><td class="memItemLeft">
 virtual&#160;</td><td class="memItemRight"><b>~Dominio</b> ()=default</td></tr>
 <tr class="memdesc:a7dcc0fbb141f6bd1c65dd742bc6f2c11 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual padrão da classe domínio. Garante a destruição correta das classes derivadas. <br /></td></tr>
-<tr class="memitem:a220fafcb42edefedd265cedec3f84070 inherit pub_methods_class_dominio" id="r_a220fafcb42edefedd265cedec3f84070"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;)</td></tr>
-<tr class="memdesc:a220fafcb42edefedd265cedec3f84070 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para definir o valor do domínio. <br /></td></tr>
+<tr class="memitem:a3ebd355a610d914beb205d70d2907491 inherit pub_methods_class_dominio" id="r_a3ebd355a610d914beb205d70d2907491"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_dominio.html#a3ebd355a610d914beb205d70d2907491">setValor</a> (const std::string &amp;valor)</td></tr>
+<tr class="memdesc:a3ebd355a610d914beb205d70d2907491 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para definir o valor do domínio.  <br /></td></tr>
 <tr class="memitem:a2d3f7e5c12c57aabdf44ed2e81b39308 inherit pub_methods_class_dominio" id="r_a2d3f7e5c12c57aabdf44ed2e81b39308"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308">getValor</a> () const</td></tr>
 <tr class="memdesc:a2d3f7e5c12c57aabdf44ed2e81b39308 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obter o valor do domínio.  <br /></td></tr>
 <tr class="memitem:afb67029bc90a8f7f027199779e84ad3d inherit pub_methods_class_dominio" id="r_afb67029bc90a8f7f027199779e84ad3d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="class_dominio.html#afb67029bc90a8f7f027199779e84ad3d">operator==</a> (const <a class="el" href="class_dominio.html">Dominio</a> &amp;outro) const</td></tr>
 <tr class="memdesc:afb67029bc90a8f7f027199779e84ad3d inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador de igualdade. Compara o valor deste domínio com o valor de outro domínio.  <br /></td></tr>
+<tr class="memitem:a41c29d298453c47ca50e7d36d1f6bd24 inherit pub_methods_class_dominio" id="r_a41c29d298453c47ca50e7d36d1f6bd24"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="class_dominio.html#a41c29d298453c47ca50e7d36d1f6bd24">operator&lt;</a> (const <a class="el" href="class_dominio.html">Dominio</a> &amp;outro) const</td></tr>
+<tr class="memdesc:a41c29d298453c47ca50e7d36d1f6bd24 inherit pub_methods_class_dominio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador de desigualdade (menor que). Compara o valor deste domínio com o valor de outro domínio.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Representa o domínio de um código de identificação. </p>
@@ -154,7 +155,7 @@ void&#160;</td><td class="memItemRight"><b>setValor</b> (const std::string &amp;
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>String contendo o valor do código a ser armazenado.<ul>
-<li>Este construtor recebe uma string como argumento e utiliza o método <a class="el" href="class_dominio.html#a220fafcb42edefedd265cedec3f84070" title="Método para definir o valor do domínio.">setValor()</a> para armazenar o valor do código, garantindo que a validação seja realizada automaticamente. </li>
+<li>Este construtor recebe uma string como argumento e utiliza o método <a class="el" href="class_dominio.html#a3ebd355a610d914beb205d70d2907491" title="Método para definir o valor do domínio.">setValor()</a> para armazenar o valor do código, garantindo que a validação seja realizada automaticamente. </li>
 </ul>
 </td></tr>
   </table>

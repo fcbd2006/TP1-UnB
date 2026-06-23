@@ -7,8 +7,8 @@ var class_i_s_gestao_projetos =
     [ "criarProjeto", "class_i_s_gestao_projetos.html#aebf62e0a485748824280ec5bff67edc8", null ],
     [ "excluirPlanoSprint", "class_i_s_gestao_projetos.html#a433b1254d2888880950c3dab90b1d7d5", null ],
     [ "excluirProjeto", "class_i_s_gestao_projetos.html#afea48dd37029101cd30134ca93e0f70d", null ],
-    [ "lerPlanoSprint", "class_i_s_gestao_projetos.html#acc699927c51b3b0bc1d2a74024458ccf", null ],
-    [ "lerProjeto", "class_i_s_gestao_projetos.html#a3e8fd0d6965c8a0dbf5fb40825db2115", null ],
-    [ "listarPlanosSprintDeProjeto", "class_i_s_gestao_projetos.html#a0f951bc0f9d0cc2b8ed3b59c483ac57c", null ],
-    [ "listarProjetosDePessoa", "class_i_s_gestao_projetos.html#a828d3822ed0ec9df8313979ef2e4c8d1", null ]
+    [ "lerPlanoSprint", "class_i_s_gestao_projetos.html#adb8c6d9566233081808b292588bf9808", null ],
+    [ "lerProjeto", "class_i_s_gestao_projetos.html#ad6c8cafd0373e41b416734cd68844504", null ],
+    [ "listarPlanosSprintDeProjeto", "class_i_s_gestao_projetos.html#a7d22cc97ecb3ef1735337a04e6bb5645", null ],
+    [ "listarProjetosDePessoa", "class_i_s_gestao_projetos.html#aac053d566d192c0508b00a8856764cae", null ]
 ];

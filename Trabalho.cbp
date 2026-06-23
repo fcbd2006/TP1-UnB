@@ -54,7 +54,6 @@
 		<Unit filename="Code/Entities/entidades.cpp" />
 		<Unit filename="Code/Interfaces/Headers/interfaces_apresentacao.hpp" />
 		<Unit filename="Code/Interfaces/Headers/interfaces_servico.hpp" />
-		<Unit filename="Code/Stubs/servico.hpp" />
 		<Unit filename="Code/main.cpp" />
 		<Extensions>
 			<DoxyBlocks>
