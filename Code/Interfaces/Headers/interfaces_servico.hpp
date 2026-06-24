@@ -4,11 +4,17 @@
 #include "Entities/Headers/entidades.hpp"
 #include <vector>
 
+/**
+ * @file interfaces_servico.hpp
+ * @brief Declaração das interfaces da camada de Serviço (Autenticação, Cadastro, Gestão de Projetos e Gestão de Histórias).
+ */
+
 //-----------------------------------------------------------
 // AUTENTICAÇÃO
 //-----------------------------------------------------------
 
 /**
+ * @class ISAutenticacao
  * @brief Interface de serviço de autenticação (ISA).
  * Esta classe abstrata define o contrato para a validação de acesso ao sistema.
  */
@@ -36,6 +42,7 @@ public:
 //-----------------------------------------------------------
 
 /**
+ * @class ISCadastro
  * @brief Interface de serviço de cadastro (ISC).
  * Define o contrato para operações de criação, leitura, atualização e 
  * exclusão de instâncias da entidade Pessoa.
@@ -51,7 +58,7 @@ public:
 
     /**
      * @brief Lê os dados de uma Pessoa a partir do seu e-mail (Serviço 2).
-     * @param pessoa Ponteiro para o objeto Pessoa que será preenchido com os dados recuperados.
+     * @param pessoa Referência para o objeto Pessoa que será preenchido com os dados recuperados.
      * @return true se a leitura foi bem-sucedida, false se a pessoa não foi encontrada.
      */
     virtual bool ler(Pessoa& pessoa) = 0;
@@ -83,6 +90,7 @@ public:
 //-----------------------------------------------------------
 
 /**
+ * @class ISGestaoProjetos
  * @brief Interface de serviço de Gestão de Projetos (ISGP).
  * * Centraliza as operações do sistema Scrum, relacionadas a projetos e planos de sprint.
  */
@@ -101,7 +109,7 @@ public:
 
     /**
      * @brief Lê os dados de um Projeto cadastrado (Serviço 6).
-     * @param projeto Ponteiro para o objeto Projeto que receberá os dados recuperados do sistema.
+     * @param projeto Referência para o objeto Projeto que receberá os dados recuperados do sistema.
      * @return true se a leitura foi bem-sucedida, false se o projeto não foi encontrado.
      */
     virtual bool lerProjeto(Projeto& projeto) = 0;
@@ -133,7 +141,7 @@ public:
 
     /**
      * @brief Lê os dados de um Plano de Sprint cadastrado (Serviço 10).
-     * @param plano Ponteiro para o objeto PlanoDeSprint que receberá os dados do sistema.
+     * @param plano Referência para o objeto PlanoDeSprint que receberá os dados do sistema.
      * @return true se a leitura foi bem-sucedida, false se o plano de sprint não foi encontrado.
      */
     virtual bool lerPlanoSprint(PlanoDeSprint& plano) = 0;
@@ -159,7 +167,7 @@ public:
     /**
      * @brief Lista todos os Projetos associados a uma Pessoa específica (Serviço 19).
      * @param emailPessoa Instância do domínio Email contendo o identificador da Pessoa.
-     * @param projetos Ponteiro para um vetor que será populado com as instâncias de Projeto encontradas.
+     * @param projetos Referência para um vetor que será populado com as instâncias de Projeto encontradas.
      * @return true se a operação de busca foi bem-sucedida, false em caso de falha.
      */
     virtual bool listarProjetosDePessoa(const Email& emailPessoa, std::vector<Projeto>& projetos) = 0;
@@ -167,7 +175,7 @@ public:
     /**
      * @brief Lista todos os Planos de Sprint associados a um Projeto (Serviço 21).
      * @param codigoProjeto Instância do domínio Codigo contendo o identificador do Projeto.
-     * @param planos Ponteiro para um vetor que será populado com as instâncias de PlanoDeSprint encontradas.
+     * @param planos Referência para um vetor que será populado com as instâncias de PlanoDeSprint encontradas.
      * @return true se a operação de busca foi bem-sucedida, false em caso de falha.
      */
     virtual bool listarPlanosSprintDeProjeto(const Codigo& codigoProjeto, std::vector<PlanoDeSprint>& planos) = 0;
@@ -181,6 +189,7 @@ public:
 };
 
 /**
+ * @class ISGestaoHistorias
  * @brief Interface de serviço de gestão de Histórias (ISGH).
  * Centraliza as operações relacionadas a Histórias de Usuário e relacionamentos.
  */
@@ -196,7 +205,7 @@ public:
 
     /**
      * @brief Lê os dados de uma História de Usuário cadastrada (Serviço 14).
-     * @param historia Ponteiro para o objeto HistoriaDeUsuario que receberá os dados do sistema.
+     * @param historia Referência para o objeto HistoriaDeUsuario que receberá os dados do sistema.
      * @return true se a leitura foi bem-sucedida, false se a história de usuário não foi encontrada.
      */
     virtual bool ler(HistoriaDeUsuario& historia) = 0;
@@ -254,7 +263,7 @@ public:
     /**
      * @brief Lista todas as Histórias de Usuário associadas a um Projeto específico (Serviço 20).
      * @param codigoProjeto Instância do domínio Codigo contendo o identificador do Projeto.
-     * @param historias Ponteiro para um vetor que será populado com as instâncias de HistoriaDeUsuario encontradas.
+     * @param historias Referência para um vetor que será populado com as instâncias de HistoriaDeUsuario encontradas.
      * @return true se a operação de busca foi bem-sucedida, false em caso de falha.
      */
     virtual bool listarHistoriasDeProjeto(const Codigo& codigoProjeto, std::vector<HistoriaDeUsuario>& historias) = 0;
@@ -262,7 +271,7 @@ public:
     /**
      * @brief Lista todas as Histórias de Usuário associadas a um Plano de Sprint (Serviço 22).
      * @param codigoPlano Instância do domínio Codigo contendo o identificador do Plano de Sprint.
-     * @param historias Ponteiro para um vetor que será populado com as instâncias de HistoriaDeUsuario encontradas.
+     * @param historias Referência para um vetor que será populado com as instâncias de HistoriaDeUsuario encontradas.
      * @return true se a operação de busca foi bem-sucedida, false em caso de falha.
      */
     virtual bool listarHistoriasDePlanoSprint(const Codigo& codigoPlano, std::vector<HistoriaDeUsuario>& historias) = 0;
@@ -270,7 +279,7 @@ public:
     /**
      * @brief Lista todas as Histórias de Usuário associadas a uma Pessoa (Serviço 23).
      * @param emailPessoa Instância do domínio Email contendo o identificador da Pessoa (ex: Desenvolvedor).
-     * @param historias Ponteiro para um vetor que será populado com as instâncias de HistoriaDeUsuario encontradas.
+     * @param historias Referência para um vetor que será populado com as instâncias de HistoriaDeUsuario encontradas.
      * @return true se a operação de busca foi bem-sucedida, false em caso de falha.
      */
     virtual bool listarHistoriasDePessoa(const Email& emailPessoa, std::vector<HistoriaDeUsuario>& historias) = 0;
