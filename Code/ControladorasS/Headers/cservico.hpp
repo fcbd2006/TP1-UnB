@@ -4,6 +4,12 @@
 #include "Interfaces/Headers/interfaces_servico.hpp"
 
 /**
+ * @file cservico.hpp
+ * @brief Declaração das classes controladoras da camada de Serviço (Autenticação, Cadastro, Gestão de Projetos e Gestão de Histórias).
+ */
+
+/**
+ * @class CntrISAutenticacao
  * @brief Classe de controle para o serviço de Autenticação.
  * Implementa a interface ISAutenticacao. Responsável por verificar as credenciais
  * de um usuário para permitir o acesso ao sistema.
@@ -21,6 +27,7 @@ public:
 };
 
 /**
+ * @class CntrISCadastro
  * @brief Classe de controle para o serviço de Cadastro.
  * Implementa a interface ISCadastro. Responsável por realizar as operações de
  * criação, leitura, atualização e exclusão (CRUD) de Pessoas.
@@ -57,6 +64,7 @@ public:
 };
 
 /**
+ * @class CntrISGestaoProjetos
  * @brief Classe de controle para o serviço de Gestão de Projetos.
  * Implementa a interface ISGestaoProjetos. Gerencia as operações relacionadas 
  * aos Projetos e seus respectivos Planos de Sprint.
@@ -137,6 +145,7 @@ public:
 };
 
 /**
+ * @class CntrISGestaoHistorias
  * @brief Classe de controle para o serviço de Gestão de Histórias.
  * Implementa a interface ISGestaoHistorias. Lida com o CRUD das Histórias de Usuário, 
  * bem como seu relacionamento com Pessoas, Planos de Sprint e controle de estados.
