@@ -5,6 +5,12 @@
 #include "Entities/Headers/entidades.hpp"
 
 /**
+ * @file cai.hpp
+ * @brief Declaração da classe controladora de apresentação do menu inicial (CntrIAInicial).
+ */
+
+/**
+ * @class CntrIAInicial
  * @brief Classe controladora de apresentação do menu inicial.
  * Implementa a interface IAInicial, mantendo o estado da sessão (se o utilizador está logado) 
  * e roteando a navegação para os subsistemas corretos.
@@ -32,25 +38,25 @@ public:
 
     /**
      * @brief Define a interface de autenticação que será dependência.
-     * @param servico Ponteiro para a instância concreta da apresentação de autenticação.
+     * @param interface Ponteiro para a instância concreta da apresentação de autenticação.
      */
     void setApresentacaoAutenticacao(IAAutenticacao* interface) override;
 
     /**
      * @brief Define a interface de cadastro que será dependência.
-     * @param servico Ponteiro para a instância concreta da apresentação de cadastro.
+     * @param interface Ponteiro para a instância concreta da apresentação de cadastro.
      */
     void setApresentacaoCadastro(IACadastro* interface) override;
 
     /**
      * @brief Define a interface de gestão de projetos que será dependência.
-     * @param servico Ponteiro para a instância concreta da apresentação de gestão de projetos.
+     * @param interface Ponteiro para a instância concreta da apresentação de gestão de projetos.
      */
     void setApresentacaoProjetos(IAGestaoProjetos* interface) override;
 
     /**
      * @brief Define a interface de gestão de histórias que será dependência.
-     * @param servico Ponteiro para a instância concreta da apresentação de gestão de histórias.
+     * @param interface Ponteiro para a instância concreta da apresentação de gestão de histórias.
      */
     void setApresentacaoHistorias(IAGestaoHistorias* interface) override;
 };
