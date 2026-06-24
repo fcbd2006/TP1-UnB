@@ -3,6 +3,11 @@
 
 #include "Entities/Headers/entidades.hpp"
 
+/**
+ * @file interfaces_apresentacao.hpp
+ * @brief Declaração das interfaces da camada de Apresentação.
+ */
+
 //-----------------------------------------------------------
 // FORWARD DECLARATIONS DAS INTERFACES DE SERVIÇO
 //-----------------------------------------------------------
@@ -17,6 +22,7 @@ class ISGestaoProjetos;
 //-----------------------------------------------------------
 
 /**
+ * @class IAAutenticacao
  * @brief Interface de apresentação de autenticação (IAA).
  *
  * Esta classe abstrata estabelece o contrato para a interação com o utilizador 
@@ -54,6 +60,7 @@ public:
 //-----------------------------------------------------------
 
 /**
+ * @class IACadastro
  * @brief Interface de apresentação de cadastro (IAC).
  *
  * Estabelece o contrato para a exibição de menus relacionados com 
@@ -90,6 +97,7 @@ public:
 //-----------------------------------------------------------
 
 /**
+ * @class IAGestaoProjetos
  * @brief Interface de apresentação de gestão de projetos (IAGP).
  *
  * Estabelece o contrato para a exibição dos menus de controle de
@@ -122,6 +130,7 @@ public:
 };
 
 /**
+ * @class IAGestaoHistorias
  * @brief Interface de apresentação de gestão de histórias (IAGH).
  *
  * Estabelece o contrato para a exibição dos menus de controle de história.
@@ -157,6 +166,7 @@ public:
 //-----------------------------------------------------------
 
 /**
+ * @class IAInicial
  * @brief Interface de apresentação para a inicialização e coordenação do sistema.
  * Define o contrato para o menu principal de navegação, que interliga 
  * os fluxos de autenticação, cadastro e gestão.
@@ -168,16 +178,29 @@ public:
      */
     virtual void executar() = 0;
 
-    /** @brief Injeta o módulo de apresentação de Autenticação. */
+    /** 
+     * @brief Injeta o módulo de apresentação de Autenticação. 
+     * @param apr Ponteiro para a interface de apresentação de autenticação (IAA).
+     */
+
     virtual void setApresentacaoAutenticacao(IAAutenticacao* apr) = 0;
     
-    /** @brief Injeta o módulo de apresentação de Cadastro. */
+    /** 
+     * @brief Injeta o módulo de apresentação de Cadastro. 
+     * @param apr Ponteiro para a interface de apresentação de cadastro (IAC).
+     */
     virtual void setApresentacaoCadastro(IACadastro* apr) = 0;
     
-    /** @brief Injeta o módulo de apresentação de Gestão de Projetos. */
+    /** 
+     * @brief Injeta o módulo de apresentação de Gestão de Projetos. 
+     * @param apr Ponteiro para a interface de apresentação de gestão de projetos (IAGP).
+     */
     virtual void setApresentacaoProjetos(IAGestaoProjetos* apr) = 0;
     
-    /** @brief Injeta o módulo de apresentação de Gestão de Histórias. */
+    /** 
+     * @brief Injeta o módulo de apresentação de Gestão de Histórias. 
+     * @param apr Ponteiro para a interface de apresentação de gestão de histórias (IAGH).
+     */
     virtual void setApresentacaoHistorias(IAGestaoHistorias* apr) = 0;
 
     /**
