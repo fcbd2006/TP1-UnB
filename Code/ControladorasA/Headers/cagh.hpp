@@ -5,6 +5,12 @@
 #include "Entities/Headers/entidades.hpp"
 
 /**
+ * @file cagh.hpp
+ * @brief Declaração da classe controladora de apresentação para a Gestão de Histórias (CntrIAGestaoHistorias).
+ */
+
+/**
+ * @class CntrIAGestaoHistorias
  * @brief Classe controladora de apresentação para a Gestão de Histórias de Usuário.
  * Implementa a interface IAGestaoHistorias, fornecendo os menus e submenus interativos 
  * para gerenciar os requisitos, estados e atribuições de histórias.
@@ -60,6 +66,7 @@ public:
     /**
      * @brief Executa o menu principal de gestão de Histórias de Usuário.
      * @param email Referência constante para o e-mail do usuário atualmente autenticado.
+     * @param papel Referência constante para o papel do usuário atualmente autenticado.
      */
     void executar(const Email& email, const Papel& papel) override;
 
