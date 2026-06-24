@@ -5,6 +5,12 @@
 #include "Entities/Headers/entidades.hpp"
 
 /**
+ * @file cagp.hpp
+ * @brief Declaração da classe controladora de apresentação para a Gestão de Projetos e Sprints (CntrIAGestaoProjetos).
+ */
+
+/**
+ * @class CntrIAGestaoProjetos
  * @brief Classe controladora de apresentação para a Gestão de Projetos e Sprints.
  * Implementa a interface IAGestaoProjetos, fornecendo os menus e submenus interativos 
  * para gerenciar a estrutura temporal (Projetos e Sprints) do sistema Scrum.
@@ -77,6 +83,7 @@ public:
     /**
      * @brief Executa o menu principal de gestão de Projetos e Sprints.
      * @param email Referência constante para o e-mail do usuário atualmente autenticado.
+     * @param papel Referência constante para o papel do usuário atualmente autenticado.
      */
     void executar(const Email& email, const Papel& papel) override;
 
