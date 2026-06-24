@@ -6,6 +6,12 @@
 #include <string>
 
 /**
+ * @file containers.hpp
+ * @brief Declaração da classe Container genérica implementada com o padrão Singleton.
+ */
+
+/**
+ * @class Container
  * @brief Classe genérica para armazenar e gerenciar pares de chave e valor.
  * Esta classe utiliza um std::map internamente para armazenar os dados, 
  * o que garante que as chaves sejam únicas e permite operações de busca,
