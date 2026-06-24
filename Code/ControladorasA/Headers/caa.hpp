@@ -5,6 +5,12 @@
 #include "Entities/Headers/entidades.hpp"
 
 /**
+ * @file caa.hpp
+ * @brief Declaração da classe controladora de apresentação de Autenticação (CntrIAAutenticacao).
+ */
+
+/**
+ * @class CntrIAAutenticacao
  * @brief Classe controladora de apresentação de Autenticação.
  * Implementa a interface IAAutenticacao, gerenciando a interação com o 
  * usuário para a coleta de credenciais e invocação do serviço de validação.
@@ -17,6 +23,7 @@ public:
     /**
      * @brief Executa o fluxo interativo de autenticação do usuário.
      * @param email o objeto Email onde será armazenado o e-mail do usuário caso a autenticação tenha sucesso.
+     * @param papel o objeto Papel onde será armazenado o papel do usuário caso a autenticação tenha sucesso.
      * @return true se a autenticação for bem-sucedida, false caso contrário.
      */
     bool autenticar(Email& email, Papel& papel) override;
