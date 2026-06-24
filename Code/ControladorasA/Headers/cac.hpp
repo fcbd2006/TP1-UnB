@@ -5,6 +5,12 @@
 #include "Entities/Headers/entidades.hpp"
 
 /**
+ * @file cac.hpp
+ * @brief Declaração da classe controladora de apresentação de Cadastro (CntrIACadastro).
+ */
+
+/**
+ * @class CntrIACadastro
  * @brief Classe controladora de apresentação do Cadastro de usuários.
  * Implementa a interface IACadastro, gerenciando os menus e interações 
  * relacionadas à criação, leitura, atualização e exclusão de contas de usuário (Pessoa).
@@ -24,7 +30,7 @@ private:
     /**
      * @brief Subrotina para o cadastro de novo usuário.
      * @param email Referência para o e-mail do usuário (esperado que seja vazio).
-     * @param email Referência para o papel do usuário.
+     * @param papel Referência para o papel do usuário.
      * @param logado Valor booleano que indica se o usário de fato não está logado (false).
      */
     void cadastrar(Email& email, Papel& papel, bool& logado);
@@ -39,7 +45,7 @@ private:
     /**
      * @brief Subrotina para a atualização dos dados de um usuário.
      * @param email Referência para o e-mail do usuário.
-     * @param email Referência para o papel do usuário.
+     * @param papel Referência para o papel do usuário.
      * @param logado Valor booleano que indica se o usário está logado (true).
      */
     void atualizar(const Email& email, Papel& papel, bool logado);
@@ -48,6 +54,7 @@ public:
     /**
      * @brief Executa o menu principal de gerenciamento de contas.
      * @param email Referência para o e-mail do usuário logado (pode ser vazio caso o usuário não esteja autenticado).
+     * @param papel Referência para o papel do usuário logado (pode ser vazio caso o usuário não esteja autenticado).
      */
     void executar(Email& email, Papel& papel) override;
 
