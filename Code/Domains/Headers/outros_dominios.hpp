@@ -3,6 +3,11 @@
 
 #include <Domains/Headers/dominio_base.hpp>
 
+/**
+ * @file outros_dominios.hpp
+ * @brief Declaração das classes de Domínio do sistema (Codigo, Data, Email, Estado, Nome, Papel, Prioridade, Senha, Tempo, Texto).
+ */
+
 // Declarações dos domínios
 
 // CODIGO
