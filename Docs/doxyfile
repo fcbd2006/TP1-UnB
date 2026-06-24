@@ -9,13 +9,13 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = Trabalho
+PROJECT_NAME           = Trabalho TP1 - UnB
 PROJECT_NUMBER         = 
 PROJECT_BRIEF          =
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       =
 CREATE_SUBDIRS         = NO
-OUTPUT_LANGUAGE        = English
+OUTPUT_LANGUAGE        = Portuguese
 BRIEF_MEMBER_DESC      = YES
 REPEAT_BRIEF           = YES
 ABBREVIATE_BRIEF       =
@@ -48,8 +48,8 @@ SYMBOL_CACHE_SIZE      = 0
 #---------------------------------------------------------------------------
 # Build related configuration options
 #---------------------------------------------------------------------------
-EXTRACT_ALL            = NO
-EXTRACT_PRIVATE        = NO
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
 EXTRACT_STATIC         = NO
 EXTRACT_LOCAL_CLASSES  = YES
 EXTRACT_LOCAL_METHODS  = NO
@@ -106,7 +106,7 @@ INPUT                  = \
 	"../Code/Interfaces/Headers/interfaces_apresentacao.hpp" 
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          =
-RECURSIVE              = NO
+RECURSIVE              = YES
 EXCLUDE                =
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       =
@@ -188,7 +188,7 @@ SERVER_BASED_SEARCH    = NO
 #---------------------------------------------------------------------------
 # configuration options related to the LaTeX output
 #---------------------------------------------------------------------------
-GENERATE_LATEX         = NO
+GENERATE_LATEX         = YES
 LATEX_OUTPUT           = latex
 LATEX_CMD_NAME         = latex
 MAKEINDEX_CMD_NAME     = makeindex
