@@ -1,17 +1,5 @@
 var searchData=
 [
-  ['_7edominio_0',['~Dominio',['../class_dominio.html#a7dcc0fbb141f6bd1c65dd742bc6f2c11',1,'Dominio']]],
-  ['_7ehistoriadeusuario_1',['~HistoriaDeUsuario',['../class_historia_de_usuario.html#abd3f908ff84cc29fa4bf9d9ee356d9ab',1,'HistoriaDeUsuario']]],
-  ['_7eiaautenticacao_2',['~IAAutenticacao',['../class_i_a_autenticacao.html#a3db80f26e7a5b45937270f74a818c715',1,'IAAutenticacao']]],
-  ['_7eiacadastro_3',['~IACadastro',['../class_i_a_cadastro.html#a66fb9eb2a276398938b45f20afd923b5',1,'IACadastro']]],
-  ['_7eiagestaohistorias_4',['~IAGestaoHistorias',['../class_i_a_gestao_historias.html#ac2d6043e11dca0e6034be3f74db7b374',1,'IAGestaoHistorias']]],
-  ['_7eiagestaoprojetos_5',['~IAGestaoProjetos',['../class_i_a_gestao_projetos.html#a26beced82b7d585279010210858f5d41',1,'IAGestaoProjetos']]],
-  ['_7eiainicial_6',['~IAInicial',['../class_i_a_inicial.html#aef7f568825534a963928d4d994aed814',1,'IAInicial']]],
-  ['_7eisautenticacao_7',['~ISAutenticacao',['../class_i_s_autenticacao.html#af0b6fd5cc2afd985070db8991b3da3a9',1,'ISAutenticacao']]],
-  ['_7eiscadastro_8',['~ISCadastro',['../class_i_s_cadastro.html#afb770bba08d1dd9da44c3dd946b1f76c',1,'ISCadastro']]],
-  ['_7eisgestaohistorias_9',['~ISGestaoHistorias',['../class_i_s_gestao_historias.html#a262c19eb4181db8c4b32b5f3f1157600',1,'ISGestaoHistorias']]],
-  ['_7eisgestaoprojetos_10',['~ISGestaoProjetos',['../class_i_s_gestao_projetos.html#a6fbc68d7d8ca1138aaaa32e859a71006',1,'ISGestaoProjetos']]],
-  ['_7epessoa_11',['~Pessoa',['../class_pessoa.html#a586de5d2e9fd85c2d19b28841853e473',1,'Pessoa']]],
-  ['_7eplanodesprint_12',['~PlanoDeSprint',['../class_plano_de_sprint.html#aab6a9a3654d28dfa10a5148706f8a1e7',1,'PlanoDeSprint']]],
-  ['_7eprojeto_13',['~Projeto',['../class_projeto.html#aa137e8842571e441c22271cf385b8646',1,'Projeto']]]
+  ['validar_0',['validar',['../class_codigo.html#aebdc8c8589cd44e64946eb5af5b6f832',1,'Codigo::validar()'],['../class_data.html#a0f86527c2c8bfa25798076dca696943a',1,'Data::validar()'],['../class_email.html#a00cd1401ade44dd13d423706e9c0ae3b',1,'Email::validar()'],['../class_estado.html#a425c92c3d35db0febe6a1898cad1e502',1,'Estado::validar()'],['../class_nome.html#a9e2d798beed87b43fcf45969a91b2132',1,'Nome::validar()'],['../class_papel.html#a19682c03ee1687c98e79073d50d1cba4',1,'Papel::validar()'],['../class_prioridade.html#afe7e9e4a6cbb2c9743fa115eb92ab9da',1,'Prioridade::validar()'],['../class_senha.html#a436574e48b8181812deb500482557a9f',1,'Senha::validar()'],['../class_tempo.html#a7e66725f3162eaf07800e1a6a58fedbc',1,'Tempo::validar()'],['../class_texto.html#a943aa58ec66ad8acffa5ea2133778f8d',1,'Texto::validar()'],['../class_dominio.html#a5be1128dae55a0eee9070946a14bfb80',1,'Dominio::validar()']]],
+  ['validar_5fformato_1',['validar_formato',['../class_email.html#a85fb4c400aa22a73f2e4ee50b8e8ef4d',1,'Email']]]
 ];

@@ -17,5 +17,13 @@ var class_historia_de_usuario =
     [ "setPrioridade", "class_historia_de_usuario.html#ae469900db4b1677a31eb966ff0f0b955", null ],
     [ "setTempo", "class_historia_de_usuario.html#a17f9927fb9bee78dfe6fcb08978bc0ed", null ],
     [ "setTitulo", "class_historia_de_usuario.html#afa61720731c9bf2f9eebdfee14fef78a", null ],
-    [ "setValor", "class_historia_de_usuario.html#a798877ec1aa80ca2975d8203e2981fff", null ]
+    [ "setValor", "class_historia_de_usuario.html#a798877ec1aa80ca2975d8203e2981fff", null ],
+    [ "acao", "class_historia_de_usuario.html#a32fbe86ae842a067224e693d430cd2e1", null ],
+    [ "codigo", "class_historia_de_usuario.html#a0e837efa0d03fdd005f5da64ea3358d7", null ],
+    [ "estado", "class_historia_de_usuario.html#a1964bdcf76f35ad87a50539e352b514f", null ],
+    [ "estimativa", "class_historia_de_usuario.html#a7e3e7eca5fa42baa66ffa7e8aa1d9429", null ],
+    [ "papel", "class_historia_de_usuario.html#a86d439f2b00ee2d7f0f4c181d1edfff5", null ],
+    [ "prioridade", "class_historia_de_usuario.html#af34c9296ca872787c58e13896e2eb3ff", null ],
+    [ "titulo", "class_historia_de_usuario.html#ad60be72b9df9d8f9da4d1563e482ff2e", null ],
+    [ "valor", "class_historia_de_usuario.html#ae136d3f0e05bbbf080bd2cd00f826e2f", null ]
 ];

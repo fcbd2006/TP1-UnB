@@ -9,5 +9,9 @@ var class_pessoa =
     [ "setEmail", "class_pessoa.html#a07c9dc9687e897de901a0361cdae0401", null ],
     [ "setNome", "class_pessoa.html#afddbfe1fabc8e39b53f9b59b24702591", null ],
     [ "setPapel", "class_pessoa.html#af9fd246c333ffb8c8deef7a4c00fed68", null ],
-    [ "setSenha", "class_pessoa.html#a57ed4246933f9585fc92a4adf9e1f69f", null ]
+    [ "setSenha", "class_pessoa.html#a57ed4246933f9585fc92a4adf9e1f69f", null ],
+    [ "email", "class_pessoa.html#a1560ad3e1f1327131518dce3ce09a2fe", null ],
+    [ "nome", "class_pessoa.html#a522b401a9c8c08aa334f75330ca0d74a", null ],
+    [ "papel", "class_pessoa.html#a2261e94d9f9ad9ec34e02991ab391be1", null ],
+    [ "senha", "class_pessoa.html#a6fc2179270099091fd6a40ec5b2e1d08", null ]
 ];

@@ -5,5 +5,7 @@ var class_dominio =
     [ "getValor", "class_dominio.html#a2d3f7e5c12c57aabdf44ed2e81b39308", null ],
     [ "operator<", "class_dominio.html#a41c29d298453c47ca50e7d36d1f6bd24", null ],
     [ "operator==", "class_dominio.html#afb67029bc90a8f7f027199779e84ad3d", null ],
-    [ "setValor", "class_dominio.html#a3ebd355a610d914beb205d70d2907491", null ]
+    [ "setValor", "class_dominio.html#a3ebd355a610d914beb205d70d2907491", null ],
+    [ "validar", "class_dominio.html#a5be1128dae55a0eee9070946a14bfb80", null ],
+    [ "valor", "class_dominio.html#a5779729c515db3da388f0dcbf0579471", null ]
 ];
