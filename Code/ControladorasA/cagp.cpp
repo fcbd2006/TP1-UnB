@@ -358,7 +358,7 @@ void CntrIAGestaoProjetos::atualizarSprint(const Email& email){
         novoSprint.setTempo(capacidade);
 
         // Passa para a camada de serviço
-        if (cntrlISGestaoProjetos->criarPlanoSprint(novoSprint)) {
+        if (cntrlISGestaoProjetos->atualizarPlanoSprint(novoSprint)) {
             std::cout << "Plano de Sprint alterado com sucesso!\n";
         } else {
             std::cout << "\nFalha na alteracao: Codigo informado nao consta na base de dados.\n";
@@ -388,7 +388,7 @@ void CntrIAGestaoProjetos::excluirSprint(const Email& email){
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         if (confirmacao == 'S' || confirmacao == 's') {
-            if (cntrlISGestaoProjetos->excluirProjeto(codigo)) {
+            if (cntrlISGestaoProjetos->excluirPlanoSprint(codigo)) {
                 std::cout << "\nPlano de Sprint excluido com sucesso.\n";
             } else {
                 std::cout << "\nErro ao tentar excluir o plano de sprint. Codigo nao encontrado na base de dados.\n";
