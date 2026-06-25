@@ -79,6 +79,8 @@ void CntrIACadastro::executar(Email& email, Papel& papel) {
                             email = Email();
                             papel = Papel();
                             executando = false; // Força a saída do menu e o fim da sessão
+                            std::cout << "Pressione ENTER para continuar...";
+                            std::cin.get();
                         } else {
                             std::cout << "\nErro ao tentar excluir a conta.\n";
                         }
